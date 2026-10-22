@@ -4,11 +4,13 @@ VDOC Flask backend.
 Endpoints
 ---------
 POST /transcribe     audio file  -> {"text": "..."}
-POST /parse          command str -> DocEditBERT result
+POST /parse          command str -> DocEditBERT result (one action)
+POST /parse-multi    command str -> VDOC 2.0 list of actions
 POST /parse-rule     command str -> rule-based result
 POST /parse-bilstm   command str -> BiLSTM result
 POST /parse-all      command str -> all three results combined
 POST /batch-evaluate commands[]  -> per-system accuracy over a labelled batch
+GET  /multi-action/config -> splitter version, fallback status
 """
 import os
 import sys
@@ -34,6 +36,11 @@ import xlmr_parser                    # XLM-RoBERTa zero-shot baseline
 import mdistilbert_parser              # mDistilBERT Tanglish baseline
 from rule_parser import parse as rule_parse  # regex rules
 import threading
+
+# VDOC 2.0 multi-action pipeline (sits on top of DocEditBERT, does not
+# replace it). Project root is already on sys.path via the parent of backend/.
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from multi_action import pipeline as multi_pipeline
 
 app = Flask(__name__)
 CORS(app)   # allow all origins (frontend runs on a different port)
@@ -108,6 +115,14 @@ def transcribe():
 
 BERT_CONFIDENCE_THRESHOLD = 0.75
 
+# The confidence router's Groq fallback is switched off: the model it called,
+# llama-3.1-8b-instant, has been retired and now returns HTTP 404. With this
+# False the whole app runs offline on DocEditBERT alone. The routing code is
+# left intact so a working model can be dropped in later.
+ENABLE_GROQ_FALLBACK = multi_pipeline.ENABLE_GROQ_FALLBACK
+GROQ_FALLBACK_NOTE   = multi_pipeline.GROQ_FALLBACK_NOTE
+
+
 @app.route("/parse", methods=["POST"])
 def parse_doceditbert():
     """
@@ -115,6 +130,9 @@ def parse_doceditbert():
     If DocEditBERT confidence < 0.75, Groq LLM is called instead and the
     response carries method='llm-fallback' and routed_to='groq'.
     All responses include a 'routed_to' field.
+
+    With ENABLE_GROQ_FALLBACK off, low-confidence commands stay on
+    DocEditBERT and carry fallback='disabled (model retired)'.
     """
     command = _cmd_from_request()
     if not command:
@@ -125,6 +143,11 @@ def parse_doceditbert():
 
     if confidence >= BERT_CONFIDENCE_THRESHOLD:
         result["routed_to"] = "doceditbert"
+        return jsonify(result)
+
+    if not ENABLE_GROQ_FALLBACK:
+        result["routed_to"] = "doceditbert"
+        result["fallback"]  = GROQ_FALLBACK_NOTE
         return jsonify(result)
 
     # Low confidence — fall back to Groq LLM
@@ -139,6 +162,57 @@ def parse_doceditbert():
         result["routed_to"]     = "doceditbert"
         result["fallback_error"] = str(e)
         return jsonify(result)
+
+
+@app.route("/parse-multi", methods=["POST"])
+def parse_multi():
+    """
+    VDOC 2.0: split one utterance into a list of actions.
+
+    Request:  {"command": "...", "line_count": 5}
+              line_count is optional; without it, line targets are found but
+              not resolved to a position.
+
+    Response: {text, chunks[], actions[], count, split, splitter,
+               groq_fallback, final_lines}
+
+    A single-action command returns a list of one, and that one action is
+    identical to what POST /parse returns.
+    """
+    data    = request.get_json(silent=True) or {}
+    command = (data.get("command") or "").strip()
+    if not command:
+        return jsonify({"error": "Missing 'command' field"}), 400
+
+    line_count = data.get("line_count")
+    if line_count is not None:
+        try:
+            line_count = int(line_count)
+        except (TypeError, ValueError):
+            return jsonify({"error": "'line_count' must be a whole number"}), 400
+        if line_count < 0:
+            return jsonify({"error": "'line_count' must not be negative"}), 400
+
+    result = multi_pipeline.parse_multi(
+        command, doceditbert_parser.predict, line_count=line_count
+    )
+    # Pre-render the label each action card shows.
+    for entry in result["actions"]:
+        entry["label"] = multi_pipeline.describe(entry)
+    return jsonify(result)
+
+
+@app.route("/multi-action/config", methods=["GET"])
+def multi_action_config():
+    """What the dashboard needs to label the pipeline honestly."""
+    return jsonify({
+        "splitter":            multi_pipeline.__dict__.get("SPLITTER_VERSION", "v0: rule-based"),
+        "line_resolver":       "rule-based",
+        "groq_fallback":       GROQ_FALLBACK_NOTE,
+        "groq_fallback_on":    ENABLE_GROQ_FALLBACK,
+        "confidence_threshold": BERT_CONFIDENCE_THRESHOLD,
+        "model":               "DocEditBERT (models/doceditbert_1000)",
+    })
 
 
 @app.route("/parse-rule", methods=["POST"])

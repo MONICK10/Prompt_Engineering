@@ -23,6 +23,8 @@ from .position_tracker import PositionTracker, LineNotFound
 ENABLE_GROQ_FALLBACK = False
 GROQ_FALLBACK_NOTE = "disabled (model retired)"
 
+SPLITTER_VERSION = "v0: rule-based"
+
 # Actions that change how many lines the document has.
 SHIFTING_ACTIONS = {"delete", "insert-after"}
 
@@ -109,7 +111,7 @@ def parse_multi(text, predict_fn, line_count=None):
         "actions": actions,
         "count": len(actions),
         "split": len(chunks) > 1,
-        "splitter": "v0: rule-based",
+        "splitter": SPLITTER_VERSION,
         "groq_fallback": GROQ_FALLBACK_NOTE,
         "final_lines": tracker.snapshot() if tracker else None,
     }
