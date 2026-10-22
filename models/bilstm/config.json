@@ -1,0 +1,28 @@
+{
+  "vocab_size": 150,
+  "embed_dim": 128,
+  "hidden_dim": 128,
+  "num_layers": 2,
+  "dropout": 0.3,
+  "num_intents": 6,
+  "num_slot_labels": 9,
+  "intent_labels": [
+    "bold",
+    "italic",
+    "delete",
+    "underline",
+    "heading2",
+    "heading3"
+  ],
+  "slot_labels": [
+    "O",
+    "B-ACTION",
+    "I-ACTION",
+    "B-FROM",
+    "I-FROM",
+    "B-TO",
+    "I-TO",
+    "B-ANCHOR",
+    "I-ANCHOR"
+  ]
+}

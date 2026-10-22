@@ -1,0 +1,31 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.4.1.237:5050
+Press CTRL+C to quit
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]Loading weights: 100%|##########| 100/100 [00:00<00:00, 4909.70it/s]
+[transformers] [1mDistilBertModel LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     |  | 
+------------------------+------------+--+-
+vocab_transform.bias    | UNEXPECTED |  | 
+vocab_layer_norm.weight | UNEXPECTED |  | 
+vocab_layer_norm.bias   | UNEXPECTED |  | 
+vocab_projector.bias    | UNEXPECTED |  | 
+vocab_transform.weight  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[warmup] DocEditBERT + BiLSTM models ready
+127.0.0.1 - - [17/Jul/2026 21:35:44] "GET /health HTTP/1.1" 200 -
+D:\miniproject-new\.venv\Lib\site-packages\whisper\transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+127.0.0.1 - - [17/Jul/2026 21:36:31] "POST /transcribe HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2026 21:36:31] "OPTIONS /parse HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2026 21:36:32] "POST /parse HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2026 21:38:11] "POST /transcribe HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2026 21:38:28] "POST /transcribe HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2026 21:38:29] "OPTIONS /parse HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jul/2026 21:38:32] "POST /parse HTTP/1.1" 200 -

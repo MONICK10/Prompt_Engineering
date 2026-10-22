@@ -1,0 +1,48 @@
+{
+  "intent_labels": [
+    "bold",
+    "italic",
+    "delete",
+    "underline",
+    "heading2",
+    "heading3",
+    "replace",
+    "insert-after",
+    "font-increase",
+    "highlight"
+  ],
+  "slot_labels": [
+    "O",
+    "B-ACTION",
+    "I-ACTION",
+    "B-FROM",
+    "I-FROM",
+    "B-TO",
+    "I-TO",
+    "B-ANCHOR",
+    "I-ANCHOR"
+  ],
+  "intent2id": {
+    "bold": 0,
+    "italic": 1,
+    "delete": 2,
+    "underline": 3,
+    "heading2": 4,
+    "heading3": 5,
+    "replace": 6,
+    "insert-after": 7,
+    "font-increase": 8,
+    "highlight": 9
+  },
+  "slot2id": {
+    "O": 0,
+    "B-ACTION": 1,
+    "I-ACTION": 2,
+    "B-FROM": 3,
+    "I-FROM": 4,
+    "B-TO": 5,
+    "I-TO": 6,
+    "B-ANCHOR": 7,
+    "I-ANCHOR": 8
+  }
+}
