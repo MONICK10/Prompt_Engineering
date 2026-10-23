@@ -44,6 +44,7 @@ PARTICLES = frozenset({
     "vare", "varai", "pannu", "panu", "paniru", "panitu", "pannidu",
     "pannitu", "panuka", "pannuga", "apram", "aprom", "appuram", "piragu",
     "sei", "seiyu", "podu", "pottu", "maathu", "maathi", "vari", "varigal",
+    "vei", "vai", "vaiyi",
     "mudhal", "mudal", "rendavathu", "moonavathu", "naalavathu",
     "anjavathu", "kadaisi", "ku", "aa", "ah", "um",
 })

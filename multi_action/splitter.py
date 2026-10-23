@@ -64,6 +64,10 @@ JOIN_PHRASES = (
 )
 
 _PUNCT = ".,?!;:"
+
+# Punctuation that can end one instruction and start the next on its own.
+_SENTENCE_BREAKS = ",.?!;"
+
 _UM_SUFFIX = re.compile(r"-?um$")
 
 
@@ -193,12 +197,18 @@ def _candidate_boundaries(tokens):
                 bounds.append((start, start, "-um"))
         i += 1
 
-    # A bare comma can separate two actions on its own.
+    # Punctuation can separate two actions on its own, with no joining word.
+    # Whisper puts a full stop between spoken sentences -- "first line bold
+    # pannu. second line font size 20 vei." -- so a sentence break is just as
+    # much a boundary as "apram" is. The safe rule still applies afterwards,
+    # so a full stop inside a single instruction costs nothing.
     for token, start, end in tokens:
-        if token.endswith(","):
-            cut = end - 1
-            if not any(b[0] <= cut <= b[1] for b in bounds):
-                bounds.append((cut, end, ","))
+        stripped = token.rstrip(_SENTENCE_BREAKS)
+        if stripped == token:
+            continue
+        cut = start + len(stripped)
+        if not any(b[0] <= cut <= b[1] for b in bounds):
+            bounds.append((cut, end, token[len(stripped):]))
 
     bounds.sort(key=lambda b: b[0])
     return bounds
@@ -249,7 +259,7 @@ def split(text):
     spans = kept
 
     return [
-        Chunk(text=original[s[0]:s[1]].strip().strip(","),
+        Chunk(text=original[s[0]:s[1]].strip().strip(_SENTENCE_BREAKS).strip(),
               start=s[0], end=s[1], join_before=s[2])
         for s in spans
     ]

@@ -33,6 +33,15 @@ CONFIDENCE_THRESHOLD = 0.75
 # Actions that change how many lines the document has.
 SHIFTING_ACTIONS = {"delete", "insert-after"}
 
+# TODO: "set font size to N" is not an action yet.
+#
+# "second line font size 20 vei" parses as font-increase, which is the
+# closest of the ten intents DocEditBERT knows, and the size (20) is thrown
+# away. Supporting it properly means a new intent plus a numeric slot, so it
+# needs a dataset change and a retrain -- not a parser tweak. Until then the
+# command does something reasonable rather than nothing, and the number is
+# silently ignored.
+
 
 def _clean_anchor(value):
     return (value or "").strip().strip(".,?!;:") or None

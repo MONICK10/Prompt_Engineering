@@ -134,6 +134,36 @@ def test_case4_tanglish(command, predict):
     assert line_numbers(result) == [1, 3]
 
 
+# ── Sentence breaks are boundaries too ───────────────────────────────────────
+# Whisper puts a full stop between spoken sentences, with no joining word.
+
+SENTENCE_BREAKS = [
+    # The transcript that exposed this: it stayed one chunk, so only
+    # font-increase ran, and it ran on line 1 instead of line 2.
+    ("first line bold pannu. second line font size 20 vei.",
+     ["bold", "font-increase"], [1, 2]),
+    ("first line bold pannu! third line delete pannu.",
+     ["bold", "delete"], [1, 3]),
+    ("bold the first line? delete the third line.",
+     ["bold", "delete"], [1, 3]),
+]
+
+
+@pytest.mark.parametrize("command,expected_actions,expected_lines", SENTENCE_BREAKS)
+def test_sentence_breaks_split(command, expected_actions, expected_lines, predict):
+    result = run(command, predict)
+    assert result["count"] == 2, f"{command!r} did not split into 2"
+    assert actions_of(result) == expected_actions
+    assert line_numbers(result) == expected_lines
+
+
+def test_trailing_full_stop_does_not_split(predict):
+    # One instruction that merely ends with a full stop stays one chunk.
+    result = run("first line bold pannu.", predict)
+    assert result["count"] == 1
+    assert actions_of(result) == ["bold"]
+
+
 # ── Rule 1: single-action commands must not be split ─────────────────────────
 
 NEVER_SPLIT = [
