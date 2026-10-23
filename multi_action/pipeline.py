@@ -25,6 +25,11 @@ GROQ_FALLBACK_NOTE = "disabled (model retired)"
 
 SPLITTER_VERSION = "v0: rule-based"
 
+# Below this, the model is guessing. A guess is worse than a refusal here:
+# acting on it edits the wrong thing and the user cannot tell why, so the
+# action is flagged and the editor asks for a repeat instead.
+CONFIDENCE_THRESHOLD = 0.75
+
 # Actions that change how many lines the document has.
 SHIFTING_ACTIONS = {"delete", "insert-after"}
 
@@ -72,12 +77,15 @@ def parse_multi(text, predict_fn, line_count=None):
         line_target = line_resolver.resolve(chunk.text)
         target = line_target if line_target else _anchor_target(prediction)
 
+        confidence = prediction.get("confidence")
         actions.append({
             "index": index,
             "chunk_text": chunk.text,
             "join_before": chunk.join_before,
             "action": prediction.get("action"),
-            "confidence": prediction.get("confidence"),
+            "confidence": confidence,
+            "low_confidence": (confidence is not None
+                               and confidence < CONFIDENCE_THRESHOLD),
             "method": prediction.get("method"),
             "target": target,
             # Kept so the demo can show what the model said about slots even

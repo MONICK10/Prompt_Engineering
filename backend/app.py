@@ -41,6 +41,7 @@ import threading
 # replace it). Project root is already on sys.path via the parent of backend/.
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from multi_action import pipeline as multi_pipeline
+from multi_action import corrector
 
 app = Flask(__name__)
 CORS(app)   # allow all origins (frontend runs on a different port)
@@ -57,14 +58,7 @@ def _warmup():
 threading.Thread(target=_warmup, daemon=True).start()
 
 # ── Whisper (lazy-loaded on first /transcribe call) ───────────────────────────
-_whisper_model = None
-
-def _get_whisper():
-    global _whisper_model
-    if _whisper_model is None:
-        import whisper
-        _whisper_model = whisper.load_model("base")
-    return _whisper_model
+import whisper_asr
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -100,13 +94,15 @@ def transcribe():
         tmp_path = tmp.name
 
     try:
-        model  = _get_whisper()
-        # Force English decoding so Tamil-accented / code-switched (Tanglish)
-        # speech comes back romanized (Latin script), matching the script
-        # DocEditBERT/mDistilBERT were trained on, instead of Whisper
-        # auto-detecting Tamil and returning Tamil-script text.
-        result = model.transcribe(tmp_path, language="en")
-        return jsonify({"text": result["text"].strip()})
+        # whisper_asr forces English decoding (so code-switched Tanglish comes
+        # back romanised, matching DocEditBERT's training script), prepends
+        # 300 ms of silence so the first word is not clipped, conditions on
+        # our vocabulary, and writes debug/last_audio.wav.
+        result = whisper_asr.transcribe_file(tmp_path)
+        return jsonify({
+            "text":        result["text"],
+            "diagnostics": result["diagnostics"],
+        })
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
     finally:
@@ -206,13 +202,59 @@ def parse_multi():
 def multi_action_config():
     """What the dashboard needs to label the pipeline honestly."""
     return jsonify({
-        "splitter":            multi_pipeline.__dict__.get("SPLITTER_VERSION", "v0: rule-based"),
+        "splitter":            multi_pipeline.SPLITTER_VERSION,
         "line_resolver":       "rule-based",
+        "corrector":           "rule-based (edit distance 1-2)",
         "groq_fallback":       GROQ_FALLBACK_NOTE,
         "groq_fallback_on":    ENABLE_GROQ_FALLBACK,
         "confidence_threshold": BERT_CONFIDENCE_THRESHOLD,
         "model":               "DocEditBERT (models/doceditbert_1000)",
+        "whisper":             whisper_asr.config(),
     })
+
+
+@app.route("/suggest-corrections", methods=["POST"])
+def suggest_corrections():
+    """
+    Check an utterance for misheard command words before it is parsed.
+
+    Saved corrections are applied straight away; anything else comes back as
+    a suggestion for the user to accept or reject. Nothing else is rewritten.
+    """
+    command = _cmd_from_request()
+    if not command:
+        return jsonify({"error": "Missing 'command' field"}), 400
+    return jsonify(corrector.review(command))
+
+
+@app.route("/confirm-correction", methods=["POST"])
+def confirm_correction():
+    """Remember a correction the user accepted, and return the new text."""
+    data    = request.get_json(silent=True) or {}
+    wrong   = (data.get("word") or "").strip()
+    right   = (data.get("suggestion") or "").strip()
+    command = (data.get("command") or "").strip()
+
+    if not wrong or not right:
+        return jsonify({"error": "Missing 'word' or 'suggestion'"}), 400
+
+    try:
+        corrections = corrector.save_correction(wrong, right)
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+    return jsonify({
+        "saved":       {"from": wrong.lower(), "to": right.lower()},
+        "command":     corrector.apply_choice(command, wrong, right) if command else "",
+        "corrections": corrections,
+    })
+
+
+@app.route("/corrections", methods=["GET"])
+def list_corrections():
+    """Every correction the user has confirmed so far."""
+    return jsonify({"corrections": corrector.load_corrections(),
+                    "file": "data/user_corrections.json"})
 
 
 @app.route("/parse-rule", methods=["POST"])

@@ -59,9 +59,12 @@ export function useVoiceInput(onTranscribed) {
       const blob = new Blob(chunksRef.current, { type: recorder.mimeType || 'audio/webm' })
       const result = await transcribe(blob)
       if (!result.ok) { setVoiceStatus(result.error); return }
-      if (!result.text) { setVoiceStatus('No speech detected.'); return }
+      if (!result.text) {
+        setVoiceStatus('No speech detected — check the mic level.')
+        return
+      }
       setVoiceStatus(null)
-      onTranscribed(result.text)
+      onTranscribed(result.text, result.diagnostics)
     }
 
     recorder.start()

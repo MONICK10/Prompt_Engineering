@@ -3,3 +3,6 @@
 __pycache__/
 *.pyc
 models/*/pytorch_model.bin
+
+# Debug recordings — audio, not source
+debug/

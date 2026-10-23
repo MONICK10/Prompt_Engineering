@@ -7,9 +7,14 @@
 import { useCallback, useEffect, useState } from 'react'
 import '../demo/demo.css'
 import { createDoc, runActions, SAMPLE_LINES } from '../demo/document'
-import { parseMulti, parseOld, fetchConfig } from '../demo/api'
+import {
+  parseMulti, parseOld, fetchConfig, suggestCorrections, confirmCorrection,
+} from '../demo/api'
 import { useVoiceInput } from '../demo/useVoiceInput'
-import { ActionCard, ChunkStrip, DocumentView } from '../demo/components'
+import {
+  ActionCard, AutoCorrectedBadges, ChunkStrip, CorrectionPrompt,
+  DocumentView, WhisperDiagnostics,
+} from '../demo/components'
 
 const EXAMPLES = [
   'second line delete pannu, apram second line bold pannu',
@@ -29,6 +34,9 @@ export default function LiveDemoPage() {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState(null)
   const [config, setConfig] = useState(null)
+  const [diagnostics, setDiagnostics] = useState(null)
+  const [pending, setPending] = useState(null)   // { command, suggestions }
+  const [autoFixed, setAutoFixed] = useState([])
 
   useEffect(() => { fetchConfig().then(setConfig) }, [])
 
@@ -37,13 +45,12 @@ export default function LiveDemoPage() {
     setBefore(null)
     setResult(null)
     setError(null)
+    setPending(null)
+    setAutoFixed([])
   }, [])
 
-  const run = useCallback(async (text, runMode) => {
-    const utterance = (text ?? command).trim()
-    const activeMode = runMode ?? mode
-    if (!utterance) return
-
+  // Parse and execute. `text` is already corrected by the time it gets here.
+  const execute = useCallback(async (utterance, activeMode) => {
     setBusy(true)
     setError(null)
 
@@ -74,9 +81,79 @@ export default function LiveDemoPage() {
       splitter: parsed.splitter,
     })
     setBusy(false)
-  }, [command, mode])
+  }, [])
 
-  const onTranscribed = useCallback(text => {
+  /**
+   * Run a command. Misheard command words are checked first: saved fixes are
+   * applied straight away, anything new stops here and waits for a yes or no.
+   */
+  const run = useCallback(async (text, runMode) => {
+    const utterance = (text ?? command).trim()
+    const activeMode = runMode ?? mode
+    if (!utterance) return
+
+    setPending(null)
+    setAutoFixed([])
+
+    const review = await suggestCorrections(utterance)
+    if (!review.ok) {           // corrector down — carry on with the raw text
+      await execute(utterance, activeMode)
+      return
+    }
+
+    if (review.auto_applied?.length) {
+      setAutoFixed(review.auto_applied)
+      setCommand(review.corrected)
+    }
+
+    if (review.suggestions?.length) {
+      setPending({ command: review.corrected, suggestions: review.suggestions, mode: activeMode })
+      return
+    }
+
+    await execute(review.corrected, activeMode)
+  }, [command, mode, execute])
+
+  // ── Correction prompt handlers ───────────────────────────────────────────
+  const acceptSuggestion = useCallback(async item => {
+    if (!pending) return
+    setBusy(true)
+    const saved = await confirmCorrection(item.word, item.suggestion, pending.command)
+    setBusy(false)
+    if (!saved.ok) { setError(saved.error); return }
+
+    const corrected = saved.command || pending.command
+    setCommand(corrected)
+    setAutoFixed(prev => [...prev, saved.saved])
+    const rest = pending.suggestions.filter(s => s.word !== item.word)
+    if (rest.length) {
+      setPending({ ...pending, command: corrected, suggestions: rest })
+    } else {
+      setPending(null)
+      await execute(corrected, pending.mode)
+    }
+  }, [pending, execute])
+
+  const rejectSuggestion = useCallback(async item => {
+    if (!pending) return
+    const rest = pending.suggestions.filter(s => s.word !== item.word)
+    if (rest.length) {
+      setPending({ ...pending, suggestions: rest })
+    } else {
+      setPending(null)
+      await execute(pending.command, pending.mode)
+    }
+  }, [pending, execute])
+
+  const runAnyway = useCallback(async () => {
+    if (!pending) return
+    const { command: text, mode: runMode } = pending
+    setPending(null)
+    await execute(text, runMode)
+  }, [pending, execute])
+
+  const onTranscribed = useCallback((text, diag) => {
+    setDiagnostics(diag ?? null)
     setCommand(text)
     run(text)
   }, [run])
@@ -143,6 +220,18 @@ export default function LiveDemoPage() {
 
       {voiceStatus && <div className="notice">{voiceStatus}</div>}
       {error && <div className="notice is-error">{error}</div>}
+
+      <AutoCorrectedBadges applied={autoFixed} />
+
+      <CorrectionPrompt
+        suggestions={pending?.suggestions}
+        onYes={acceptSuggestion}
+        onNo={rejectSuggestion}
+        onRunAnyway={runAnyway}
+        busy={busy}
+      />
+
+      <WhisperDiagnostics diagnostics={diagnostics} />
 
       {/* ── Steps ── */}
       <div className="demo-grid">

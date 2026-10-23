@@ -59,7 +59,33 @@ export async function transcribe(blob) {
   form.append('audio', blob, 'recording.webm')
   try {
     const { data } = await axios.post(`${API}/transcribe`, form)
-    return { ok: true, text: (data.text || '').trim() }
+    return { ok: true, text: (data.text || '').trim(), diagnostics: data.diagnostics }
+  } catch (err) {
+    return { ok: false, error: friendlyError(err) }
+  }
+}
+
+/**
+ * Check an utterance for misheard command words.
+ * Saved corrections come back already applied; the rest are suggestions
+ * waiting for a yes or no.
+ */
+export async function suggestCorrections(command) {
+  try {
+    const { data } = await axios.post(`${API}/suggest-corrections`, { command })
+    return { ok: true, ...data }
+  } catch (err) {
+    return { ok: false, error: friendlyError(err) }
+  }
+}
+
+/** Remember a correction the user accepted. */
+export async function confirmCorrection(word, suggestion, command) {
+  try {
+    const { data } = await axios.post(`${API}/confirm-correction`, {
+      word, suggestion, command,
+    })
+    return { ok: true, ...data }
   } catch (err) {
     return { ok: false, error: friendlyError(err) }
   }

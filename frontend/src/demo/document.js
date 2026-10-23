@@ -149,6 +149,18 @@ export function applyAction(docIn, entry) {
   const action = entry.action
   const target = entry.target
 
+  // A low-confidence prediction is a guess. Acting on a guess edits the
+  // wrong thing and the user cannot tell why, so ask for a repeat instead.
+  // This check comes first: "not found" would blame the document for what is
+  // really the model saying it does not know.
+  if (entry.low_confidence) {
+    const score = typeof entry.confidence === 'number' ? entry.confidence.toFixed(3) : '?'
+    return {
+      doc, touched: [], ok: false, unsure: true,
+      message: `I'm not sure, please repeat (confidence ${score})`,
+    }
+  }
+
   if (!action) return { doc, touched: [], ok: false, message: 'no action detected' }
   if (!target) return { doc, touched: [], ok: false, message: 'no target found' }
 
@@ -227,7 +239,10 @@ export function runActions(docIn, actions) {
     const result = applyAction(doc, entry)
     doc = result.doc
     result.touched.forEach(id => touchedAll.add(id))
-    steps.push({ entry, ok: result.ok, message: result.message, touched: result.touched })
+    steps.push({
+      entry, ok: result.ok, message: result.message,
+      touched: result.touched, unsure: result.unsure ?? false,
+    })
   }
   return { doc, steps, touched: [...touchedAll] }
 }

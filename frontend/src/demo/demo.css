@@ -230,6 +230,72 @@ h3.doc-line-text { font-size: 18px; font-weight: 700; }
 .doc-empty { padding: 14px; color: #999; font-style: italic; }
 .doc-foot { padding: 7px 12px; font-size: 13px; color: #c62828; background: #fff5f5; font-weight: 600; }
 
+/* ── Misheard-word correction ─────────────────────────────── */
+.correction-panel {
+  margin: 12px 0;
+  padding: 14px 16px;
+  border: 2px solid #f9a825;
+  border-radius: 10px;
+  background: #fffdf5;
+}
+.correction-head { font-size: 15px; font-weight: 700; color: #6d4c00; margin-bottom: 10px; }
+.correction-row {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap; padding: 7px 0;
+}
+.correction-q { font-size: 18px; color: #1a1a1a; }
+.heard-word {
+  font-family: ui-monospace, Consolas, monospace;
+  background: #ffe0b2; padding: 2px 7px; border-radius: 4px;
+  text-decoration: line-through; color: #8d4e00;
+}
+.correction-distance { font-size: 13px; color: #8a7a5a; }
+.yes-btn, .no-btn {
+  padding: 7px 20px; font-size: 15px; font-weight: 700;
+  border-radius: 7px; cursor: pointer; border: 2px solid transparent;
+}
+.yes-btn { background: #2e7d32; color: #fff; }
+.yes-btn:hover:not(:disabled) { background: #1b5e20; }
+.no-btn  { background: #fff; color: #555; border-color: #ccc; }
+.no-btn:hover:not(:disabled) { background: #f0f0f0; }
+.yes-btn:disabled, .no-btn:disabled { opacity: 0.5; cursor: default; }
+.run-anyway-btn {
+  margin-top: 8px; padding: 6px 14px;
+  font-size: 13px; color: #6d4c00;
+  background: none; border: 1px solid #d9b45a; border-radius: 6px;
+  cursor: pointer;
+}
+.run-anyway-btn:hover:not(:disabled) { background: #fff3d6; }
+
+.auto-corrected-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0 0; }
+.badge-autofix { background: #e3f2fd; color: #0d47a1; font-size: 13px; padding: 4px 11px; }
+.badge-unsure  { background: #ffe0b2; color: #8d4e00; }
+
+.action-card.is-unsure { border-left-color: #f9a825; background: #fffdf5; }
+.action-card-result.is-unsure { color: #8d4e00; }
+.conf.is-unsure { color: #c62828; font-weight: 700; }
+
+/* ── Whisper diagnostics ──────────────────────────────────── */
+.diag-panel {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border: 1px solid #d5dbe8;
+  border-radius: 9px;
+  background: #f8fafe;
+}
+.diag-title {
+  font-size: 13px; font-weight: 700; color: #37474f;
+  text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px;
+}
+.diag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 6px 16px;
+}
+.diag-field { display: flex; gap: 8px; font-size: 13px; }
+.diag-label { color: #78909c; min-width: 86px; }
+.diag-value { color: #1a1a1a; font-family: ui-monospace, Consolas, monospace; word-break: break-all; }
+
 .config-foot {
   margin-top: 18px;
   font-size: 13px;
