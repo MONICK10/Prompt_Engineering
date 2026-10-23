@@ -2,6 +2,7 @@ import { Routes, Route, NavLink } from 'react-router-dom'
 import EditorPage from './pages/EditorPage'
 import ExperimentPage from './pages/ExperimentPage'
 import LiveDemoPage from './pages/LiveDemoPage'
+import HardCasesPage from './pages/HardCasesPage'
 
 const link = ({ isActive }) => isActive ? 'topnav-link active' : 'topnav-link'
 
@@ -11,12 +12,14 @@ export default function App() {
       <nav className="topnav">
         <span className="topnav-brand">VDOC 2.0</span>
         <NavLink to="/"           className={link}>Live Demo</NavLink>
+        <NavLink to="/hard-cases" className={link}>Hard Cases</NavLink>
         <NavLink to="/editor"     className={link}>Editor</NavLink>
         <NavLink to="/experiment" className={link}>Experiment</NavLink>
       </nav>
       <div style={{ flex: 1, overflow: 'hidden' }}>
         <Routes>
           <Route path="/"           element={<LiveDemoPage />} />
+          <Route path="/hard-cases" element={<HardCasesPage />} />
           <Route path="/editor"     element={<EditorPage />} />
           <Route path="/experiment" element={<ExperimentPage />} />
         </Routes>

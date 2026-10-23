@@ -219,6 +219,23 @@ export function applyAction(docIn, entry) {
     }
     return { doc, touched, ok: true, message: `${action} from "${target.from}" to "${target.to}"` }
   }
+  if (action === 'insert-after') {
+    // The slots are reversed for this intent: `from` is the text to insert,
+    // `to` is the anchor it goes after. Insert at the end of the anchor word.
+    const anchor = findAnchorRange(doc, target.to, target.to)
+    if (!anchor) {
+      return { doc, touched: [], ok: false, message: `anchor "${target.to}" not found` }
+    }
+    const line = doc[anchor.startLine]
+    line.text = line.text.slice(0, anchor.endOffset)
+      + ' ' + target.from
+      + line.text.slice(anchor.endOffset)
+    line.marks = []
+    return {
+      doc, touched: [line.id], ok: true,
+      message: `inserted "${target.from}" after "${target.to}"`,
+    }
+  }
   const markType = MARK_ACTIONS[action]
   if (!markType) {
     return { doc, touched: [], ok: false, message: `"${action}" is not supported in the demo view` }
