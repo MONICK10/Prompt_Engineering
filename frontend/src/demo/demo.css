@@ -267,6 +267,33 @@ h3.doc-line-text { font-size: 18px; font-weight: 700; }
 }
 .run-anyway-btn:hover:not(:disabled) { background: #fff3d6; }
 
+/* ── Vocabulary snapping ──────────────────────────────────── */
+.snap-row {
+  margin: 12px 0 0;
+  padding: 11px 14px;
+  border: 1px solid #b3d4c4;
+  border-left: 5px solid #2e7d32;
+  border-radius: 9px;
+  background: #f4fbf6;
+}
+.snap-line { display: flex; gap: 10px; align-items: baseline; margin-bottom: 4px; }
+.snap-label {
+  font-size: 12px; color: #4b6b57; text-transform: uppercase;
+  letter-spacing: 0.5px; min-width: 104px; flex-shrink: 0;
+}
+.snap-before { font-size: 16px; color: #8d6e63; font-style: italic; }
+.snap-after  { font-size: 17px; color: #1b5e20; font-weight: 600; }
+.snap-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.badge-snap {
+  background: #e8f5e9; color: #1b5e20;
+  font-size: 13px; padding: 4px 11px;
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.snap-reason {
+  font-size: 11px; font-weight: 600; color: #5a7d66;
+  background: #d6ecd9; padding: 1px 6px; border-radius: 8px;
+}
+
 .auto-corrected-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0 0; }
 .badge-autofix { background: #e3f2fd; color: #0d47a1; font-size: 13px; padding: 4px 11px; }
 .badge-unsure  { background: #ffe0b2; color: #8d4e00; }

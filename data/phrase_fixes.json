@@ -1,0 +1,30 @@
+{
+  "_comment": "Mishearings Whisper makes on Tanglish, fixed before parsing. Edit this file freely; the backend reloads it on every request, no restart needed. 'phrases' are matched first, longest first, on word boundaries and ignoring case. 'words' are single-word fixes for cases the phonetic snapper cannot reach on its own.",
+  "phrases": {
+    "line-up is": "la irunthu",
+    "line up is": "la irunthu",
+    "lineup is": "la irunthu",
+    "like this": "la irunthu",
+    "lot iron to": "la irunthu",
+    "law irrent the": "la irunthu",
+    "to have": "vara",
+    "a prem": "apram",
+    "a premium": "apram",
+    "up room": "apram",
+    "upper room": "apram",
+    "vari crum": "varikum",
+    "vari krum": "varikum",
+    "vari come": "varikum",
+    "vari gum": "varikum"
+  },
+  "words": {
+    "convolution": "conclusion",
+    "varicrum": "varikum",
+    "varicum": "varikum",
+    "varicam": "varikum",
+    "ponu": "panu",
+    "ponyu": "panu",
+    "punu": "panu",
+    "panel": "pannu"
+  }
+}

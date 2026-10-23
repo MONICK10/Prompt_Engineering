@@ -42,6 +42,7 @@ import threading
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from multi_action import pipeline as multi_pipeline
 from multi_action import corrector
+from multi_action import snapper
 
 app = Flask(__name__)
 CORS(app)   # allow all origins (frontend runs on a different port)
@@ -205,6 +206,9 @@ def multi_action_config():
         "splitter":            multi_pipeline.SPLITTER_VERSION,
         "line_resolver":       "rule-based",
         "corrector":           "rule-based (edit distance 1-2)",
+        "snapper":             ("rule-based (Double Metaphone + edit distance)"
+                                if snapper.ENABLE_SNAPPING else "disabled"),
+        "snapping_enabled":    snapper.ENABLE_SNAPPING,
         "groq_fallback":       GROQ_FALLBACK_NOTE,
         "groq_fallback_on":    ENABLE_GROQ_FALLBACK,
         "confidence_threshold": BERT_CONFIDENCE_THRESHOLD,
@@ -216,15 +220,34 @@ def multi_action_config():
 @app.route("/suggest-corrections", methods=["POST"])
 def suggest_corrections():
     """
-    Check an utterance for misheard command words before it is parsed.
+    Clean up an utterance before it is parsed.
 
-    Saved corrections are applied straight away; anything else comes back as
-    a suggestion for the user to accept or reject. Nothing else is rewritten.
+    Request: {"command": "...", "document": "optional text on screen"}
+
+    Three stages, all reported separately so the UI can show what happened:
+      1. snapping  — pull Whisper's English-sounding output back onto our
+                     Tanglish vocabulary (phrases, word fixes, then sound)
+      2. saved     — corrections the user confirmed earlier, applied now
+      3. suggested — anything else, offered as a yes/no question
+
+    Only stages 1 and 2 change the text. Stage 3 never does.
     """
-    command = _cmd_from_request()
+    data     = request.get_json(silent=True) or {}
+    command  = (data.get("command") or "").strip()
+    document = data.get("document") or ""
     if not command:
         return jsonify({"error": "Missing 'command' field"}), 400
-    return jsonify(corrector.review(command))
+
+    snapped = snapper.snap(command, document=document)
+    review  = corrector.review(snapped["snapped"])
+
+    # `original` stays the raw transcription so the UI can show the journey.
+    review["original"] = command
+    review["snapped"] = snapped["snapped"]
+    review["snap_changes"] = snapped["changes"]
+    review["snapping_enabled"] = snapped["enabled"]
+    review["changed"] = review["corrected"] != command
+    return jsonify(review)
 
 
 @app.route("/confirm-correction", methods=["POST"])

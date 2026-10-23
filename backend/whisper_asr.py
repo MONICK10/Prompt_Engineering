@@ -36,13 +36,25 @@ WHISPER_MODEL = os.environ.get("VDOC_WHISPER_MODEL", "small")
 # script when it detects Tamil words.
 WHISPER_LANGUAGE = "en"
 
-# Vocabulary hint. Whisper treats this as the text preceding the audio, so it
-# biases decoding towards these spellings.
+# Vocabulary hint. Whisper treats this as the text that came just before the
+# audio, so it biases decoding towards these spellings and, more importantly,
+# towards this *style* of sentence.
+#
+# Full Tanglish sentences work much better here than a word list: a bare list
+# gives Whisper no grammar to follow, so it still falls back on English and
+# turns "varikum" into "vari-crum". Sentences taken from DocEdit-1000 show it
+# what a whole command looks like. Kept well under the 224-token limit --
+# anything longer is silently truncated from the front, which would drop the
+# examples we care about most.
 INITIAL_PROMPT = (
-    "first line, second line, third line, last line, "
-    "bold, italic, underline, highlight, delete, heading, "
-    "pannu, panu, apram, pannitu, bold-um, italic-um, "
-    "vari, mudhal, rendavathu"
+    "car la irunthu accident varikum bold panu. "
+    "introduction la irunthu conclusion vara italic sei. "
+    "header irunthu footer varikum underline panu. "
+    "second line delete pannu, apram second line bold pannu. "
+    "first line bold-um italic-um pannu. "
+    "mudhal vari highlight pannu, apram kadaisi vari delete pannu. "
+    "summary ku aprom conclusion insert panu. "
+    "rendavathu line heading2 aa maathu."
 )
 
 LEADING_PAD_MS = 300

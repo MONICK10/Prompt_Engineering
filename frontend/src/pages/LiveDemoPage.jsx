@@ -13,7 +13,7 @@ import {
 import { useVoiceInput } from '../demo/useVoiceInput'
 import {
   ActionCard, AutoCorrectedBadges, ChunkStrip, CorrectionPrompt,
-  DocumentView, WhisperDiagnostics,
+  DocumentView, SnapBadges, WhisperDiagnostics,
 } from '../demo/components'
 
 const EXAMPLES = [
@@ -37,6 +37,7 @@ export default function LiveDemoPage() {
   const [diagnostics, setDiagnostics] = useState(null)
   const [pending, setPending] = useState(null)   // { command, suggestions }
   const [autoFixed, setAutoFixed] = useState([])
+  const [snap, setSnap] = useState(null)         // { changes, original, snapped }
 
   useEffect(() => { fetchConfig().then(setConfig) }, [])
 
@@ -47,6 +48,7 @@ export default function LiveDemoPage() {
     setError(null)
     setPending(null)
     setAutoFixed([])
+    setSnap(null)
   }, [])
 
   // Parse and execute. `text` is already corrected by the time it gets here.
@@ -94,11 +96,25 @@ export default function LiveDemoPage() {
 
     setPending(null)
     setAutoFixed([])
+    setSnap(null)
 
-    const review = await suggestCorrections(utterance)
+    // The document on screen joins the vocabulary, so its own words are
+    // never snapped away and can be snapped *to*.
+    const documentText = doc.map(line => line.text).join('\n')
+
+    const review = await suggestCorrections(utterance, documentText)
     if (!review.ok) {           // corrector down — carry on with the raw text
       await execute(utterance, activeMode)
       return
+    }
+
+    if (review.snap_changes?.length) {
+      setSnap({
+        changes: review.snap_changes,
+        original: review.original,
+        snapped: review.snapped,
+      })
+      setCommand(review.corrected)
     }
 
     if (review.auto_applied?.length) {
@@ -112,7 +128,7 @@ export default function LiveDemoPage() {
     }
 
     await execute(review.corrected, activeMode)
-  }, [command, mode, execute])
+  }, [command, mode, execute, doc])
 
   // ── Correction prompt handlers ───────────────────────────────────────────
   const acceptSuggestion = useCallback(async item => {
@@ -220,6 +236,12 @@ export default function LiveDemoPage() {
 
       {voiceStatus && <div className="notice">{voiceStatus}</div>}
       {error && <div className="notice is-error">{error}</div>}
+
+      <SnapBadges
+        changes={snap?.changes}
+        original={snap?.original}
+        snapped={snap?.snapped}
+      />
 
       <AutoCorrectedBadges applied={autoFixed} />
 

@@ -172,6 +172,40 @@ export function AutoCorrectedBadges({ applied }) {
   )
 }
 
+const SNAP_REASON = {
+  phrase: 'phrase',
+  word: 'known fix',
+  sound: 'sound match',
+}
+
+/** "snapped: convolution → conclusion" for vocabulary snapping. */
+export function SnapBadges({ changes, original, snapped }) {
+  if (!changes?.length) return null
+  return (
+    <div className="snap-row">
+      <div className="snap-line">
+        <span className="snap-label">Whisper heard</span>
+        <span className="snap-before">“{original}”</span>
+      </div>
+      <div className="snap-line">
+        <span className="snap-label">snapped to</span>
+        <span className="snap-after">“{snapped}”</span>
+      </div>
+      <div className="snap-badges">
+        {changes.map((item, i) => (
+          <span key={i} className="badge badge-snap">
+            snapped: {item.from} → {item.to}
+            <span className="snap-reason">
+              {SNAP_REASON[item.reason] ?? item.reason}
+              {item.score != null && ` ${item.score}`}
+            </span>
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 /** What Whisper did with the clip — the ASR half of the pipeline. */
 export function WhisperDiagnostics({ diagnostics }) {
   if (!diagnostics) return null

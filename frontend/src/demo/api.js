@@ -70,9 +70,9 @@ export async function transcribe(blob) {
  * Saved corrections come back already applied; the rest are suggestions
  * waiting for a yes or no.
  */
-export async function suggestCorrections(command) {
+export async function suggestCorrections(command, document = '') {
   try {
-    const { data } = await axios.post(`${API}/suggest-corrections`, { command })
+    const { data } = await axios.post(`${API}/suggest-corrections`, { command, document })
     return { ok: true, ...data }
   } catch (err) {
     return { ok: false, error: friendlyError(err) }

@@ -1,3 +1,7 @@
 {
-  "corrections": {}
+  "corrections": {
+    "good": "bold",
+    "hold": "bold",
+    "parl": "para"
+  }
 }
