@@ -1,0 +1,89 @@
+/* Prompt Engineering page. Sits on top of demo.css and reuses its .step,
+   .badge, .doc-* and control-bar styles; only the new pieces live here. */
+
+.pe-lead { font-size: 17px; line-height: 1.65; color: #2b2d3a; margin: 0 0 10px; }
+.pe-lead strong { color: #1e2030; }
+.pe-sample {
+  display: inline-block; margin-top: 4px;
+  background: #e8f5e9; color: #1b5e20;
+  font-size: 13px; font-weight: 700;
+  padding: 4px 11px; border-radius: 11px;
+}
+
+/* ── How it works: five boxes with arrows ─────────────────── */
+.pe-flow { display: flex; align-items: flex-start; gap: 4px; flex-wrap: wrap; }
+.pe-flow-step { flex: 1 1 140px; min-width: 130px; }
+.pe-flow-box {
+  background: #1e2030; color: #fff;
+  border-radius: 9px; padding: 13px 10px;
+  text-align: center; font-weight: 700; font-size: 15px;
+}
+.pe-flow-cap {
+  margin-top: 7px; text-align: center;
+  font-size: 13px; line-height: 1.45; color: #555;
+}
+.pe-flow-arrow {
+  flex: 0 0 26px; align-self: center;
+  text-align: center; font-size: 22px; color: #9aa0b4; padding-top: 8px;
+}
+
+/* ── Controls ─────────────────────────────────────────────── */
+.pe-select {
+  padding: 10px 12px; font-size: 15px;
+  border: 1px solid #c9c9c9; border-radius: 8px; background: #fff;
+  color: #1e2030; min-width: 190px;
+}
+.pe-select-label { font-size: 13px; font-weight: 700; color: #555; margin-right: 6px; }
+
+/* ── Prompt / reply blocks ────────────────────────────────── */
+.pe-prompt { margin: 10px 0; }
+.pe-prompt > summary {
+  cursor: pointer; font-size: 14px; font-weight: 700; color: #3949ab;
+  padding: 6px 0;
+}
+.pe-pre {
+  background: #1e2030; color: #e8eaf6;
+  border-radius: 8px; padding: 12px 14px; margin: 8px 0 0;
+  font-family: ui-monospace, Consolas, monospace; font-size: 13px;
+  line-height: 1.55; white-space: pre-wrap; word-break: break-word;
+  max-height: 320px; overflow: auto;
+}
+.pe-pre.is-light { background: #f7f7f9; color: #1e2030; border: 1px solid #e3e3e3; }
+.pe-field-label {
+  font-size: 13px; font-weight: 700; color: #555;
+  margin: 12px 0 2px; text-transform: uppercase; letter-spacing: .03em;
+}
+.pe-time { font-size: 13px; color: #555; margin-top: 8px; }
+
+/* ── Compare cards ────────────────────────────────────────── */
+.pe-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.pe-card {
+  background: #fff; border: 1px solid #e3e3e3; border-radius: 10px;
+  padding: 12px 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.pe-card.is-bert { border-color: #2e7d32; border-width: 2px; }
+.pe-card-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; margin-bottom: 8px;
+}
+.pe-card-title { font-size: 15px; font-weight: 700; color: #1e2030; }
+.pe-mark { font-size: 19px; line-height: 1; }
+.pe-mark.ok { color: #2e7d32; }
+.pe-mark.bad { color: #c62828; }
+.pe-card-note { font-size: 13px; color: #8d4e00; margin-top: 8px; line-height: 1.45; }
+
+/* ── Tables ───────────────────────────────────────────────── */
+.pe-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.pe-table th, .pe-table td {
+  border: 1px solid #e3e3e3; padding: 8px 10px; text-align: left;
+}
+.pe-table th { background: #f3f4f8; font-weight: 700; color: #1e2030; }
+.pe-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.pe-table td.best { background: #e8f5e9; font-weight: 700; color: #1b5e20; }
+.pe-table td.none { color: #9aa0b4; font-style: italic; }
+.pe-table-wrap { overflow-x: auto; }
+
+/* ── Findings, limits ─────────────────────────────────────── */
+.pe-list { margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.7; color: #2b2d3a; }
+.pe-list li { margin-bottom: 5px; }
+.pe-chart-note { font-size: 13px; color: #555; margin-top: 8px; line-height: 1.5; }

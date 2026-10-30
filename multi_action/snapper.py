@@ -47,6 +47,10 @@ PARTICLES = frozenset({
     "vei", "vai", "vaiyi",
     "mudhal", "mudal", "rendavathu", "moonavathu", "naalavathu",
     "anjavathu", "kadaisi", "ku", "aa", "ah", "um",
+    # Replace-command particles: "reported-a car-nu maathu", "X-ku badhila
+    # Y podu". Short ones especially need listing -- left out, the phonetic
+    # matcher is free to snap them onto a longer word that sounds similar.
+    "nu", "nnu", "kku", "badhila", "badhilaa", "pathila", "ai", "ya",
 })
 
 # A word this short is mostly noise under edit distance, so it is only

@@ -46,7 +46,7 @@ WHISPER_LANGUAGE = "en"
 # what a whole command looks like. Kept well under the 224-token limit --
 # anything longer is silently truncated from the front, which would drop the
 # examples we care about most.
-INITIAL_PROMPT = (
+_EXAMPLE_COMMANDS = (
     "car la irunthu accident varikum bold panu. "
     "introduction la irunthu conclusion vara italic sei. "
     "header irunthu footer varikum underline panu. "
@@ -56,6 +56,45 @@ INITIAL_PROMPT = (
     "summary ku aprom conclusion insert panu. "
     "rendavathu line heading2 aa maathu."
 )
+
+VOCAB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "..", "data", "vocabulary.txt")
+
+
+def load_vocabulary():
+    """
+    Names and command words from data/vocabulary.txt, read every time.
+
+    A proper noun Whisper has never met comes back as whatever it sounds
+    like -- "Karunya" turns into "caroniya" -- and no amount of grammar in
+    the examples fixes a word the decoder does not know. Listing the word is
+    what fixes it, and keeping the list in a file means adding one needs no
+    code change and no restart.
+    """
+    try:
+        with open(VOCAB_FILE, encoding="utf-8") as handle:
+            lines = [line.strip() for line in handle]
+    except OSError:
+        return ""
+    words = [line for line in lines if line and not line.startswith("#")]
+    return ", ".join(words)
+
+
+def build_initial_prompt():
+    """
+    Vocabulary first, example sentences last.
+
+    Both matter: the word list fixes spellings, the sentences show Whisper
+    what a whole Tanglish command sounds like so it does not fall back on
+    English grammar. The sentences go last because an over-long prompt is
+    truncated from the front, and losing a name costs less than losing the
+    shape of a command.
+    """
+    vocabulary = load_vocabulary()
+    return f"{vocabulary}. {_EXAMPLE_COMMANDS}" if vocabulary else _EXAMPLE_COMMANDS
+
+
+INITIAL_PROMPT = build_initial_prompt()
 
 LEADING_PAD_MS = 300
 
@@ -139,7 +178,7 @@ def transcribe_file(path, model_name=None, save_debug=True):
     result = model.transcribe(
         padded,
         language=WHISPER_LANGUAGE,
-        initial_prompt=INITIAL_PROMPT,
+        initial_prompt=build_initial_prompt(),   # re-read, so edits need no restart
         fp16=False,                       # CPU only; avoids the FP16 warning
         temperature=0.0,                  # no random retries: same clip, same
         condition_on_previous_text=False, # text every time, which a demo needs
@@ -175,5 +214,5 @@ def config():
         "language": WHISPER_LANGUAGE,
         "sample_rate": SAMPLE_RATE,
         "leading_pad_ms": LEADING_PAD_MS,
-        "initial_prompt": INITIAL_PROMPT,
+        "initial_prompt": build_initial_prompt(),
     }

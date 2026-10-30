@@ -33,12 +33,30 @@ def _load_dataset():
         return json.load(handle)
 
 
+def _anchor_same(new_value, old_value):
+    """
+    One difference is allowed, and only one.
+
+    The pipeline strips a Tanglish case marker from an anchor -- "reported-a"
+    becomes "reported" -- so the executor can find that word in the document.
+    The old single-call path hands the raw token back, and "reported-a"
+    matches nothing on the page. The new answer is the same edit, said
+    properly, so it does not count as a changed result.
+
+    Any other difference still does.
+    """
+    new_value = new_value or None
+    old_value = old_value or None
+    return new_value == old_value or new_value == pipeline._clean_anchor(old_value)
+
+
 def test_pipeline_matches_old_vdoc_on_all_1000():
     import doceditbert_parser
     predict = doceditbert_parser.predict
 
     examples = _load_dataset()
     unchanged = 0
+    marker_stripped = 0
     split_wrongly = []
     differed = []
 
@@ -59,13 +77,20 @@ def test_pipeline_matches_old_vdoc_on_all_1000():
 
         entry = new["actions"][0]
         target = entry.get("target") or {}
-        same = (
+        identical = (
             entry["action"] == old.get("action")
             and (target.get("from") or None) == (old.get("from") or None)
             and (target.get("to") or None) == (old.get("to") or None)
         )
+        same = identical or (
+            entry["action"] == old.get("action")
+            and _anchor_same(target.get("from"), old.get("from"))
+            and _anchor_same(target.get("to"), old.get("to"))
+        )
         if same:
             unchanged += 1
+            if not identical:
+                marker_stripped += 1
         else:
             differed.append({
                 "text": text,
@@ -82,6 +107,7 @@ def test_pipeline_matches_old_vdoc_on_all_1000():
         "dataset": "data/docEdit1000.json",
         "total": total,
         "unchanged": unchanged,
+        "case_marker_stripped": marker_stripped,
         "wrongly_split": len(split_wrongly),
         "changed_result": len(differed),
         "accuracy_unchanged": round(unchanged / total, 4),
@@ -95,7 +121,8 @@ def test_pipeline_matches_old_vdoc_on_all_1000():
         json.dump(report, handle, indent=2)
 
     print(f"\nRegression: {unchanged}/{total} commands unchanged "
-          f"({len(split_wrongly)} wrongly split, {len(differed)} changed result)")
+          f"({len(split_wrongly)} wrongly split, {len(differed)} changed result, "
+          f"{marker_stripped} with a Tanglish case marker stripped)")
     print(f"Saved to {RESULTS_FILE}")
 
     if split_wrongly:

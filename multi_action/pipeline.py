@@ -43,8 +43,27 @@ SHIFTING_ACTIONS = {"delete", "insert-after"}
 # silently ignored.
 
 
+# Tanglish case markers that glue onto an anchor word: "reported-a",
+# "address-nu". The snapper splits these off on the voice path, but a typed
+# command reaches us with the hyphen still attached.
+CASE_MARKERS = {"a", "aa", "ah", "nu", "nnu", "ku", "kku", "ai", "ya"}
+
+# Actions where a line is a *scope* rather than the thing being acted on.
+# "third line reported-a car-nu maathu" edits a word inside line 3; the line
+# only says where to look. Formatting actions are the other way round -- there
+# the line itself is what changes -- so only replace is listed here.
+SCOPED_ACTIONS = {"replace"}
+
+
 def _clean_anchor(value):
-    return (value or "").strip().strip(".,?!;:") or None
+    cleaned = (value or "").strip().strip(".,?!;:")
+    # Drop a trailing case marker, but only when it really is one: "rule-based"
+    # keeps its hyphen because "based" is not a marker.
+    if "-" in cleaned:
+        stem, _, suffix = cleaned.rpartition("-")
+        if stem and suffix.lower() in CASE_MARKERS:
+            cleaned = stem
+    return cleaned or None
 
 
 def _anchor_target(prediction):
@@ -84,7 +103,16 @@ def parse_multi(text, predict_fn, line_count=None):
     for index, chunk in enumerate(chunks):
         prediction = predict_fn(chunk.text)
         line_target = line_resolver.resolve(chunk.text)
-        target = line_target if line_target else _anchor_target(prediction)
+        anchor_target = _anchor_target(prediction)
+        target = line_target if line_target else anchor_target
+
+        # A scoped action needs both halves: without the anchor the executor
+        # knows which line to edit but not which word, and the edit cannot run.
+        if (line_target and anchor_target
+                and prediction.get("action") in SCOPED_ACTIONS):
+            target = {**line_target,
+                      "from": anchor_target["from"],
+                      "to": anchor_target["to"]}
 
         confidence = prediction.get("confidence")
         actions.append({
@@ -146,11 +174,16 @@ def describe(entry):
         return f"{action} from {target['from']} to {target['to']}"
 
     resolved = entry.get("resolved_line")
-    if not resolved:
-        return f"{action} {line_resolver.describe(target)}"
-
     unit = target.get("unit", "line")
-    label = f"{action} {unit} {resolved['current']}"
-    if resolved["moved"]:
+    where = (f"{unit} {resolved['current']}" if resolved
+             else line_resolver.describe(target))
+
+    # A scoped action names the words it swaps, not just the line.
+    if action in SCOPED_ACTIONS and target.get("from") and target.get("to"):
+        label = f"{action} \"{target['from']}\" with \"{target['to']}\" on {where}"
+    else:
+        label = f"{action} {where}"
+
+    if resolved and resolved["moved"]:
         label += f" (was {unit} {resolved['original']})"
     return label

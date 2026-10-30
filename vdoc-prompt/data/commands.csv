@@ -1,0 +1,151 @@
+id,command,category,expected_json,split
+1,bold the title,english,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",tune
+2,last line-a delete pannu,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",tune
+3,rendavathu para-va italic aakku,tamil_number,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",tune
+4,intha para-va formal-a maathu,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""formal"",""question"":null}",tune
+5,"end-la ""Thank you"" serkku",tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",tune
+6,atha delete pannu,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I delete?""}",tune
+7,kadaisi paragraph-a eduthudu,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",tune
+8,reported-a car-nu maathu,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",tune
+9,moonavathu line-la name-a address-nu maathu,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""name"",""to"":""address""},""question"":null}",tune
+10,change the heading to bold,english,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",tune
+11,underline the whole document,english,"{""action"":""underline"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",tune
+12,move the third paragraph to the top,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",tune
+13,"redo that, I mean undo it",unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Do you want to undo or redo?""}",tune
+14,mudhal vari-ya highlight pannu,tamil_number,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",tune
+15,second line font size perusu pannu,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",tune
+16,make the summary more formal,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""formal"",""question"":null}",tune
+17,title-ku badhila heading podu,replace,"{""action"":""replace"",""target"":{""type"":""title"",""index"":null},""value"":{""from"":""title"",""to"":""heading""},""question"":null}",tune
+18,adha konjam sari pannu,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I fix?""}",tune
+19,naalavathu line-a underline pannu,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",tune
+20,insert a blank line after the title,english,"{""action"":""insert"",""target"":{""type"":""title"",""index"":null},""value"":"""",""question"":null}",tune
+21,delete the first paragraph,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",test
+22,"insert ""Thank you"" at the end",english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",test
+23,bold the second line,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",test
+24,italicise the last paragraph,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",test
+25,underline the first line,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",test
+26,delete the last line,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",test
+27,make the title italic,english,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+28,highlight the third line,english,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",test
+29,undo the last change,english,"{""action"":""undo"",""target"":null,""value"":null,""question"":null}",test
+30,move the first paragraph to the end,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",test
+31,make the second paragraph more casual,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":2},""value"":""casual"",""question"":null}",test
+32,rewrite the introduction in a formal tone,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":""formal"",""question"":null}",test
+33,bold the whole document,english,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",test
+34,delete the fourth line,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",test
+35,"add ""Regards"" at the end",english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Regards"",""question"":null}",test
+36,underline the title,english,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+37,change the second line to bold,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",test
+38,change the first paragraph to italic,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",test
+39,turn the last line into underline,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",test
+40,make the fifth line bold,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",test
+41,remove the third paragraph,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",test
+42,italicise the selected text,english,"{""action"":""italic"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",test
+43,bold the selection,english,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",test
+44,make the conclusion shorter,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":-1},""value"":""shorter"",""question"":null}",test
+45,increase the font size of the first line,english,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",test
+46,move the last paragraph up,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",test
+47,delete the word reported,english,"{""action"":""delete"",""target"":{""type"":""word"",""index"":null},""value"":""reported"",""question"":null}",test
+48,highlight the whole second paragraph,english,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",test
+49,undo,english,"{""action"":""undo"",""target"":null,""value"":null,""question"":null}",test
+50,"insert ""Introduction"" before the first paragraph",english,"{""action"":""insert"",""target"":{""type"":""paragraph"",""index"":1},""value"":""Introduction"",""question"":null}",test
+51,title-a bold pannu,tanglish,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+52,"end-la ""Nandri"" serkku",tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",test
+53,first para-va kadaisi-ku nagarthu,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",test
+54,undo pannu,tanglish,"{""action"":""undo"",""target"":null,""value"":null,""question"":null}",test
+55,second line-a bold pannu,tanglish,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",test
+56,third line delete pannu,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",test
+57,title-a italic aakku,tanglish,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+58,kadaisi line-a eduthudu,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",test
+59,whole document-a underline pannu,tanglish,"{""action"":""underline"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",test
+60,first line-a highlight panu,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",test
+61,intha para-va casual-a maathu,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""casual"",""question"":null}",test
+62,summary-va chinna-dha maathu,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""shorter"",""question"":null}",test
+63,second para-va delete pannidu,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",test
+64,"mudhal-la ""Vanakkam"" serkku",tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":1},""value"":""Vanakkam"",""question"":null}",test
+65,title-a periya font-la vei,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+66,fourth line-a italic pannu,tanglish,"{""action"":""italic"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",test
+67,last para-va mela nagarthu,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",test
+68,select panna text-a bold pannu,tanglish,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",test
+69,intha line-a underline panu,tanglish,"{""action"":""underline"",""target"":{""type"":""line"",""index"":null},""value"":null,""question"":null}",test
+70,document muzhusa italic aakku,tanglish,"{""action"":""italic"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",test
+71,third para-va eduthudu,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",test
+72,heading-a bold-um italic-um pannu,tanglish,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+73,fifth line-a highlight pannu,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",test
+74,conclusion-a formal-a maathu,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":-1},""value"":""formal"",""question"":null}",test
+75,second line font size perusu panu,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",test
+76,"kadaisi-la ""Nandri solli mudikiren"" serkku",tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri solli mudikiren"",""question"":null}",test
+77,first line-a delete panitu,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",test
+78,title-a underline pannuga,tanglish,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+79,intha word-a bold pannu,tanglish,"{""action"":""bold"",""target"":{""type"":""word"",""index"":null},""value"":null,""question"":null}",test
+80,last line-a italic aakku,tanglish,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",test
+81,whole para-va highlight pannu,tanglish,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":null},""value"":null,""question"":null}",test
+82,second para-va first-ku nagarthu,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",test
+83,introduction-a simple-a maathu,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":""simple"",""question"":null}",test
+84,fourth para delete pannu,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":4},""value"":null,""question"":null}",test
+85,title font size vei,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+86,document-a muzhusa bold pannu,tanglish,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",test
+87,third line-a underline pannidu,tanglish,"{""action"":""underline"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",test
+88,last word-a eduthudu,tanglish,"{""action"":""delete"",""target"":{""type"":""word"",""index"":-1},""value"":null,""question"":null}",test
+89,intha sentence-a italic pannu,tanglish,"{""action"":""italic"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",test
+90,undo pannidu,tanglish,"{""action"":""undo"",""target"":null,""value"":null,""question"":null}",test
+91,first para-va formal-a maathu,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":""formal"",""question"":null}",test
+92,second line-a periya-dha vei,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",test
+93,"title-ku keezha ""Subtitle"" serkku",tanglish,"{""action"":""insert"",""target"":{""type"":""title"",""index"":null},""value"":""Subtitle"",""question"":null}",test
+94,fifth para-va delete panuka,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":5},""value"":null,""question"":null}",test
+95,heading-a highlight panu,tanglish,"{""action"":""highlight"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",test
+96,kadaisi para-va bold pannu,tanglish,"{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",test
+97,first line-a kadaisi-ku nagarthu,tanglish,"{""action"":""move"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",test
+98,document-a casual-a maathu,tanglish,"{""action"":""rewrite"",""target"":{""type"":""document"",""index"":null},""value"":""casual"",""question"":null}",test
+99,third line-a bold-a vei,tanglish,"{""action"":""bold"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",test
+100,summary para-va eduthu podu,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":null},""value"":null,""question"":null}",test
+101,mudhal line-a underline pannu,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",test
+102,rendavathu line-a bold pannu,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",test
+103,moonavathu para-va delete pannu,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",test
+104,naalavathu line-a italic aakku,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",test
+105,anjavathu para-va highlight pannu,tamil_number,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":5},""value"":null,""question"":null}",test
+106,kadaisi line-a bold pannu,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",test
+107,mudhal para-va eduthudu,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",test
+108,rendavathu vari-ya highlight panu,tamil_number,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",test
+109,moonavathu line-a underline panu,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",test
+110,naalavathu para-va formal-a maathu,tamil_number,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":4},""value"":""formal"",""question"":null}",test
+111,anjavathu line-a delete pannidu,tamil_number,"{""action"":""delete"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",test
+112,kadaisi vari-ya italic pannu,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",test
+113,mudhal vari-ya bold pannu,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",test
+114,rendavathu para-va kadaisi-ku nagarthu,tamil_number,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",test
+115,moonavathu vari font size perusu pannu,tamil_number,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",test
+116,naalavathu line-a highlight panuka,tamil_number,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",test
+117,anjavathu vari-ya underline pannu,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",test
+118,kadaisi para-va delete panitu,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",test
+119,mudhal line-a italic pannu,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",test
+120,rendavathu line-a casual-a maathu,tamil_number,"{""action"":""rewrite"",""target"":{""type"":""line"",""index"":2},""value"":""casual"",""question"":null}",test
+121,3rd line-la reported-a car-nu maathu,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",test
+122,moonavathu line-la reported-ku badhila car podu,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",test
+123,reported-a car-a maathu,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",test
+124,change reported to car,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",test
+125,in the third line change reported to car,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",test
+126,second line-la name-a address-nu maathu,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":2},""value"":{""from"":""name"",""to"":""address""},""question"":null}",test
+127,replace conclusion with summary,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""conclusion"",""to"":""summary""},""question"":null}",test
+128,first line-la chapter-a section-nu maathu,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":1},""value"":{""from"":""chapter"",""to"":""section""},""question"":null}",test
+129,kadaisi line-la study-ku badhila research podu,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":-1},""value"":{""from"":""study"",""to"":""research""},""question"":null}",test
+130,change method to approach in the second paragraph,replace,"{""action"":""replace"",""target"":{""type"":""paragraph"",""index"":2},""value"":{""from"":""method"",""to"":""approach""},""question"":null}",test
+131,accident-a incident-nu maathu,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""accident"",""to"":""incident""},""question"":null}",test
+132,replace the word result with outcome,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""result"",""to"":""outcome""},""question"":null}",test
+133,naalavathu line-la researchers-ku badhila authors podu,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":4},""value"":{""from"":""researchers"",""to"":""authors""},""question"":null}",test
+134,title-la introduction-a overview-nu maathu,replace,"{""action"":""replace"",""target"":{""type"":""title"",""index"":null},""value"":{""from"":""introduction"",""to"":""overview""},""question"":null}",test
+135,swap system for platform everywhere,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""system"",""to"":""platform""},""question"":null}",test
+136,adha konjam maathu,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I rewrite?""}",test
+137,atha bold pannu,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I bold?""}",test
+138,delete it,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I delete?""}",test
+139,make it better,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I rewrite, and how?""}",test
+140,andha line-a maathu,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line do you mean?""}",test
+141,change that word,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I change, and to what?""}",test
+142,inga konjam sari pannu,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I fix?""}",test
+143,ethana line delete pannanum,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which lines should I delete?""}",test
+144,move it up,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I move?""}",test
+145,that one italic,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I italicise?""}",test
+146,konjam periya-dha vei,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I make bigger?""}",test
+147,replace it,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I replace, and with what?""}",test
+148,do the usual thing,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""What would you like me to do?""}",test
+149,apdiye vechuko,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Should I leave the document unchanged?""}",test
+150,idha sari pannu,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I fix?""}",test

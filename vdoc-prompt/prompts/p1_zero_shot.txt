@@ -1,0 +1,2 @@
+Convert this document editing command into JSON.
+Command: {command}

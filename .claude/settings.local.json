@@ -2,7 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(./.venv/Scripts/python.exe -m pip install pytest -q)",
-      "Bash(./.venv/Scripts/python.exe -c \"import pytest; print\\('pytest', pytest.__version__\\)\")"
+      "Bash(./.venv/Scripts/python.exe -c \"import pytest; print\\('pytest', pytest.__version__\\)\")",
+      "PowerShell(cd E:\\\\prompt_project\\\\vdoc-prompt; $k = \\(Get-Content E:\\\\prompt_project\\\\.env | Select-String '^GROQ_API_KEY='\\).ToString\\(\\).Split\\('=',2\\)[1].Trim\\(\\); $r = Invoke-RestMethod -Uri \"https://api.groq.com/openai/v1/models\" -Headers @{Authorization=\"Bearer $k\"}; $r.data | Select-Object -ExpandProperty id | Sort-Object)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5050 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }; Start-Sleep -Seconds 2; \"port cleared\")",
+      "Bash(/e/prompt_project/.venv/Scripts/python.exe /e/prompt_project/backend/app.py)",
+      "Bash(./.venv/Scripts/python.exe -I \"C:/Users/HP/AppData/Local/Temp/claude/e--prompt-project/bb8e7922-28ba-4709-afc1-722a983c2ea4/scratchpad/compare.py\")",
+      "Bash(grep -v \"Loading\\\\|transformers\\\\|vocab_\\\\|^Key \\\\|^---\\\\|^Notes\\\\|UNEXPECTED\\\\|Warning\\\\|^$\")",
+      "Bash(./.venv/Scripts/python.exe -m pytest multi_action/tests -q)",
+      "Bash(./.venv/Scripts/python.exe -c ' *)",
+      "Bash(/e/prompt_project/.venv/Scripts/python.exe -m pip install python-docx reportlab)",
+      "Bash(rm -f results/studio/_test.docx results/studio/_test.pdf)",
+      "Bash(/e/prompt_project/.venv/Scripts/python.exe -m src.studio_eval)",
+      "Bash(curl -s --max-time 10 \"http://localhost:5174/src/demo/studio.css\")",
+      "Bash(curl -s -o /dev/null -w \"  StudioPage.jsx -> %{http_code}\\\\n\" --max-time 15 \"http://localhost:5174/src/pages/StudioPage.jsx\")"
     ]
   }
 }

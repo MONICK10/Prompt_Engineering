@@ -1,0 +1,2386 @@
+model,technique,id,category,output,valid_json,action_ok,exact_ok,latency_s
+groq,p1_zero_shot,21,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""paragraphNumber"": 1
+}
+```",True,True,False,4.248
+groq,p1_zero_shot,22,english,"```json
+{
+  ""action"": ""insert"",
+  ""text"": ""Thank you"",
+  ""position"": ""end""
+}
+```",True,True,False,1.391
+groq,p1_zero_shot,23,english,"```json
+{
+  ""action"": ""bold"",
+  ""target"": {
+    ""type"": ""line"",
+    ""index"": 2
+  }
+}
+```",True,True,True,1.801
+groq,p1_zero_shot,24,english,"```json
+{
+  ""action"": ""italicise"",
+  ""target"": ""last paragraph""
+}
+```",True,False,False,1.488
+groq,p1_zero_shot,25,english,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""first line""
+}
+```",True,True,False,1.758
+groq,p1_zero_shot,26,english,"```json
+{
+  ""action"": ""delete"",
+  ""line"": ""last""
+}
+```",True,True,False,1.487
+groq,p1_zero_shot,27,english,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""title"",
+  ""style"": ""italic""
+}
+```",True,False,False,1.796
+groq,p1_zero_shot,28,english,"```json
+{
+  ""action"": ""highlight"",
+  ""lineNumber"": 3
+}
+```",True,True,False,1.837
+groq,p1_zero_shot,29,english,"```json
+{
+  ""action"": ""undo"",
+  ""target"": ""last_change""
+}
+```",True,True,False,1.582
+groq,p1_zero_shot,30,english,"```json
+{
+  ""action"": ""move"",
+  ""target"": ""paragraph"",
+  ""sourceIndex"": 0,
+  ""destinationIndex"": ""end""
+}
+```",True,True,False,1.518
+groq,p1_zero_shot,31,english,"```json
+{
+  ""action"": ""edit"",
+  ""target"": ""paragraph"",
+  ""index"": 2,
+  ""style"": ""casual""
+}
+```",True,False,False,1.653
+groq,p1_zero_shot,32,english,"```json
+{
+  ""action"": ""rewrite"",
+  ""target"": ""introduction"",
+  ""tone"": ""formal""
+}
+```",True,True,False,1.608
+groq,p1_zero_shot,33,english,"```json
+{
+  ""action"": ""bold"",
+  ""scope"": ""document""
+}
+```",True,True,False,1.556
+groq,p1_zero_shot,34,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""line_number"": 4
+}
+```",True,True,False,1.715
+groq,p1_zero_shot,35,english,"```json
+{
+  ""command"": ""add"",
+  ""text"": ""Regards"",
+  ""position"": ""end""
+}
+```",True,False,False,2.143
+groq,p1_zero_shot,36,english,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""title""
+}
+```",True,True,False,2.408
+groq,p1_zero_shot,37,english,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""line"",
+  ""lineNumber"": 2,
+  ""style"": ""bold""
+}
+```",True,False,False,2.285
+groq,p1_zero_shot,38,english,"```json
+{
+  ""action"": ""format"",
+  ""paragraphIndex"": 0,
+  ""style"": ""italic""
+}
+```",True,False,False,2.439
+groq,p1_zero_shot,39,english,"```json
+{
+  ""action"": ""apply_formatting"",
+  ""formatting"": ""underline"",
+  ""target"": {
+    ""type"": ""line"",
+    ""position"": ""last""
+  }
+}
+```",True,False,False,2.034
+groq,p1_zero_shot,40,english,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""line"",
+  ""lineNumber"": 5,
+  ""style"": ""bold""
+}
+```",True,False,False,3.08
+groq,p1_zero_shot,41,english,"```json
+{
+  ""action"": ""remove"",
+  ""target"": ""paragraph"",
+  ""index"": 3
+}
+```",True,False,False,2.379
+groq,p1_zero_shot,42,english,"```json
+{
+  ""action"": ""italicise"",
+  ""target"": ""selected_text""
+}
+```",True,False,False,2.138
+groq,p1_zero_shot,43,english,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""selection""
+}
+```",True,True,False,2.695
+groq,p1_zero_shot,44,english,"```json
+{
+  ""command"": ""make the conclusion shorter""
+}
+```",True,False,False,2.269
+groq,p1_zero_shot,45,english,"```json
+{
+  ""action"": ""increase_font_size"",
+  ""target"": ""first_line""
+}
+```",True,False,False,2.466
+groq,p1_zero_shot,46,english,"```json
+{
+  ""action"": ""move"",
+  ""target"": {
+    ""type"": ""paragraph"",
+    ""index"": ""last""
+  },
+  ""direction"": ""up""
+}
+```",True,True,False,2.485
+groq,p1_zero_shot,47,english,"```json
+{
+  ""command"": ""delete"",
+  ""target"": ""word"",
+  ""value"": ""reported""
+}
+```",True,False,False,2.551
+groq,p1_zero_shot,48,english,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": {
+    ""type"": ""paragraph"",
+    ""number"": 2,
+    ""scope"": ""whole""
+  }
+}
+```",True,True,False,2.577
+groq,p1_zero_shot,49,english,"```json
+{
+  ""command"": ""undo""
+}
+```",True,False,False,2.863
+groq,p1_zero_shot,50,english,"```json
+{
+  ""action"": ""insert"",
+  ""content"": ""Introduction"",
+  ""position"": ""before"",
+  ""target"": {
+    ""type"": ""paragraph"",
+    ""index"": 1
+  }
+}
+```",True,True,False,3.088
+groq,p1_zero_shot,51,tanglish,"```json
+{
+  ""type"": ""formatting"",
+  ""target"": ""title-a"",
+  ""style"": ""bold""
+}
+```",True,False,False,4.201
+groq,p1_zero_shot,52,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""position"": ""end"",
+  ""text"": ""Nandri""
+}
+```",True,True,False,3.18
+groq,p1_zero_shot,53,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""paragraph"": 1,
+  ""content"": """"
+}
+```",True,False,False,3.55
+groq,p1_zero_shot,54,tanglish,"Here’s a straightforward JSON representation of the command:
+
+```json
+{
+  ""action"": ""undo"",
+  ""target"": ""pannu""
+}
+```
+
+- **action** – the operation to perform (`undo`).  
+- **target** – the item or element the action applies to (`pannu`).",True,True,False,2.717
+groq,p1_zero_shot,55,tanglish,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""second line""
+}
+```",True,True,False,2.672
+groq,p1_zero_shot,56,tanglish,"```json
+{
+  ""operation"": ""delete"",
+  ""line"": 3,
+  ""content"": ""pannu""
+}
+```",True,False,False,2.069
+groq,p1_zero_shot,57,tanglish,"```json
+{
+  ""commands"": [
+    {
+      ""action"": ""setTitle"",
+      ""value"": ""a""
+    },
+    {
+      ""action"": ""format"",
+      ""target"": ""aakku"",
+      ""style"": ""italic""
+    }
+  ]
+}
+```",True,False,False,3.68
+groq,p1_zero_shot,58,tanglish,"```json
+{
+  ""action"": ""take"",
+  ""target"": ""line"",
+  ""content"": ""kadai""
+}
+```",True,False,False,3.728
+groq,p1_zero_shot,59,tanglish,"```json
+{
+  ""operation"": ""underline"",
+  ""target"": ""document"",
+  ""scope"": ""whole""
+}
+```",True,False,False,2.658
+groq,p1_zero_shot,60,tanglish,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": {
+    ""type"": ""line"",
+    ""number"": 1
+  },
+  ""content"": ""panu""
+}
+```
+
+This JSON represents the instruction to highlight the word **“panu”** on the first line of the document.",True,True,False,2.914
+groq,p1_zero_shot,61,tanglish,"```json
+{
+  ""action"": ""convert"",
+  ""target"": ""paragraph"",
+  ""style"": ""casual""
+}
+```",True,False,False,2.776
+groq,p1_zero_shot,62,tanglish,"```json
+{
+  ""action"": ""summarize"",
+  ""content"": ""chinna-dha maathu"",
+  ""language"": ""Tamil""
+}
+```",True,False,False,2.774
+groq,p1_zero_shot,63,tanglish,"```json
+{
+  ""originalCommand"": ""second para-va delete pannidu"",
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""index"": 2
+}
+```",True,True,False,2.691
+groq,p1_zero_shot,64,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""position"": ""beginning"",
+  ""text"": ""Vanakkam""
+}
+```",True,True,False,2.256
+groq,p1_zero_shot,65,tanglish,"```json
+{
+  ""action"": ""setTitle"",
+  ""title"": ""a"",
+  ""fontSize"": ""large""
+}
+```",True,False,False,2.373
+groq,p1_zero_shot,66,tanglish,"```json
+{
+  ""action"": ""applyFormatting"",
+  ""target"": {
+    ""type"": ""line"",
+    ""index"": 4
+  },
+  ""format"": {
+    ""italic"": true
+  }
+}
+```",True,False,False,2.317
+groq,p1_zero_shot,67,tanglish,"```json
+{
+  ""action"": ""move"",
+  ""target"": ""paragraph"",
+  ""position"": ""last"",
+  ""direction"": ""above""
+}
+```",True,True,False,2.735
+groq,p1_zero_shot,68,tanglish,"```json
+{
+  ""steps"": [
+    { ""step"": ""select"", ""object"": ""text"" },
+    { ""step"": ""apply_format"", ""style"": ""bold"" }
+  ]
+}
+```",True,False,False,3.149
+groq,p1_zero_shot,69,tanglish,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""line"",
+  ""scope"": ""current""
+}
+```",True,True,False,2.621
+groq,p1_zero_shot,70,tanglish,"```json
+{
+  ""command"": ""document"",
+  ""document"": ""muzhusa"",
+  ""format"": ""italic"",
+  ""action"": ""aakku""
+}
+```",True,False,False,2.985
+groq,p1_zero_shot,71,tanglish,"```json
+{
+  ""action"": ""take"",
+  ""object"": ""paragraph"",
+  ""index"": 3
+}
+```",True,False,False,1.966
+groq,p1_zero_shot,72,tanglish,"Here’s a JSON representation of the command you provided:
+
+```json
+{
+  ""action"": ""apply"",
+  ""formatting"": {
+    ""heading"": ""a"",
+    ""bold"": true,
+    ""italic"": true
+  }
+}
+```
+
+- **action** – indicates that the command is to apply formatting.  
+- **formatting** – lists the specific styles to apply: a heading (level “a”), bold, and italic.",True,False,False,3.197
+groq,p1_zero_shot,73,tanglish,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": {
+    ""type"": ""line"",
+    ""number"": 5
+  }
+}
+```",True,True,False,3.746
+groq,p1_zero_shot,74,tanglish,"```json
+{
+  ""action"": ""edit"",
+  ""target"": ""conclusion"",
+  ""format"": ""formal"",
+  ""language"": ""maathu""
+}
+```",True,False,False,3.341
+groq,p1_zero_shot,75,tanglish,"```json
+{
+  ""action"": ""setFontSize"",
+  ""target"": {
+    ""type"": ""line"",
+    ""index"": 2
+  },
+  ""value"": ""perusu panu""
+}
+```",True,False,False,2.589
+groq,p1_zero_shot,77,tanglish,"```json
+{
+  ""action"": ""delete"",
+  ""target"": {
+    ""type"": ""line"",
+    ""number"": 1
+  },
+  ""content"": ""panitu""
+}
+```
+
+This JSON represents the command to delete the word **“panitu”** from the first line of the document.",True,True,False,2.063
+groq,p1_zero_shot,78,tanglish,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""title-a""
+}
+```",True,True,False,3.91
+groq,p1_zero_shot,79,tanglish,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""this word""
+}
+```",True,True,False,2.784
+groq,p1_zero_shot,80,tanglish,"```json
+{
+  ""command"": ""apply_format"",
+  ""target"": ""last_line"",
+  ""format"": ""italic""
+}
+```",True,False,False,2.365
+groq,p1_zero_shot,81,tanglish,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": ""paragraph"",
+  ""scope"": ""whole""
+}
+```",True,True,False,3.406
+groq,p1_zero_shot,82,tanglish,"```json
+{
+  ""action"": ""move"",
+  ""unit"": ""paragraph"",
+  ""sourceIndex"": 2,
+  ""destinationIndex"": 1
+}
+```",True,True,False,2.483
+groq,p1_zero_shot,83,tanglish,"```json
+{
+  ""command"": ""introduction"",
+  ""parameters"": {
+    ""text"": ""a simple-a maathu""
+  }
+}
+```",True,False,False,2.457
+groq,p1_zero_shot,84,tanglish,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""paragraphNumber"": 4
+}
+```",True,True,False,2.224
+groq,p1_zero_shot,85,tanglish,"```json
+{
+  ""command"": ""set"",
+  ""target"": ""title"",
+  ""property"": ""fontSize"",
+  ""value"": ""vei""
+}
+```",True,False,False,3.496
+groq,p1_zero_shot,86,tanglish,"```json
+{
+  ""document"": ""document-a"",
+  ""action"": ""applyStyle"",
+  ""style"": ""bold""
+}
+```",True,False,False,2.274
+groq,p1_zero_shot,87,tanglish,"```json
+{
+  ""action"": ""underline"",
+  ""target"": {
+    ""type"": ""line"",
+    ""index"": 3
+  }
+}
+```",True,True,True,2.201
+groq,p1_zero_shot,88,tanglish,"```json
+{
+  ""action"": ""take"",
+  ""target"": ""last_word""
+}
+```",True,False,False,2.571
+groq,p1_zero_shot,89,tanglish,"```json
+{
+  ""action"": ""italicize"",
+  ""target"": ""sentence"",
+  ""content"": ""intha sentence-a""
+}
+```",True,False,False,2.666
+groq,p1_zero_shot,90,tanglish,"```json
+{
+  ""command"": ""undo pannidu"",
+  ""action"": ""undo"",
+  ""language"": ""Tamil""
+}
+```",True,True,True,2.524
+groq,p1_zero_shot,91,tanglish,"```json
+{
+  ""action"": ""edit"",
+  ""target"": ""first paragraph"",
+  ""style"": ""formal""
+}
+```",True,False,False,2.219
+groq,p1_zero_shot,92,tanglish,"```json
+{
+  ""action"": ""edit"",
+  ""target"": ""second line a"",
+  ""content"": ""periya-dha vei""
+}
+```",True,False,False,2.691
+groq,p1_zero_shot,93,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""target"": ""title"",
+  ""position"": ""below"",
+  ""content"": ""Subtitle""
+}
+```",True,True,False,2.159
+groq,p1_zero_shot,94,tanglish,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""index"": 5,
+  ""content"": ""panuka""
+}
+```",True,True,False,2.465
+groq,p1_zero_shot,95,tanglish,"```json
+{
+  ""commands"": [
+    {
+      ""type"": ""heading"",
+      ""level"": ""a""
+    },
+    {
+      ""type"": ""highlight"",
+      ""text"": ""panu""
+    }
+  ]
+}
+```",True,False,False,2.566
+groq,p1_zero_shot,96,tanglish,"```json
+{
+  ""command"": ""kadai para-va bold pannu"",
+  ""action"": ""bold"",
+  ""target"": ""paragraph""
+}
+```",True,True,False,2.588
+groq,p1_zero_shot,97,tanglish,"```json
+{
+  ""line"": 1,
+  ""action"": ""keep"",
+  ""description"": ""Keep the first line unchanged.""
+}
+```",True,False,False,2.15
+groq,p1_zero_shot,98,tanglish,"```json
+{
+  ""action"": ""document-a"",
+  ""mode"": ""casual-a"",
+  ""parameter"": ""maathu""
+}
+```",True,False,False,2.381
+groq,p1_zero_shot,99,tanglish,"```json
+{
+  ""targetLine"": 3,
+  ""formatting"": [
+    {
+      ""word"": ""a"",
+      ""style"": ""bold""
+    }
+  ],
+  ""postCommand"": ""view""
+}
+```",True,False,False,2.781
+groq,p1_zero_shot,100,tanglish,"```json
+{
+  ""command"": ""summary_para_va_eduthu_podu"",
+  ""description"": ""Insert the summary paragraph into the document"",
+  ""parameters"": {
+    ""content_type"": ""summary"",
+    ""target"": ""paragraph"",
+    ""action"": ""insert"",
+    ""position"": ""end""
+  }
+}
+```",True,False,False,2.574
+groq,p1_zero_shot,101,tamil_number,"```json
+{
+  ""action"": ""underline"",
+  ""line"": 1
+}
+```",True,True,False,2.273
+groq,p1_zero_shot,102,tamil_number,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""line"",
+  ""lineNumber"": 2
+}
+```",True,True,False,2.166
+groq,p1_zero_shot,103,tamil_number,"```json
+{
+  ""command"": ""moonavathu para-va delete pannu"",
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""language"": ""Tamil""
+}
+```",True,True,False,2.17
+groq,p1_zero_shot,104,tamil_number,"```json
+{
+  ""action"": ""applyStyle"",
+  ""lineNumber"": 4,
+  ""style"": {
+    ""italic"": true
+  }
+}
+```",True,False,False,2.067
+groq,p1_zero_shot,105,tamil_number,"```json
+{
+  ""command"": ""anjavathu para-va highlight pannu"",
+  ""action"": ""highlight"",
+  ""target"": ""paragraph"",
+  ""description"": ""Highlight the paragraph""
+}
+```",True,True,False,2.168
+groq,p1_zero_shot,106,tamil_number,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""line""
+}
+```",True,True,False,1.86
+groq,p1_zero_shot,107,tamil_number,"```json
+{
+  ""action"": ""take"",
+  ""object"": ""paragraph"",
+  ""order"": ""first""
+}
+```",True,False,False,2.245
+groq,p1_zero_shot,108,tamil_number,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": ""variable"",
+  ""index"": 2
+}
+```",True,True,False,2.509
+groq,p1_zero_shot,109,tamil_number,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""line"",
+  ""original_command"": ""moonavathu line-a underline panu""
+}
+```",True,True,False,2.58
+groq,p1_zero_shot,110,tamil_number,"```json
+{
+  ""action"": ""modify"",
+  ""paragraph"": 4,
+  ""style"": ""formal""
+}
+```",True,False,False,2.377
+groq,p1_zero_shot,111,tamil_number,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""details"": ""Delete the specified line""
+}
+```",True,True,False,2.164
+groq,p1_zero_shot,112,tamil_number,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""last_word"",
+  ""style"": ""italic""
+}
+```",True,False,False,2.674
+groq,p1_zero_shot,113,tamil_number,"```json
+{
+  ""command"": ""mudhal vari-ya bold pannu"",
+  ""action"": ""format"",
+  ""target"": ""first_line"",
+  ""style"": ""bold""
+}
+```",True,False,False,2.283
+groq,p1_zero_shot,114,tamil_number,"```json
+{
+  ""action"": ""add"",
+  ""paragraph"": 2,
+  ""position"": ""end""
+}
+```",True,False,False,2.525
+groq,p1_zero_shot,115,tamil_number,"```json
+{
+  ""action"": ""adjust_font_size"",
+  ""target"": {
+    ""type"": ""paragraph"",
+    ""index"": 2
+  },
+  ""change"": ""decrease"",
+  ""unit"": ""font_size""
+}
+```",True,False,False,2.05
+groq,p1_zero_shot,116,tamil_number,"```json
+{
+  ""action"": ""highlight"",
+  ""lineNumber"": 4
+}
+```",True,True,False,2.021
+groq,p1_zero_shot,117,tamil_number,"{""action"":""underline"",""target"":""anjavathu""}",True,True,False,2.172
+groq,p1_zero_shot,118,tamil_number,"```json
+{
+  ""action"": ""delete"",
+  ""object"": ""panitu"",
+  ""context"": {
+    ""subject"": ""kadai"",
+    ""modifier"": ""para-va""
+  }
+}
+```",True,True,False,3.138
+groq,p1_zero_shot,119,tamil_number,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""line"",
+  ""lineNumber"": 1,
+  ""style"": ""italic""
+}
+```",True,False,False,2.39
+groq,p1_zero_shot,120,tamil_number,"```json
+{
+  ""action"": ""convert"",
+  ""lineNumber"": 2,
+  ""style"": ""casual""
+}
+```",True,False,False,2.231
+groq,p1_zero_shot,121,replace,"```json
+{
+  ""operation"": ""replace"",
+  ""line"": 3,
+  ""target"": ""reported"",
+  ""replacement"": ""car""
+}
+```",True,False,False,2.133
+groq,p1_zero_shot,122,replace,"```json
+{
+  ""action"": ""replace"",
+  ""target_line"": ""reported"",
+  ""replace_line"": ""third"",
+  ""content"": ""car""
+}
+```
+
+This JSON represents the instruction: *Insert a car in the reported line instead of the third line.*",True,True,False,2.408
+groq,p1_zero_shot,123,replace,"```json
+{
+  ""originalCommand"": ""reported-a car-a maathu"",
+  ""parsed"": {
+    ""action"": ""report"",
+    ""article"": ""a"",
+    ""object"": ""car"",
+    ""language"": ""maathu""
+  }
+}
+```",True,False,False,3.16
+groq,p1_zero_shot,124,replace,"```json
+{
+  ""action"": ""change"",
+  ""search"": ""reported"",
+  ""replace"": ""car""
+}
+```",True,False,False,2.477
+groq,p1_zero_shot,125,replace,"```json
+{
+  ""action"": ""replace"",
+  ""line"": 3,
+  ""find"": ""reported"",
+  ""replace"": ""car""
+}
+```",True,True,False,2.459
+groq,p1_zero_shot,126,replace,"```json
+{
+  ""action"": ""replace"",
+  ""target"": {
+    ""type"": ""line"",
+    ""index"": 2
+  },
+  ""replacement"": {
+    ""oldText"": ""name"",
+    ""newText"": ""address""
+  }
+}
+```
+
+This JSON represents the command “second line‑la name‑a address‑nu maathu”, i.e., replace the word **“name”** with **“address”** in the second line of the document.",True,True,False,2.28
+groq,p1_zero_shot,127,replace,"```json
+{
+  ""command"": ""replace"",
+  ""target"": ""conclusion"",
+  ""replacement"": ""summary""
+}
+```",True,False,False,2.109
+groq,p1_zero_shot,128,replace,"```json
+{
+  ""action"": ""replace"",
+  ""line"": 1,
+  ""find"": ""chapter-a"",
+  ""replace_with"": ""section-nu maathu""
+}
+```
+
+This JSON represents the command: in the first line of the document, replace the text **“chapter-a”** with **“section-nu maathu.”**",True,True,False,2.615
+groq,p1_zero_shot,129,replace,"```json
+{
+  ""instruction"": ""kadai line-la study-ku badhila research podu"",
+  ""action"": ""replace"",
+  ""target"": ""line"",
+  ""original_text"": ""study"",
+  ""replacement_text"": ""research""
+}
+```",True,True,False,2.862
+groq,p1_zero_shot,130,replace,"```json
+{
+  ""action"": ""replace"",
+  ""target"": ""method"",
+  ""replacement"": ""approach"",
+  ""location"": {
+    ""paragraph"": 2
+  }
+}
+```",True,True,False,2.281
+groq,p1_zero_shot,131,replace,"```json
+{
+  ""command"": ""accident-a"",
+  ""parameters"": [
+    ""incident-nu"",
+    ""maathu""
+  ]
+}
+```",True,False,False,2.247
+groq,p1_zero_shot,132,replace,"```json
+{
+  ""action"": ""replace"",
+  ""target"": ""word"",
+  ""old"": ""result"",
+  ""new"": ""outcome""
+}
+```",True,True,False,2.29
+groq,p1_zero_shot,133,replace,"```json
+{
+  ""action"": ""replace"",
+  ""target"": ""researchers"",
+  ""replacement"": ""authors"",
+  ""line"": 4
+}
+```",True,True,False,2.178
+groq,p1_zero_shot,134,replace,"```json
+{
+  ""command"": ""title-la"",
+  ""title"": ""introduction-a"",
+  ""subtitle"": ""overview-nu maathu""
+}
+```",True,False,False,3.488
+groq,p1_zero_shot,135,replace,"```json
+{
+  ""action"": ""swap"",
+  ""target"": ""system"",
+  ""replacement"": ""platform"",
+  ""scope"": ""everywhere""
+}
+```",True,False,False,2.078
+groq,p1_zero_shot,136,unclear,"```json
+{
+  ""command"": ""adha konjam maathu"",
+  ""language"": ""Tamil"",
+  ""translation"": ""Add a little more""
+}
+```",True,False,False,2.266
+groq,p1_zero_shot,137,unclear,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""atha""
+}
+```",True,False,False,2.268
+groq,p1_zero_shot,138,unclear,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""it""
+}
+```",True,False,False,2.057
+groq,p1_zero_shot,139,unclear,"```json
+{
+  ""command"": ""make it better""
+}
+```",True,False,False,2.785
+groq,p1_zero_shot,140,unclear,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""reference"": ""that""
+}
+```",True,False,False,3.509
+groq,p1_zero_shot,141,unclear,"```json
+{
+  ""action"": ""change"",
+  ""target"": ""word"",
+  ""old_word"": """",
+  ""new_word"": """"
+}
+```",True,False,False,3.788
+groq,p1_zero_shot,142,unclear,"```json
+{
+  ""command"": ""inga konjam sari pannu"",
+  ""language"": ""Tamil"",
+  ""action"": ""edit"",
+  ""description"": ""Make a small correction""
+}
+```",True,False,False,2.283
+groq,p1_zero_shot,143,unclear,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""lineNumber"": ""ethana"",
+  ""must"": true
+}
+```",True,False,False,3.687
+groq,p1_zero_shot,144,unclear,"```json
+{
+  ""action"": ""move"",
+  ""target"": ""it"",
+  ""direction"": ""up""
+}
+```",True,False,False,2.372
+groq,p1_zero_shot,145,unclear,"```json
+{
+  ""operation"": ""format"",
+  ""formatting"": ""italic"",
+  ""target"": ""that one""
+}
+```",True,False,False,3.499
+groq,p1_zero_shot,146,unclear,"```json
+{
+  ""action"": ""resize"",
+  ""target"": ""document"",
+  ""size_change"": ""increase"",
+  ""amount"": ""small"",
+  ""description"": ""konjam periya-dha vei""
+}
+```",True,False,False,2.384
+groq,p1_zero_shot,147,unclear,"```json
+{
+  ""action"": ""replace"",
+  ""target"": ""it""
+}
+```",True,False,False,1.951
+groq,p1_zero_shot,148,unclear,"```json
+{
+  ""command"": ""do the usual thing""
+}
+```",True,False,False,1.959
+groq,p1_zero_shot,149,unclear,"```json
+{
+  ""command"": ""apdiye vechuko""
+}
+```",True,False,False,1.663
+groq,p1_zero_shot,150,unclear,"```json
+{
+  ""command"": ""idha sari pannu""
+}
+```",True,False,False,2.177
+groq,p2_role,21,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""position"": ""first""
+}
+```",True,True,False,2.051
+groq,p2_role,22,english,"```json
+{
+  ""action"": ""insert"",
+  ""text"": ""Thank you"",
+  ""position"": ""end""
+}
+```",True,True,False,2.069
+groq,p2_role,23,english,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""line"",
+  ""index"": 2
+}
+```",True,True,False,2.164
+groq,p2_role,24,english,"```json
+{
+  ""action"": ""italicise"",
+  ""target"": ""last paragraph""
+}
+```",True,False,False,2.468
+groq,p2_role,25,english,"```json
+{
+  ""action"": ""underline"",
+  ""range"": ""first line""
+}
+```",True,True,False,2.078
+groq,p2_role,26,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""position"": ""last""
+}
+```",True,True,False,1.936
+groq,p2_role,27,english,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""title"",
+  ""style"": ""italic""
+}
+```",True,False,False,1.982
+groq,p2_role,28,english,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": {
+    ""type"": ""line"",
+    ""index"": 3
+  }
+}
+```",True,True,True,2.113
+groq,p2_role,29,english,"{""command"":""undo"",""target"":""last change""}",True,False,False,2.02
+groq,p2_role,30,english,"```json
+{
+  ""action"": ""move_paragraph"",
+  ""from"": ""first"",
+  ""to"": ""end""
+}
+```",True,False,False,2.262
+groq,p2_role,31,english,"```json
+{
+  ""action"": ""modify"",
+  ""target"": ""paragraph"",
+  ""index"": 2,
+  ""style"": ""casual""
+}
+```",True,False,False,1.779
+groq,p2_role,32,english,"```json
+{
+  ""action"": ""rewrite"",
+  ""target"": ""introduction"",
+  ""tone"": ""formal""
+}
+```",True,True,False,2.149
+groq,p2_role,33,english,"{""action"":""bold"",""target"":""whole_document""}",True,True,False,2.172
+groq,p2_role,34,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""lineNumber"": 4
+}
+```",True,True,False,2.372
+groq,p2_role,35,english,"```json
+{
+  ""command"": ""add"",
+  ""text"": ""Regards"",
+  ""position"": ""end""
+}
+```",True,False,False,2.704
+groq,p2_role,36,english,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""title""
+}
+```",True,True,False,2.232
+groq,p2_role,37,english,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""line"",
+  ""lineNumber"": 2,
+  ""style"": ""bold""
+}
+```",True,False,False,2.067
+groq,p2_role,38,english,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""paragraph"",
+  ""index"": 0,
+  ""style"": ""italic""
+}
+```",True,False,False,2.171
+groq,p2_role,39,english,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""last line""
+}
+```",True,True,False,2.569
+groq,p2_role,40,english,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""line"",
+  ""index"": 5,
+  ""style"": ""bold""
+}
+```",True,False,False,1.806
+groq,p2_role,41,english,"```json
+{
+  ""action"": ""remove"",
+  ""target"": ""paragraph"",
+  ""index"": 3
+}
+```",True,False,False,1.917
+groq,p2_role,42,english,"{""command"":""italicise"",""target"":""selected_text""}",True,False,False,2.068
+groq,p2_role,43,english,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""selection""
+}
+```",True,True,False,2.27
+groq,p2_role,44,english,"```json
+{
+  ""command"": ""make the conclusion shorter"",
+  ""action"": ""shorten"",
+  ""target"": ""conclusion""
+}
+```",True,False,False,2.239
+groq,p2_role,45,english,"{""action"":""increase_font_size"",""line"":1}",True,False,False,2.311
+groq,p2_role,46,english,"```json
+{
+  ""action"": ""move"",
+  ""target"": ""paragraph"",
+  ""position"": ""last"",
+  ""direction"": ""up""
+}
+```",True,True,False,3.289
+groq,p2_role,47,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""word"",
+  ""content"": ""reported""
+}
+```",True,True,False,2.065
+groq,p2_role,48,english,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": ""paragraph"",
+  ""index"": 2,
+  ""scope"": ""whole""
+}
+```",True,True,False,4.218
+groq,p2_role,49,english,"```json
+{
+  ""command"": ""undo""
+}
+```",True,False,False,1.856
+groq,p2_role,50,english,"{""action"":""insert"",""content"":""Introduction"",""position"":""before"",""target"":""first paragraph""}",True,True,False,2.73
+groq,p2_role,51,tanglish,"{""action"":""bold"",""target"":""title""}",True,True,False,2.94
+groq,p2_role,52,tanglish,"```json
+{
+  ""command"": ""insert"",
+  ""position"": ""end"",
+  ""text"": ""Nandri""
+}
+```",True,False,False,2.072
+groq,p2_role,53,tanglish,"```json
+{
+  ""action"": ""undo"",
+  ""target"": ""paragraph"",
+  ""index"": 1
+}
+```",True,False,False,2.566
+groq,p2_role,54,tanglish,"```json
+{
+  ""action"": ""undo""
+}
+```",True,True,True,2.066
+groq,p2_role,55,tanglish,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""line"",
+  ""lineNumber"": 2,
+  ""style"": ""bold""
+}
+```",True,False,False,2.373
+groq,p2_role,56,tanglish,"{""action"":""delete"",""line"":3}",True,True,False,2.271
+groq,p2_role,57,tanglish,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""title"",
+  ""style"": ""italic""
+}
+```",True,False,False,2.475
+groq,p2_role,58,tanglish,"```json
+{
+  ""action"": ""take"",
+  ""target"": ""line""
+}
+```",True,False,False,2.475
+groq,p2_role,59,tanglish,"```json
+{
+  ""action"": ""underline"",
+  ""range"": ""whole_document""
+}
+```",True,True,False,2.173
+groq,p2_role,60,tanglish,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": ""first line""
+}
+```",True,True,False,2.134
+groq,p2_role,61,tanglish,"```json
+{
+  ""command"": ""make_casual"",
+  ""target"": ""paragraph""
+}
+```",True,False,False,2.278
+groq,p2_role,62,tanglish,"```json
+{
+  ""command"": ""summary"",
+  ""detail"": ""short""
+}
+```",True,False,False,3.946
+groq,p2_role,63,tanglish,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""index"": 2
+}
+```",True,True,False,2.047
+groq,p2_role,64,tanglish,"```json
+{
+  ""command"": ""insert"",
+  ""text"": ""Vanakkam"",
+  ""position"": ""beginning""
+}
+```",True,False,False,2.779
+groq,p2_role,65,tanglish,"```json
+{
+  ""action"": ""setTitle"",
+  ""style"": {
+    ""fontSize"": ""large""
+  }
+}
+```",True,False,False,2.58
+groq,p2_role,66,tanglish,"```json
+{
+  ""action"": ""apply_format"",
+  ""target"": {
+    ""type"": ""line"",
+    ""index"": 4
+  },
+  ""format"": {
+    ""italic"": true
+  }
+}
+```",True,False,False,2.891
+groq,p2_role,67,tanglish,"```json
+{
+  ""command"": ""move_cursor"",
+  ""parameters"": {
+    ""target"": ""paragraph"",
+    ""position"": ""last"",
+    ""direction"": ""up"",
+    ""steps"": 1
+  }
+}
+```",True,False,False,2.677
+groq,p2_role,68,tanglish,"```json
+{
+  ""commands"": [
+    {
+      ""action"": ""select"",
+      ""target"": ""text""
+    },
+    {
+      ""action"": ""format"",
+      ""style"": ""bold""
+    }
+  ]
+}
+```",True,False,False,2.886
+groq,p2_role,69,tanglish,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""current_line""
+}
+```",True,True,False,2.989
+groq,p2_role,70,tanglish,"```json
+{
+  ""action"": ""apply_format"",
+  ""format"": ""italic"",
+  ""target"": {
+    ""type"": ""word"",
+    ""value"": ""muzhusa""
+  }
+}
+```",True,False,False,3.305
+groq,p2_role,71,tanglish,"```json
+{
+  ""action"": ""selectParagraph"",
+  ""paragraphIndex"": 3
+}
+```",True,False,False,4.309
+groq,p2_role,72,tanglish,"```json
+{
+  ""action"": ""applyHeading"",
+  ""level"": 1,
+  ""styles"": [""bold"", ""italic""]
+}
+```",True,False,False,1.969
+groq,p2_role,73,tanglish,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": ""line"",
+  ""lineNumber"": 5
+}
+```",True,True,False,2.163
+groq,p2_role,74,tanglish,"```json
+{
+  ""action"": ""write"",
+  ""content_type"": ""conclusion"",
+  ""style"": ""formal""
+}
+```",True,False,False,2.884
+groq,p2_role,75,tanglish,"```json
+{
+  ""action"": ""change_font_size"",
+  ""line"": 2,
+  ""direction"": ""increase""
+}
+```",True,False,False,2.674
+groq,p2_role,76,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""location"": ""kadai"",
+  ""text"": ""Nandri solli mudikiren""
+}
+```",True,True,False,2.576
+groq,p2_role,77,tanglish,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""lineNumber"": 1
+}
+```",True,True,False,2.273
+groq,p2_role,78,tanglish,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""title""
+}
+```",True,True,False,2.609
+groq,p2_role,79,tanglish,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""this_word""
+}
+```",True,True,False,2.132
+groq,p2_role,80,tanglish,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""last_line"",
+  ""style"": ""italic""
+}
+```",True,False,False,2.455
+groq,p2_role,81,tanglish,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": ""paragraph"",
+  ""scope"": ""whole""
+}
+```",True,True,False,2.271
+groq,p2_role,82,tanglish,"```json
+{
+  ""action"": ""moveParagraph"",
+  ""from"": 2,
+  ""to"": 1
+}
+```",True,False,False,2.315
+groq,p2_role,83,tanglish,"```json
+{
+  ""command"": ""introduction"",
+  ""style"": ""simple"",
+  ""type"": ""sentence""
+}
+```",True,False,False,2.21
+groq,p2_role,84,tanglish,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""index"": 4
+}
+```",True,True,False,3.497
+groq,p2_role,85,tanglish,"```json
+{
+  ""action"": ""set"",
+  ""target"": ""title"",
+  ""property"": ""fontSize"",
+  ""value"": ""vei""
+}
+```",True,False,False,2.619
+groq,p2_role,86,tanglish,"```json
+{
+  ""command"": ""bold"",
+  ""target"": ""document""
+}
+```",True,False,False,2.627
+groq,p2_role,87,tanglish,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""line"",
+  ""lineNumber"": 3
+}
+```",True,True,False,2.426
+groq,p2_role,88,tanglish,"```json
+{
+  ""action"": ""copy"",
+  ""target"": ""last_word""
+}
+```",True,False,False,2.623
+groq,p2_role,89,tanglish,"{""action"":""format"",""style"":""italic"",""target"":""sentence""}",True,False,False,2.394
+groq,p2_role,90,tanglish,"{""command"":""undo""}",True,False,False,1.841
+groq,p2_role,91,tanglish,"```json
+{
+  ""action"": ""formatParagraph"",
+  ""paragraphIndex"": 1,
+  ""style"": ""formal""
+}
+```",True,False,False,2.648
+groq,p2_role,92,tanglish,"```json
+{
+  ""command"": ""formatLine"",
+  ""lineNumber"": 2,
+  ""format"": {
+    ""fontSize"": ""large""
+  }
+}
+```",True,False,False,2.712
+groq,p2_role,93,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""target"": ""title"",
+  ""position"": ""below"",
+  ""content"": ""Subtitle""
+}
+```",True,True,False,2.299
+groq,p2_role,94,tanglish,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""index"": 5
+}
+```",True,True,False,3.166
+groq,p2_role,95,tanglish,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": ""heading"",
+  ""identifier"": ""a""
+}
+```",True,True,False,2.169
+groq,p2_role,96,tanglish,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""paragraph"",
+  ""style"": {
+    ""bold"": true
+  }
+}
+```",True,False,False,2.572
+groq,p2_role,97,tanglish,"```json
+{
+  ""action"": ""write"",
+  ""target"": ""first_line"",
+  ""content"": """"
+}
+```",True,False,False,2.565
+groq,p2_role,98,tanglish,"```json
+{
+  ""action"": ""create_document"",
+  ""title"": ""casual maathu"",
+  ""category"": ""casual""
+}
+```",True,False,False,2.691
+groq,p2_role,99,tanglish,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""line"",
+  ""lineNumber"": 3,
+  ""style"": ""bold""
+}
+```",True,False,False,2.275
+groq,p2_role,100,tanglish,"```json
+{
+  ""action"": ""summarize"",
+  ""target"": ""paragraph""
+}
+```",True,False,False,3.802
+groq,p2_role,101,tamil_number,"```json
+{
+  ""action"": ""underline"",
+  ""line"": ""first""
+}
+```",True,True,False,2.489
+groq,p2_role,102,tamil_number,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""line"",
+  ""lineNumber"": 2
+}
+```",True,True,False,2.256
+groq,p2_role,103,tamil_number,"```json
+{
+  ""action"": ""delete"",
+  ""object"": ""paragraph"",
+  ""position"": ""next""
+}
+```",True,True,False,2.296
+groq,p2_role,104,tamil_number,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""line"",
+  ""line_number"": 4,
+  ""style"": ""italic""
+}
+```",True,False,False,3.181
+groq,p2_role,105,tamil_number,"{""action"":""highlight"",""target"":""paragraph""}",True,True,False,2.237
+groq,p2_role,106,tamil_number,"```json
+{
+  ""action"": ""format"",
+  ""format"": ""bold"",
+  ""range"": ""currentLine""
+}
+```",True,False,False,3.2
+groq,p2_role,107,tamil_number,"```json
+{
+  ""action"": ""take"",
+  ""object"": ""paragraph"",
+  ""index"": ""first""
+}
+```",True,False,False,2.372
+groq,p2_role,108,tamil_number,"```json
+{
+  ""action"": ""highlight"",
+  ""target"": ""line"",
+  ""index"": 2
+}
+```",True,True,False,2.479
+groq,p2_role,109,tamil_number,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""next_line""
+}
+```",True,True,False,2.16
+groq,p2_role,110,tamil_number,"```json
+{
+  ""action"": ""write"",
+  ""paragraph"": 4,
+  ""style"": ""formal""
+}
+```",True,False,False,2.333
+groq,p2_role,111,tamil_number,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""position"": ""previous""
+}
+```",True,True,False,2.614
+groq,p2_role,112,tamil_number,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""heading"",
+  ""style"": ""italic""
+}
+```",True,False,False,2.285
+groq,p2_role,113,tamil_number,"{""action"":""bold"",""target"":""first_line""}",True,True,False,2.153
+groq,p2_role,114,tamil_number,"```json
+{
+  ""action"": ""insert"",
+  ""object"": ""paragraph"",
+  ""index"": 2,
+  ""destination"": ""page""
+}
+```",True,False,False,2.58
+groq,p2_role,115,tamil_number,"```json
+{
+  ""action"": ""increase_font_size""
+}
+```",True,False,False,2.378
+groq,p2_role,116,tamil_number,"```json
+{
+  ""action"": ""highlight"",
+  ""line"": 4
+}
+```",True,True,False,2.187
+groq,p2_role,117,tamil_number,"```json
+{
+  ""action"": ""underline"",
+  ""target"": ""anjavathu""
+}
+```",True,True,False,2.237
+groq,p2_role,118,tamil_number,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""description"": ""Delete the specified paragraph (kadai para-va)""
+}
+```",True,True,False,1.961
+groq,p2_role,119,tamil_number,"```json
+{
+  ""action"": ""applyStyle"",
+  ""target"": ""line"",
+  ""lineNumber"": 1,
+  ""style"": ""italic""
+}
+```",True,False,False,2.685
+groq,p2_role,120,tamil_number,"```json
+{
+  ""action"": ""style"",
+  ""target"": ""line"",
+  ""lineNumber"": 2,
+  ""style"": ""casual""
+}
+```",True,False,False,2.366
+groq,p2_role,121,replace,"```json
+{
+  ""action"": ""write"",
+  ""line"": 3,
+  ""content"": ""reported a car""
+}
+```",True,False,False,2.377
+groq,p2_role,122,replace,"```json
+{
+  ""action"": ""insert"",
+  ""target"": ""car"",
+  ""position"": {
+    ""section"": ""reported"",
+    ""line"": 3
+  }
+}
+```",True,False,False,2.471
+groq,p2_role,123,replace,"```json
+{
+  ""command"": ""report"",
+  ""object"": ""car""
+}
+```",True,False,False,2.533
+groq,p2_role,124,replace,"```json
+{
+  ""action"": ""replace"",
+  ""target"": ""reported"",
+  ""replacement"": ""car""
+}
+```",True,True,False,2.01
+groq,p2_role,125,replace,"```json
+{
+  ""action"": ""replace"",
+  ""line"": 3,
+  ""find"": ""reported"",
+  ""replaceWith"": ""car""
+}
+```",True,True,False,2.261
+groq,p2_role,126,replace,"```json
+{
+  ""action"": ""replace"",
+  ""line"": 2,
+  ""old_word"": ""name"",
+  ""new_word"": ""address""
+}
+```",True,True,False,2.488
+groq,p2_role,127,replace,"```json
+{
+  ""action"": ""replace"",
+  ""target"": ""conclusion"",
+  ""replacement"": ""summary""
+}
+```",True,True,False,2.123
+groq,p2_role,128,replace,"```json
+{
+  ""action"": ""write"",
+  ""line"": 1,
+  ""content"": ""chapter section""
+}
+```",True,False,False,2.917
+groq,p2_role,129,replace,"```json
+{
+  ""command"": ""switchActivity"",
+  ""from"": ""study"",
+  ""to"": ""research"",
+  ""location"": ""classroom line""
+}
+```",True,False,False,2.897
+groq,p2_role,130,replace,"```json
+{
+  ""action"": ""replace"",
+  ""target"": ""method"",
+  ""replacement"": ""approach"",
+  ""paragraph"": 2,
+  ""description"": ""Replace the word 'method' with 'approach' in the second paragraph of the document.""
+}
+```",True,True,False,2.26
+groq,p2_role,131,replace,"```json
+{
+  ""action"": ""insert_text"",
+  ""text"": ""accident is an incident""
+}
+```",True,False,False,2.994
+groq,p2_role,132,replace,"```json
+{
+  ""command"": ""replace"",
+  ""parameters"": {
+    ""type"": ""word"",
+    ""old"": ""result"",
+    ""new"": ""outcome""
+  }
+}
+```",True,False,False,1.961
+groq,p2_role,133,replace,"```json
+{
+  ""action"": ""replace"",
+  ""line"": 4,
+  ""find"": ""researchers"",
+  ""replace"": ""authors""
+}
+```",True,True,False,2.068
+groq,p2_role,135,replace,"```json
+{
+  ""action"": ""swap"",
+  ""target_word"": ""system"",
+  ""replacement_word"": ""platform"",
+  ""scope"": ""everywhere""
+}
+```",True,False,False,2.179
+groq,p2_role,136,unclear,"```json
+{
+  ""command"": ""stop"",
+  ""duration"": ""short""
+}
+```",True,False,False,2.457
+groq,p2_role,137,unclear,"```json
+{
+  ""action"": ""bold"",
+  ""target"": ""selected""
+}
+```",True,False,False,2.388
+groq,p2_role,138,unclear,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""it""
+}
+```",True,False,False,2.359
+groq,p2_role,139,unclear,"```json
+{
+  ""action"": ""improve"",
+  ""target"": ""document"",
+  ""details"": ""Enhance the overall quality of the current document""
+}
+```",True,False,False,2.477
+groq,p2_role,140,unclear,"```json
+{
+  ""action"": ""delete"",
+  ""object"": ""line"",
+  ""reference"": ""that""
+}
+```",True,False,False,2.067
+groq,p2_role,141,unclear,"```json
+{
+  ""action"": ""change_word"",
+  ""target"": ""that_word"",
+  ""replacement"": null
+}
+```",True,False,False,3.103
+groq,p2_role,142,unclear,"```json
+{
+  ""command"": ""correct"",
+  ""parameters"": {
+    ""location"": ""current"",
+    ""detail"": ""make a bit correct""
+  }
+}
+```",True,False,False,2.7
+groq,p2_role,143,unclear,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""line"",
+  ""count"": null
+}
+```",True,False,False,2.342
+groq,p2_role,144,unclear,"```json
+{
+  ""action"": ""move"",
+  ""object"": ""it"",
+  ""direction"": ""up""
+}
+```",True,False,False,2.473
+groq,p2_role,145,unclear,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""that one"",
+  ""style"": ""italic""
+}
+```",True,False,False,2.244
+groq,p2_role,146,unclear,"```json
+{
+  ""action"": ""volume"",
+  ""operation"": ""increase"",
+  ""amount"": ""small""
+}
+```",True,False,False,3.02
+groq,p2_role,147,unclear,"```json
+{
+  ""action"": ""replace"",
+  ""target"": ""it"",
+  ""replacement"": """"
+}
+```",True,False,False,2.876
+groq,p2_role,148,unclear,"```json
+{
+  ""action"": ""save""
+}
+```",True,False,False,2.585
+groq,p2_role,149,unclear,"```json
+{
+  ""command"": ""apply_style"",
+  ""style"": ""apdiye""
+}
+```",True,False,False,2.969
+groq,p2_role,150,unclear,"```json
+{
+  ""command"": ""correct"",
+  ""target"": ""current_selection""
+}
+```",True,False,False,2.371
+groq,p3_structured,21,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.779
+groq,p3_structured,22,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":null},""value"":""Thank you"",""question"":null}",True,True,False,2.064
+groq,p3_structured,23,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.372
+groq,p3_structured,24,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.063
+groq,p3_structured,25,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,2.066
+groq,p3_structured,26,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.759
+groq,p3_structured,27,english,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,3.289
+groq,p3_structured,28,english,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,2.538
+groq,p3_structured,29,english,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,1.949
+groq,p3_structured,30,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.552
+groq,p3_structured,31,english,"{""action"":""clarify"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":""Could you provide the second paragraph so I can rewrite it to be more casual?""}",True,False,False,2.547
+groq,p3_structured,32,english,"{""action"":""clarify"",""target"":{""type"":""paragraph"",""index"":null},""value"":null,""question"":""Could you provide the introduction text to rewrite?""}",True,False,False,2.123
+groq,p3_structured,33,english,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.08
+groq,p3_structured,34,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,2.048
+groq,p3_structured,35,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":null},""value"":""Regards"",""question"":null}",True,True,False,2.832
+groq,p3_structured,36,english,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,4.008
+groq,p3_structured,37,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.256
+groq,p3_structured,38,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.18
+groq,p3_structured,39,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.055
+groq,p3_structured,40,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",True,True,True,1.975
+groq,p3_structured,41,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,2.167
+groq,p3_structured,42,english,"{""action"":""italic"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,2.471
+groq,p3_structured,43,english,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,1.947
+groq,p3_structured,44,english,"{""action"":""clarify"",""target"":{""type"":""paragraph"",""index"":null},""value"":null,""question"":""Which part of the conclusion would you like to shorten?""}",True,False,False,2.595
+groq,p3_structured,45,english,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,2.168
+groq,p3_structured,46,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.067
+groq,p3_structured,47,english,"{""action"":""delete"",""target"":{""type"":""word"",""index"":null},""value"":null,""question"":null}",True,True,True,2.163
+groq,p3_structured,48,english,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,2.373
+groq,p3_structured,49,english,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,3.802
+groq,p3_structured,50,english,"{""action"":""insert"",""target"":{""type"":""paragraph"",""index"":1},""value"":""Introduction"",""question"":null}",True,True,True,2.271
+groq,p3_structured,51,tanglish,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,3.09
+groq,p3_structured,52,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":null},""value"":""Nandri"",""question"":null}",True,True,False,2.704
+groq,p3_structured,53,tanglish,"{""action"":""delete"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,False,False,2.664
+groq,p3_structured,54,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,1.967
+groq,p3_structured,55,tanglish,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.568
+groq,p3_structured,56,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,1.96
+groq,p3_structured,57,tanglish,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.668
+groq,p3_structured,58,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,3.305
+groq,p3_structured,59,tanglish,"{""action"":""underline"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.176
+groq,p3_structured,60,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,2.671
+groq,p3_structured,61,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":null,""question"":null}",True,True,False,3.285
+groq,p3_structured,62,tanglish,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""Which part would you like summarized?""}",True,False,False,2.074
+groq,p3_structured,63,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,2.058
+groq,p3_structured,64,tanglish,"{""action"":""insert"",""target"":{""type"":""paragraph"",""index"":1},""value"":""Vanakkam"",""question"":null}",True,True,False,3.48
+groq,p3_structured,65,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":""large"",""question"":null}",True,True,True,2.684
+groq,p3_structured,66,tanglish,"{""action"":""italic"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,1.909
+groq,p3_structured,67,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,False,False,1.718
+groq,p3_structured,68,tanglish,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,2.249
+groq,p3_structured,69,tanglish,"{""action"":""underline"",""target"":{""type"":""line"",""index"":null},""value"":null,""question"":null}",True,True,True,1.861
+groq,p3_structured,70,tanglish,"{""action"":""italic"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.877
+groq,p3_structured,71,tanglish,"{""action"":""clarify"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":""What would you like to do with the third paragraph?""}",True,False,False,2.791
+groq,p3_structured,73,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",True,True,True,1.89
+groq,p3_structured,74,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":-1},""value"":""Make the conclusion formal"",""question"":null}",True,True,False,2.096
+groq,p3_structured,75,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.044
+groq,p3_structured,76,tanglish,"{""action"":""insert"",""target"":{""type"":""line"",""index"":-1},""value"":""Nandri solli mudikiren"",""question"":null}",True,True,False,2.173
+groq,p3_structured,77,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.795
+groq,p3_structured,78,tanglish,"{""action"":""underline"",""target"":{""type"":""title"",""index"":1},""value"":null,""question"":null}",True,True,False,2.37
+groq,p3_structured,79,tanglish,"{""action"":""clarify"",""target"":{""type"":""word"",""index"":null},""value"":null,""question"":""Which word would you like to bold?""}",True,False,False,2.271
+groq,p3_structured,80,tanglish,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.965
+groq,p3_structured,81,tanglish,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":null},""value"":null,""question"":null}",True,True,True,1.959
+groq,p3_structured,82,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.86
+groq,p3_structured,83,tanglish,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""Which part do you want to edit?""}",True,False,False,1.658
+groq,p3_structured,84,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":4},""value"":null,""question"":null}",True,True,True,2.168
+groq,p3_structured,85,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.964
+groq,p3_structured,86,tanglish,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.172
+groq,p3_structured,87,tanglish,"{""action"":""underline"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,1.909
+groq,p3_structured,88,tanglish,"{""action"":""delete"",""target"":{""type"":""word"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.31
+groq,p3_structured,89,tanglish,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""Which sentence would you like to italicize?""}",True,False,False,2.132
+groq,p3_structured,90,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,1.838
+groq,p3_structured,91,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,False,2.218
+groq,p3_structured,92,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.76
+groq,p3_structured,93,tanglish,"{""action"":""insert"",""target"":{""type"":""title"",""index"":1},""value"":""Subtitle"",""question"":null}",True,True,False,2.9
+groq,p3_structured,94,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":5},""value"":null,""question"":null}",True,True,True,2.042
+groq,p3_structured,95,tanglish,"{""action"":""highlight"",""target"":{""type"":""title"",""index"":1},""value"":null,""question"":null}",True,True,False,3.186
+groq,p3_structured,96,tanglish,"{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.164
+groq,p3_structured,97,tanglish,"{""action"":""delete"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,False,False,2.739
+groq,p3_structured,98,tanglish,"{""action"":""rewrite"",""target"":{""type"":""document"",""index"":null},""value"":""casual"",""question"":null}",True,True,True,2.116
+groq,p3_structured,99,tanglish,"{""action"":""bold"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,2.98
+groq,p3_structured,100,tanglish,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""Which paragraph would you like to summarize?""}",True,False,False,2.168
+groq,p3_structured,101,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.76
+groq,p3_structured,102,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.967
+groq,p3_structured,103,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,2.236
+groq,p3_structured,104,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,1.908
+groq,p3_structured,105,tamil_number,"{""action"":""clarify"",""target"":{""type"":""paragraph"",""index"":null},""value"":null,""question"":""Which paragraph would you like to highlight?""}",True,False,False,2.329
+groq,p3_structured,106,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.067
+groq,p3_structured,107,tamil_number,"{""action"":""clarify"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":""What would you like to do with the first paragraph?""}",True,False,False,2.362
+groq,p3_structured,108,tamil_number,"{""action"":""highlight"",""target"":{""type"":""word"",""index"":2},""value"":null,""question"":null}",True,True,False,2.046
+groq,p3_structured,109,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,2.526
+groq,p3_structured,110,tamil_number,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":4},""value"":null,""question"":null}",True,True,False,2.347
+groq,p3_structured,111,tamil_number,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,False,2.053
+groq,p3_structured,112,tamil_number,"{""action"":""italic"",""target"":{""type"":""word"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.863
+groq,p3_structured,113,tamil_number,"{""action"":""bold"",""target"":{""type"":""word"",""index"":1},""value"":null,""question"":null}",True,True,False,2.683
+groq,p3_structured,114,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,False,False,3.193
+groq,p3_structured,115,tamil_number,"{""action"":""font-increase"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,False,2.111
+groq,p3_structured,116,tamil_number,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,3.251
+groq,p3_structured,117,tamil_number,"{""action"":""underline"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,False,3.894
+groq,p3_structured,118,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.171
+groq,p3_structured,119,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,2.169
+groq,p3_structured,120,tamil_number,"{""action"":""clarify"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":""What should the casual version of the second line be?""}",True,False,False,2.17
+groq,p3_structured,121,replace,"{""action"":""delete"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,False,False,2.069
+groq,p3_structured,122,replace,"{""action"":""insert"",""target"":{""type"":""line"",""index"":3},""value"":""car"",""question"":null}",True,False,False,2.427
+groq,p3_structured,123,replace,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""Where would you like to insert 'reported a car'?""}",True,False,False,2.266
+groq,p3_structured,124,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,False,2.723
+groq,p3_structured,125,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,True,1.863
+groq,p3_structured,126,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":2},""value"":{""from"":""name"",""to"":""address""},""question"":null}",True,True,True,2.477
+groq,p3_structured,127,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""conclusion"",""to"":""summary""},""question"":null}",True,True,False,3.598
+groq,p3_structured,128,replace,"{""action"":""rewrite"",""target"":{""type"":""line"",""index"":1},""value"":""chapter-a section-nu maathu"",""question"":null}",True,False,False,3.303
+groq,p3_structured,129,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":-1},""value"":{""from"":""study"",""to"":""research""},""question"":null}",True,True,True,1.956
+groq,p3_structured,130,replace,"{""action"":""replace"",""target"":{""type"":""paragraph"",""index"":2},""value"":{""from"":""method"",""to"":""approach""},""question"":null}",True,True,True,2.681
+groq,p3_structured,131,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""accident"",""to"":""incident""},""question"":null}",True,True,False,2.373
+groq,p3_structured,132,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""result"",""to"":""outcome""},""question"":null}",True,True,True,2.68
+groq,p3_structured,133,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":4},""value"":{""from"":""researchers"",""to"":""authors""},""question"":null}",True,True,True,2.372
+groq,p3_structured,134,replace,"{""action"":""replace"",""target"":{""type"":""title"",""index"":null},""value"":{""from"":""introduction"",""to"":""overview""},""question"":null}",True,True,True,2.349
+groq,p3_structured,135,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""system"",""to"":""platform""},""question"":null}",True,True,True,2.174
+groq,p3_structured,136,unclear,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""Where would you like to add more text?""}",True,True,True,2.272
+groq,p3_structured,137,unclear,"{""action"":""clarify"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":""Which part would you like to bold?""}",True,True,True,2.387
+groq,p3_structured,138,unclear,"{""action"":""clarify"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":""What do you want to delete?""}",True,True,True,2.799
+groq,p3_structured,139,unclear,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""What would you like to improve?""}",True,True,True,2.236
+groq,p3_structured,140,unclear,"{""action"":""clarify"",""target"":{""type"":""line"",""index"":null},""value"":null,""question"":""Which line would you like to delete?""}",True,True,True,3.546
+groq,p3_structured,141,unclear,"{""action"":""clarify"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":""Which word would you like to change?""}",True,True,True,2.845
+groq,p3_structured,142,unclear,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""What would you like me to correct?""}",True,True,True,2.361
+groq,p3_structured,143,unclear,"{""action"":""clarify"",""target"":{""type"":""line"",""index"":null},""value"":null,""question"":""Which line would you like to delete?""}",True,True,True,2.578
+groq,p3_structured,144,unclear,"{""action"":""clarify"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":""Which part would you like to move up?""}",True,True,True,1.86
+groq,p3_structured,145,unclear,"{""action"":""clarify"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":""Which part would you like to italicize?""}",True,True,True,2.138
+groq,p3_structured,146,unclear,"{""action"":""font-increase"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,False,False,1.983
+groq,p3_structured,147,unclear,"{""action"":""clarify"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":""Which word would you like to replace?""}",True,True,True,2.285
+groq,p3_structured,148,unclear,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""What would you like me to do?""}",True,True,True,2.244
+groq,p3_structured,149,unclear,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""What would you like me to edit?""}",True,True,True,1.98
+groq,p3_structured,150,unclear,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""Which part would you like me to correct?""}",True,True,True,4.012
+groq,p4_few_shot,21,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.574
+groq,p4_few_shot,22,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",True,True,True,4.625
+groq,p4_few_shot,23,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,3.365
+groq,p4_few_shot,24,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.51
+groq,p4_few_shot,25,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,3.362
+groq,p4_few_shot,26,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,4.315
+groq,p4_few_shot,27,english,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.987
+groq,p4_few_shot,28,english,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,2.064
+groq,p4_few_shot,29,english,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,2.276
+groq,p4_few_shot,30,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.47
+groq,p4_few_shot,31,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":2},""value"":""casual"",""question"":null}",True,True,True,2.366
+groq,p4_few_shot,32,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""formal"",""question"":null}",True,True,False,2.374
+groq,p4_few_shot,33,english,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.433
+groq,p4_few_shot,34,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,2.16
+groq,p4_few_shot,35,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Regards"",""question"":null}",True,True,True,3.542
+groq,p4_few_shot,36,english,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.37
+groq,p4_few_shot,37,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.272
+groq,p4_few_shot,38,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.268
+groq,p4_few_shot,39,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.886
+groq,p4_few_shot,40,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",True,True,True,2.601
+groq,p4_few_shot,41,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,2.954
+groq,p4_few_shot,42,english,"{""action"":""italic"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,2.454
+groq,p4_few_shot,44,english,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph is the conclusion?""}",True,False,False,3.159
+groq,p4_few_shot,46,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,55.784
+groq,p4_few_shot_v1,21,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.574
+groq,p4_few_shot_v1,22,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",True,True,True,4.625
+groq,p4_few_shot_v1,23,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,3.365
+groq,p4_few_shot_v1,24,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.51
+groq,p4_few_shot_v1,25,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,3.362
+groq,p4_few_shot_v1,26,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,4.315
+groq,p4_few_shot_v1,27,english,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.987
+groq,p4_few_shot_v1,28,english,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,2.064
+groq,p4_few_shot_v1,29,english,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,2.276
+groq,p4_few_shot_v1,30,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.47
+groq,p4_few_shot_v1,31,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":2},""value"":""casual"",""question"":null}",True,True,True,2.366
+groq,p4_few_shot_v1,32,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""formal"",""question"":null}",True,True,False,2.374
+groq,p4_few_shot_v1,33,english,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.433
+groq,p4_few_shot_v1,34,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,2.16
+groq,p4_few_shot_v1,35,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Regards"",""question"":null}",True,True,True,3.542
+groq,p4_few_shot_v1,36,english,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.37
+groq,p4_few_shot_v1,37,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.272
+groq,p4_few_shot_v1,38,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.268
+groq,p4_few_shot_v1,39,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.886
+groq,p4_few_shot_v1,40,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",True,True,True,2.601
+groq,p4_few_shot_v1,41,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,2.954
+groq,p4_few_shot_v1,42,english,"{""action"":""italic"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,2.454
+groq,p4_few_shot_v1,44,english,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph is the conclusion?""}",True,False,False,3.159
+groq,p4_few_shot_v1,46,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,55.784
+groq,p1_zero_shot,76,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""content"": ""Nandri solli mudikiren"",
+  ""language"": ""Tamil""
+}
+```",True,True,False,4.827
+groq,p2_role,134,replace,"{""title"":""introduction"",""overview"":""introduction""}",True,False,False,4.945
+groq,p3_structured,72,tanglish,,False,False,False,4.404
+groq,p4_few_shot,43,english,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,1.678
+groq,p4_few_shot,45,english,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.713
+groq,p4_few_shot,47,english,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which occurrence of 'reported' should I delete?""}",True,False,False,1.802
+groq,p4_few_shot,48,english,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.525
+groq,p4_few_shot,49,english,"{""action"":""undo"",""target"":null,""value"":null,""question"":null}",True,True,True,1.548
+groq,p4_few_shot,50,english,"{""action"":""insert"",""target"":{""type"":""paragraph"",""index"":1},""value"":""Introduction"",""question"":null}",True,True,True,1.667
+groq,p4_few_shot,51,tanglish,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.553
+groq,p4_few_shot,52,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",True,True,True,1.872
+groq,p4_few_shot,53,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,False,False,2.269
+groq,p4_few_shot,54,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.969
+groq,p4_few_shot,55,tanglish,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.654
+groq,p4_few_shot,56,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I delete?""}",True,False,False,1.769
+groq,p4_few_shot,57,tanglish,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.446
+groq,p4_few_shot,58,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.736
+groq,p4_few_shot,59,tanglish,"{""action"":""underline"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.05
+groq,p4_few_shot,60,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.551
+groq,p4_few_shot,61,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""casual"",""question"":null}",True,True,True,1.944
+groq,p4_few_shot,62,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""short"",""question"":null}",True,True,False,1.934
+groq,p4_few_shot,63,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.383
+groq,p4_few_shot,64,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":1},""value"":""Vanakkam"",""question"":null}",True,True,True,1.889
+groq,p4_few_shot,65,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":""large"",""question"":null}",True,True,True,1.733
+groq,p4_few_shot,66,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I italicize?""}",True,False,False,1.813
+groq,p4_few_shot,67,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":""up"",""question"":null}",True,True,True,1.785
+groq,p4_few_shot,68,tanglish,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,1.967
+groq,p4_few_shot,69,tanglish,"{""action"":""underline"",""target"":{""type"":""line"",""index"":null},""value"":null,""question"":null}",True,True,True,1.965
+groq,p4_few_shot,70,tanglish,"{""action"":""italic"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,1.638
+groq,p4_few_shot,71,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""What would you like to do with the third paragraph?""}",True,False,False,2.066
+groq,p4_few_shot,72,tanglish,"{""action"":""clarify"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":""Do you want me to apply both bold and italic to the heading?""}",True,False,False,2.165
+groq,p4_few_shot,73,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",True,True,True,1.468
+groq,p4_few_shot,74,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""formal"",""question"":null}",True,True,False,1.752
+groq,p4_few_shot,75,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.759
+groq,p4_few_shot,76,tanglish,"{""action"":""insert"",""target"":{""type"":""line"",""index"":-1},""value"":""Nandri solli mudikiren"",""question"":null}",True,True,False,1.556
+groq,p4_few_shot,77,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.659
+groq,p4_few_shot,78,tanglish,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.761
+groq,p4_few_shot,79,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I bold?""}",True,False,False,1.761
+groq,p4_few_shot,80,tanglish,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.447
+groq,p4_few_shot,81,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph should I highlight?""}",True,False,False,1.556
+groq,p4_few_shot,82,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":""first"",""question"":null}",True,True,True,2.274
+groq,p4_few_shot,83,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""simple"",""question"":null}",True,True,False,1.877
+groq,p4_few_shot,84,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph should I delete?""}",True,False,False,2.178
+groq,p4_few_shot,85,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.845
+groq,p4_few_shot,86,tanglish,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,1.452
+groq,p4_few_shot,87,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I underline?""}",True,False,False,2.064
+groq,p4_few_shot,88,tanglish,"{""action"":""delete"",""target"":{""type"":""word"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.272
+groq,p4_few_shot,89,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which sentence should I italicize?""}",True,False,False,3.18
+groq,p4_few_shot,90,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,2.322
+groq,p4_few_shot,91,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":""formal"",""question"":null}",True,True,True,1.423
+groq,p4_few_shot,92,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.856
+groq,p4_few_shot,93,tanglish,"{""action"":""insert"",""target"":{""type"":""title"",""index"":null},""value"":""Subtitle"",""question"":null}",True,True,True,2.04
+groq,p4_few_shot,94,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph should I delete?""}",True,False,False,1.892
+groq,p4_few_shot,95,tanglish,"{""action"":""highlight"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.069
+groq,p4_few_shot,96,tanglish,"{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.461
+groq,p4_few_shot,97,tanglish,"{""action"":""move"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.455
+groq,p4_few_shot,98,tanglish,"{""action"":""rewrite"",""target"":{""type"":""document"",""index"":null},""value"":""casual"",""question"":null}",True,True,True,2.473
+groq,p4_few_shot,99,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I bold?""}",True,False,False,1.658
+groq,p4_few_shot,100,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which action should I perform on the summary paragraph?""}",True,False,False,2.072
+groq,p4_few_shot,101,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.644
+groq,p4_few_shot,102,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.59
+groq,p4_few_shot,103,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,1.755
+groq,p4_few_shot,104,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,1.863
+groq,p4_few_shot,105,tamil_number,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,False,2.161
+groq,p4_few_shot,106,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.199
+groq,p4_few_shot,107,tamil_number,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which action would you like to perform on the first paragraph?""}",True,False,False,2.04
+groq,p4_few_shot,108,tamil_number,"{""action"":""highlight"",""target"":{""type"":""word"",""index"":2},""value"":null,""question"":null}",True,True,False,1.866
+groq,p4_few_shot,109,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,2.063
+groq,p4_few_shot,110,tamil_number,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":4},""value"":""formal"",""question"":null}",True,True,True,1.764
+groq,p4_few_shot,111,tamil_number,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I delete?""}",True,False,False,1.763
+groq,p4_few_shot,112,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.064
+groq,p4_few_shot,113,tamil_number,"{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,False,1.621
+groq,p4_few_shot,114,tamil_number,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.654
+groq,p4_few_shot,115,tamil_number,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,1.985
+groq,p4_few_shot,116,tamil_number,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,1.652
+groq,p4_few_shot,117,tamil_number,"{""action"":""underline"",""target"":{""type"":""word"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.76
+groq,p4_few_shot,118,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.874
+groq,p4_few_shot,119,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.757
+groq,p4_few_shot,120,tamil_number,"{""action"":""rewrite"",""target"":{""type"":""line"",""index"":2},""value"":""casual"",""question"":null}",True,True,True,1.863
+groq,p4_few_shot,121,replace,"{""action"":""rewrite"",""target"":{""type"":""line"",""index"":3},""value"":""reported-a car-nu"",""question"":null}",True,False,False,1.76
+groq,p4_few_shot,122,replace,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Where should I insert 'car' in line 3?""}",True,False,False,2.58
+groq,p4_few_shot,123,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,False,1.663
+groq,p4_few_shot,124,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,False,2.218
+groq,p4_few_shot,125,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,True,2.32
+groq,p4_few_shot,126,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":2},""value"":{""from"":""name"",""to"":""address""},""question"":null}",True,True,True,2.067
+groq,p4_few_shot,127,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""conclusion"",""to"":""summary""},""question"":null}",True,True,False,1.755
+groq,p4_few_shot,128,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":1},""value"":{""from"":""chapter"",""to"":""section""},""question"":null}",True,True,True,1.76
+groq,p4_few_shot,129,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":-1},""value"":{""from"":""study"",""to"":""research""},""question"":null}",True,True,True,1.654
+groq,p4_few_shot,130,replace,"{""action"":""replace"",""target"":{""type"":""paragraph"",""index"":2},""value"":{""from"":""method"",""to"":""approach""},""question"":null}",True,True,True,1.378
+groq,p4_few_shot,131,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""accident"",""to"":""incident""},""question"":null}",True,True,False,1.422
+groq,p4_few_shot,132,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""result"",""to"":""outcome""},""question"":null}",True,True,True,2.119
+groq,p4_few_shot,133,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":4},""value"":{""from"":""researchers"",""to"":""authors""},""question"":null}",True,True,True,2.31
+groq,p4_few_shot,134,replace,"{""action"":""replace"",""target"":{""type"":""title"",""index"":null},""value"":{""from"":""introduction"",""to"":""overview""},""question"":null}",True,True,True,1.556
+groq,p4_few_shot,135,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""system"",""to"":""platform""},""question"":null}",True,True,True,2.478
+groq,p4_few_shot,136,unclear,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":-1},""value"":""formal"",""question"":null}",True,False,False,2.382
+groq,p4_few_shot,137,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I bold?""}",True,True,True,1.678
+groq,p4_few_shot,138,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I delete?""}",True,True,True,1.967
+groq,p4_few_shot,139,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part would you like to improve?""}",True,True,True,1.916
+groq,p4_few_shot,140,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I rewrite?""}",True,True,True,2.112
+groq,p4_few_shot,141,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I change?""}",True,True,True,1.869
+groq,p4_few_shot,142,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I correct?""}",True,True,True,2.061
+groq,p4_few_shot,143,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which lines should I delete?""}",True,True,True,1.726
+groq,p4_few_shot,144,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I move up?""}",True,True,True,1.891
+groq,p4_few_shot,145,unclear,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,False,False,2.372
+groq,p4_few_shot,146,unclear,"{""action"":""font-increase"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,False,False,2.065
+groq,p4_few_shot,147,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I replace?""}",True,True,True,1.859
+groq,p4_few_shot,148,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""What would you like me to do?""}",True,True,True,2.17
+groq,p4_few_shot,149,unclear,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,False,False,2.939
+groq,p4_few_shot,150,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I correct?""}",True,True,True,1.912
+groq,p4_few_shot_v1,43,english,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,1.678
+groq,p4_few_shot_v1,45,english,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.713
+groq,p4_few_shot_v1,47,english,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which occurrence of 'reported' should I delete?""}",True,False,False,1.802
+groq,p4_few_shot_v1,48,english,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.525
+groq,p4_few_shot_v1,49,english,"{""action"":""undo"",""target"":null,""value"":null,""question"":null}",True,True,True,1.548
+groq,p4_few_shot_v1,50,english,"{""action"":""insert"",""target"":{""type"":""paragraph"",""index"":1},""value"":""Introduction"",""question"":null}",True,True,True,1.667
+groq,p4_few_shot_v1,51,tanglish,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.553
+groq,p4_few_shot_v1,52,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",True,True,True,1.872
+groq,p4_few_shot_v1,53,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,False,False,2.269
+groq,p4_few_shot_v1,54,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.969
+groq,p4_few_shot_v1,55,tanglish,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.654
+groq,p4_few_shot_v1,56,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I delete?""}",True,False,False,1.769
+groq,p4_few_shot_v1,57,tanglish,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.446
+groq,p4_few_shot_v1,58,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.736
+groq,p4_few_shot_v1,59,tanglish,"{""action"":""underline"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.05
+groq,p4_few_shot_v1,60,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.551
+groq,p4_few_shot_v1,61,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""casual"",""question"":null}",True,True,True,1.944
+groq,p4_few_shot_v1,62,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""short"",""question"":null}",True,True,False,1.934
+groq,p4_few_shot_v1,63,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.383
+groq,p4_few_shot_v1,64,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":1},""value"":""Vanakkam"",""question"":null}",True,True,True,1.889
+groq,p4_few_shot_v1,65,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":""large"",""question"":null}",True,True,True,1.733
+groq,p4_few_shot_v1,66,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I italicize?""}",True,False,False,1.813
+groq,p4_few_shot_v1,67,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":""up"",""question"":null}",True,True,True,1.785
+groq,p4_few_shot_v1,68,tanglish,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,1.967
+groq,p4_few_shot_v1,69,tanglish,"{""action"":""underline"",""target"":{""type"":""line"",""index"":null},""value"":null,""question"":null}",True,True,True,1.965
+groq,p4_few_shot_v1,70,tanglish,"{""action"":""italic"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,1.638
+groq,p4_few_shot_v1,71,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""What would you like to do with the third paragraph?""}",True,False,False,2.066
+groq,p4_few_shot_v1,72,tanglish,"{""action"":""clarify"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":""Do you want me to apply both bold and italic to the heading?""}",True,False,False,2.165
+groq,p4_few_shot_v1,73,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",True,True,True,1.468
+groq,p4_few_shot_v1,74,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""formal"",""question"":null}",True,True,False,1.752
+groq,p4_few_shot_v1,75,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.759
+groq,p4_few_shot_v1,76,tanglish,"{""action"":""insert"",""target"":{""type"":""line"",""index"":-1},""value"":""Nandri solli mudikiren"",""question"":null}",True,True,False,1.556
+groq,p4_few_shot_v1,77,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.659
+groq,p4_few_shot_v1,78,tanglish,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.761
+groq,p4_few_shot_v1,79,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I bold?""}",True,False,False,1.761
+groq,p4_few_shot_v1,80,tanglish,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.447
+groq,p4_few_shot_v1,81,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph should I highlight?""}",True,False,False,1.556
+groq,p4_few_shot_v1,82,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":""first"",""question"":null}",True,True,True,2.274
+groq,p4_few_shot_v1,83,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""simple"",""question"":null}",True,True,False,1.877
+groq,p4_few_shot_v1,84,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph should I delete?""}",True,False,False,2.178
+groq,p4_few_shot_v1,85,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.845
+groq,p4_few_shot_v1,86,tanglish,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,1.452
+groq,p4_few_shot_v1,87,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I underline?""}",True,False,False,2.064
+groq,p4_few_shot_v1,88,tanglish,"{""action"":""delete"",""target"":{""type"":""word"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.272
+groq,p4_few_shot_v1,89,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which sentence should I italicize?""}",True,False,False,3.18
+groq,p4_few_shot_v1,90,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,2.322
+groq,p4_few_shot_v1,91,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":""formal"",""question"":null}",True,True,True,1.423
+groq,p4_few_shot_v1,92,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.856
+groq,p4_few_shot_v1,93,tanglish,"{""action"":""insert"",""target"":{""type"":""title"",""index"":null},""value"":""Subtitle"",""question"":null}",True,True,True,2.04
+groq,p4_few_shot_v1,94,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph should I delete?""}",True,False,False,1.892
+groq,p4_few_shot_v1,95,tanglish,"{""action"":""highlight"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.069
+groq,p4_few_shot_v1,96,tanglish,"{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.461
+groq,p4_few_shot_v1,97,tanglish,"{""action"":""move"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.455
+groq,p4_few_shot_v1,98,tanglish,"{""action"":""rewrite"",""target"":{""type"":""document"",""index"":null},""value"":""casual"",""question"":null}",True,True,True,2.473
+groq,p4_few_shot_v1,99,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I bold?""}",True,False,False,1.658
+groq,p4_few_shot_v1,100,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which action should I perform on the summary paragraph?""}",True,False,False,2.072
+groq,p4_few_shot_v1,101,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.644
+groq,p4_few_shot_v1,102,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.59
+groq,p4_few_shot_v1,103,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,1.755
+groq,p4_few_shot_v1,104,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,1.863
+groq,p4_few_shot_v1,105,tamil_number,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,False,2.161
+groq,p4_few_shot_v1,106,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.199
+groq,p4_few_shot_v1,107,tamil_number,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which action would you like to perform on the first paragraph?""}",True,False,False,2.04
+groq,p4_few_shot_v1,108,tamil_number,"{""action"":""highlight"",""target"":{""type"":""word"",""index"":2},""value"":null,""question"":null}",True,True,False,1.866
+groq,p4_few_shot_v1,109,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,2.063
+groq,p4_few_shot_v1,110,tamil_number,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":4},""value"":""formal"",""question"":null}",True,True,True,1.764
+groq,p4_few_shot_v1,111,tamil_number,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I delete?""}",True,False,False,1.763
+groq,p4_few_shot_v1,112,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.064
+groq,p4_few_shot_v1,113,tamil_number,"{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,False,1.621
+groq,p4_few_shot_v1,114,tamil_number,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.654
+groq,p4_few_shot_v1,115,tamil_number,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,1.985
+groq,p4_few_shot_v1,116,tamil_number,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,1.652
+groq,p4_few_shot_v1,117,tamil_number,"{""action"":""underline"",""target"":{""type"":""word"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.76
+groq,p4_few_shot_v1,118,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.874
+groq,p4_few_shot_v1,119,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.757
+groq,p4_few_shot_v1,120,tamil_number,"{""action"":""rewrite"",""target"":{""type"":""line"",""index"":2},""value"":""casual"",""question"":null}",True,True,True,1.863
+groq,p4_few_shot_v1,121,replace,"{""action"":""rewrite"",""target"":{""type"":""line"",""index"":3},""value"":""reported-a car-nu"",""question"":null}",True,False,False,1.76
+groq,p4_few_shot_v1,122,replace,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Where should I insert 'car' in line 3?""}",True,False,False,2.58
+groq,p4_few_shot_v1,123,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,False,1.663
+groq,p4_few_shot_v1,124,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,False,2.218
+groq,p4_few_shot_v1,125,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,True,2.32
+groq,p4_few_shot_v1,126,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":2},""value"":{""from"":""name"",""to"":""address""},""question"":null}",True,True,True,2.067
+groq,p4_few_shot_v1,127,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""conclusion"",""to"":""summary""},""question"":null}",True,True,False,1.755
+groq,p4_few_shot_v1,128,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":1},""value"":{""from"":""chapter"",""to"":""section""},""question"":null}",True,True,True,1.76
+groq,p4_few_shot_v1,129,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":-1},""value"":{""from"":""study"",""to"":""research""},""question"":null}",True,True,True,1.654
+groq,p4_few_shot_v1,130,replace,"{""action"":""replace"",""target"":{""type"":""paragraph"",""index"":2},""value"":{""from"":""method"",""to"":""approach""},""question"":null}",True,True,True,1.378
+groq,p4_few_shot_v1,131,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""accident"",""to"":""incident""},""question"":null}",True,True,False,1.422
+groq,p4_few_shot_v1,132,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""result"",""to"":""outcome""},""question"":null}",True,True,True,2.119
+groq,p4_few_shot_v1,133,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":4},""value"":{""from"":""researchers"",""to"":""authors""},""question"":null}",True,True,True,2.31
+groq,p4_few_shot_v1,134,replace,"{""action"":""replace"",""target"":{""type"":""title"",""index"":null},""value"":{""from"":""introduction"",""to"":""overview""},""question"":null}",True,True,True,1.556
+groq,p4_few_shot_v1,135,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""system"",""to"":""platform""},""question"":null}",True,True,True,2.478
+groq,p4_few_shot_v1,136,unclear,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":-1},""value"":""formal"",""question"":null}",True,False,False,2.382
+groq,p4_few_shot_v1,137,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I bold?""}",True,True,True,1.678
+groq,p4_few_shot_v1,138,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I delete?""}",True,True,True,1.967
+groq,p4_few_shot_v1,139,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part would you like to improve?""}",True,True,True,1.916
+groq,p4_few_shot_v1,140,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I rewrite?""}",True,True,True,2.112
+groq,p4_few_shot_v1,141,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I change?""}",True,True,True,1.869
+groq,p4_few_shot_v1,142,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I correct?""}",True,True,True,2.061
+groq,p4_few_shot_v1,143,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which lines should I delete?""}",True,True,True,1.726
+groq,p4_few_shot_v1,144,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I move up?""}",True,True,True,1.891
+groq,p4_few_shot_v1,145,unclear,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,False,False,2.372
+groq,p4_few_shot_v1,146,unclear,"{""action"":""font-increase"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,False,False,2.065
+groq,p4_few_shot_v1,147,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I replace?""}",True,True,True,1.859
+groq,p4_few_shot_v1,148,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""What would you like me to do?""}",True,True,True,2.17
+groq,p4_few_shot_v1,149,unclear,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,False,False,2.939
+groq,p4_few_shot_v1,150,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I correct?""}",True,True,True,1.912
+groq,p4_few_shot_v3,21,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,3.516
+groq,p4_few_shot_v3,22,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",True,True,True,1.643
+groq,p4_few_shot_v3,23,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.557
+groq,p4_few_shot_v3,24,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.166
+groq,p4_few_shot_v3,25,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.449
+groq,p4_few_shot_v3,26,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,3.422
+groq,p4_few_shot_v3,27,english,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.481
+groq,p4_few_shot_v3,28,english,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,1.981
+groq,p4_few_shot_v3,29,english,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,2.169
+groq,p4_few_shot_v3,30,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,1.869
+groq,p4_few_shot_v3,31,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":2},""value"":""casual"",""question"":null}",True,True,True,1.958
+groq,p4_few_shot_v3,32,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""formal"",""question"":null}",True,True,False,1.345
+groq,p4_few_shot_v3,33,english,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,1.088
+groq,p4_few_shot_v3,34,english,"{""action"":""delete"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,1.07
+groq,p4_few_shot_v3,35,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Regards"",""question"":null}",True,True,True,1.088
+groq,p4_few_shot_v3,36,english,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.094
+groq,p4_few_shot_v3,37,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.267
+groq,p4_few_shot_v3,38,english,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,1.253
+groq,p4_few_shot_v3,39,english,"{""action"":""underline"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.142
+groq,p4_few_shot_v3,40,english,"{""action"":""bold"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",True,True,True,1.557
+groq,p4_few_shot_v3,41,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,1.249
+groq,p4_few_shot_v3,42,english,"{""action"":""italic"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,1.557
+groq,p4_few_shot_v3,43,english,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,1.446
+groq,p4_few_shot_v3,44,english,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""shorter"",""question"":null}",True,True,False,1.217
+groq,p4_few_shot_v3,45,english,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.63
+groq,p4_few_shot_v3,46,english,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.45
+groq,p4_few_shot_v3,47,english,"{""action"":""delete"",""target"":{""type"":""word"",""index"":null},""value"":null,""question"":null}",True,True,True,1.644
+groq,p4_few_shot_v3,48,english,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,0.814
+groq,p4_few_shot_v3,49,english,"{""action"":""undo"",""target"":null,""value"":null,""question"":null}",True,True,True,0.921
+groq,p4_few_shot_v3,50,english,"{""action"":""insert"",""target"":{""type"":""paragraph"",""index"":1},""value"":""Introduction"",""question"":null}",True,True,True,1.981
+groq,p4_few_shot_v3,51,tanglish,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.293
+groq,p4_few_shot_v3,52,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",True,True,True,1.187
+groq,p4_few_shot_v3,53,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph(s) should I delete?""}",True,False,False,1.974
+groq,p4_few_shot_v3,54,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,1.796
+groq,p4_few_shot_v3,55,tanglish,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,0.889
+groq,p4_few_shot_v3,56,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I delete?""}",True,False,False,1.606
+groq,p4_few_shot_v3,57,tanglish,"{""action"":""italic"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.345
+groq,p4_few_shot_v3,58,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.251
+groq,p4_few_shot_v3,59,tanglish,"{""action"":""underline"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,1.352
+groq,p4_few_shot_v3,60,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.557
+groq,p4_few_shot_v3,61,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":null},""value"":""casual"",""question"":null}",True,True,True,1.862
+groq,p4_few_shot_v3,62,tanglish,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""summary"",""to"":""chinna-dha""},""question"":null}",True,False,False,3.523
+groq,p4_few_shot_v3,63,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.339
+groq,p4_few_shot_v3,64,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":1},""value"":""Vanakkam"",""question"":null}",True,True,True,1.955
+groq,p4_few_shot_v3,65,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.172
+groq,p4_few_shot_v3,66,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I italicize?""}",True,False,False,1.557
+groq,p4_few_shot_v3,67,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.728
+groq,p4_few_shot_v3,68,tanglish,"{""action"":""bold"",""target"":{""type"":""selection"",""index"":null},""value"":null,""question"":null}",True,True,True,1.23
+groq,p4_few_shot_v3,69,tanglish,"{""action"":""underline"",""target"":{""type"":""line"",""index"":null},""value"":null,""question"":null}",True,True,True,1.599
+groq,p4_few_shot_v3,70,tanglish,"{""action"":""italic"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.173
+groq,p4_few_shot_v3,71,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,1.629
+groq,p4_few_shot_v3,72,tanglish,"{""action"":""clarify"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":""Do you want to apply bold, italic, or both to the heading?""}",True,False,False,2.606
+groq,p4_few_shot_v3,73,tanglish,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":5},""value"":null,""question"":null}",True,True,True,1.046
+groq,p4_few_shot_v3,74,tanglish,"{""action"":""replace"",""target"":{""type"":""paragraph"",""index"":null},""value"":{""from"":""conclusion"",""to"":""formal""},""question"":null}",True,False,False,1.541
+groq,p4_few_shot_v3,75,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.152
+groq,p4_few_shot_v3,76,tanglish,"{""action"":""insert"",""target"":{""type"":""line"",""index"":-1},""value"":""Nandri solli mudikiren"",""question"":null}",True,True,False,1.748
+groq,p4_few_shot_v3,77,tanglish,"{""action"":""delete"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.186
+groq,p4_few_shot_v3,78,tanglish,"{""action"":""underline"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.526
+groq,p4_few_shot_v3,79,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I bold?""}",True,False,False,1.85
+groq,p4_few_shot_v3,80,tanglish,"{""action"":""italic"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.15
+groq,p4_few_shot_v3,81,tanglish,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":null},""value"":null,""question"":null}",True,True,True,1.35
+groq,p4_few_shot_v3,82,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":""1"",""question"":null}",True,True,True,2.191
+groq,p4_few_shot_v3,83,tanglish,"{""action"":""replace"",""target"":{""type"":""paragraph"",""index"":null},""value"":{""from"":""introduction"",""to"":""simple""},""question"":null}",True,False,False,1.436
+groq,p4_few_shot_v3,84,tanglish,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":4},""value"":null,""question"":null}",True,True,True,1.478
+groq,p4_few_shot_v3,85,tanglish,"{""action"":""font-increase"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,2.037
+groq,p4_few_shot_v3,86,tanglish,"{""action"":""bold"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,True,2.078
+groq,p4_few_shot_v3,87,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I underline?""}",True,False,False,1.582
+groq,p4_few_shot_v3,88,tanglish,"{""action"":""delete"",""target"":{""type"":""word"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.965
+groq,p4_few_shot_v3,89,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which sentence should I italicize?""}",True,False,False,1.661
+groq,p4_few_shot_v3,90,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,1.556
+groq,p4_few_shot_v3,91,tanglish,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":""formal"",""question"":null}",True,True,True,2.068
+groq,p4_few_shot_v3,92,tanglish,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,2.256
+groq,p4_few_shot_v3,93,tanglish,"{""action"":""insert"",""target"":{""type"":""title"",""index"":null},""value"":""Subtitle"",""question"":null}",True,True,True,1.27
+groq,p4_few_shot_v3,94,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph should I delete?""}",True,False,False,1.761
+groq,p4_few_shot_v3,95,tanglish,"{""action"":""highlight"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.252
+groq,p4_few_shot_v3,96,tanglish,"{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.324
+groq,p4_few_shot_v3,97,tanglish,"{""action"":""move"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.559
+groq,p4_few_shot_v3,98,tanglish,"{""action"":""rewrite"",""target"":{""type"":""document"",""index"":null},""value"":""casual"",""question"":null}",True,True,True,1.392
+groq,p4_few_shot_v3,99,tanglish,"{""action"":""bold"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,1.721
+groq,p4_few_shot_v3,100,tanglish,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which paragraph should I delete?""}",True,False,False,1.814
+groq,p4_few_shot_v3,101,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.505
+groq,p4_few_shot_v3,102,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":null}",True,True,True,1.145
+groq,p4_few_shot_v3,103,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":3},""value"":null,""question"":null}",True,True,True,1.149
+groq,p4_few_shot_v3,104,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,1.169
+groq,p4_few_shot_v3,105,tamil_number,"{""action"":""highlight"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.258
+groq,p4_few_shot_v3,106,tamil_number,"{""action"":""bold"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.294
+groq,p4_few_shot_v3,107,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,1.084
+groq,p4_few_shot_v3,108,tamil_number,"{""action"":""highlight"",""target"":{""type"":""word"",""index"":2},""value"":null,""question"":null}",True,True,False,1.08
+groq,p4_few_shot_v3,109,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,1.266
+groq,p4_few_shot_v3,110,tamil_number,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":4},""value"":""formal"",""question"":null}",True,True,True,1.558
+groq,p4_few_shot_v3,111,tamil_number,"{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.24
+groq,p4_few_shot_v3,112,tamil_number,"{""action"":""italic"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.515
+groq,p4_few_shot_v3,113,tamil_number,"{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,False,1.384
+groq,p4_few_shot_v3,114,tamil_number,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,True,1.468
+groq,p4_few_shot_v3,115,tamil_number,"{""action"":""font-increase"",""target"":{""type"":""line"",""index"":3},""value"":null,""question"":null}",True,True,True,0.869
+groq,p4_few_shot_v3,116,tamil_number,"{""action"":""highlight"",""target"":{""type"":""line"",""index"":4},""value"":null,""question"":null}",True,True,True,0.992
+groq,p4_few_shot_v3,117,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,True,False,1.25
+groq,p4_few_shot_v3,118,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,1.036
+groq,p4_few_shot_v3,119,tamil_number,"{""action"":""italic"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.17
+groq,p4_few_shot_v3,120,tamil_number,"{""action"":""clarify"",""target"":{""type"":""line"",""index"":2},""value"":null,""question"":""What should 'casual' be replaced with?""}",True,False,False,1.119
+groq,p4_few_shot_v3,121,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,True,1.415
+groq,p4_few_shot_v3,122,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,True,1.198
+groq,p4_few_shot_v3,123,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,True,1.466
+groq,p4_few_shot_v3,124,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,True,1.139
+groq,p4_few_shot_v3,125,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":3},""value"":{""from"":""reported"",""to"":""car""},""question"":null}",True,True,True,1.475
+groq,p4_few_shot_v3,126,replace,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which line should I edit?""}",True,False,False,1.436
+groq,p4_few_shot_v3,127,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""conclusion"",""to"":""summary""},""question"":null}",True,True,True,2.475
+groq,p4_few_shot_v3,128,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":1},""value"":{""from"":""chapter"",""to"":""section""},""question"":null}",True,True,True,1.508
+groq,p4_few_shot_v3,129,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":-1},""value"":{""from"":""study"",""to"":""research""},""question"":null}",True,True,True,1.33
+groq,p4_few_shot_v3,130,replace,"{""action"":""replace"",""target"":{""type"":""paragraph"",""index"":2},""value"":{""from"":""method"",""to"":""approach""},""question"":null}",True,True,True,1.158
+groq,p4_few_shot_v3,131,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""accident"",""to"":""incident""},""question"":null}",True,True,False,1.531
+groq,p4_few_shot_v3,132,replace,"{""action"":""replace"",""target"":{""type"":""word"",""index"":null},""value"":{""from"":""result"",""to"":""outcome""},""question"":null}",True,True,True,1.025
+groq,p4_few_shot_v3,133,replace,"{""action"":""replace"",""target"":{""type"":""line"",""index"":4},""value"":{""from"":""researchers"",""to"":""authors""},""question"":null}",True,True,True,1.203
+groq,p4_few_shot_v3,134,replace,"{""action"":""replace"",""target"":{""type"":""title"",""index"":null},""value"":{""from"":""introduction"",""to"":""overview""},""question"":null}",True,True,True,1.635
+groq,p4_few_shot_v3,135,replace,"{""action"":""replace"",""target"":{""type"":""document"",""index"":null},""value"":{""from"":""system"",""to"":""platform""},""question"":null}",True,True,True,1.176
+groq,p4_few_shot_v3,136,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I change a little?""}",True,True,True,1.474
+groq,p4_few_shot_v3,137,unclear,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,False,False,1.5
+groq,p4_few_shot_v3,138,unclear,"{""action"":""delete"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,False,False,1.732
+groq,p4_few_shot_v3,139,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I improve?""}",True,True,True,0.969
+groq,p4_few_shot_v3,140,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I change?""}",True,True,True,1.728
+groq,p4_few_shot_v3,141,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which word should I change?""}",True,True,True,1.176
+groq,p4_few_shot_v3,142,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I correct?""}",True,True,True,1.211
+groq,p4_few_shot_v3,143,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""How many lines should I delete?""}",True,True,True,1.174
+groq,p4_few_shot_v3,144,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which element should I move up?""}",True,True,True,1.319
+groq,p4_few_shot_v3,145,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I italicize?""}",True,True,True,0.979
+groq,p4_few_shot_v3,146,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I enlarge?""}",True,True,True,0.974
+groq,p4_few_shot_v3,147,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I replace?""}",True,True,True,1.006
+groq,p4_few_shot_v3,148,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""What would you like me to do?""}",True,True,True,1.42
+groq,p4_few_shot_v3,149,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I apply this to?""}",True,True,True,1.484
+groq,p4_few_shot_v3,150,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I correct?""}",True,True,True,1.412

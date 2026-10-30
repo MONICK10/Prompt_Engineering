@@ -1,0 +1,824 @@
+model,technique,id,category,output,valid_json,action_ok,exact_ok,latency_s
+groq,p1_zero_shot,2,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""paragraphNumber"": 1
+}
+```",True,True,False,3.089
+groq,p1_zero_shot,3,english,"```json
+{
+  ""action"": ""insert"",
+  ""text"": ""Thank you"",
+  ""position"": ""end""
+}
+```",True,True,False,1.886
+groq,p1_zero_shot,5,tanglish,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""title-a"",
+  ""style"": ""bold""
+}
+```",True,False,False,1.931
+groq,p1_zero_shot,6,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""position"": ""end"",
+  ""text"": ""Nandri""
+}
+```",True,True,False,2.475
+groq,p1_zero_shot,7,tanglish,"```json
+{
+  ""command"": {
+    ""action"": ""insert"",
+    ""target"": ""first paragraph"",
+    ""language"": ""Tamil"",
+    ""description"": ""Insert content into the first paragraph""
+  }
+}
+```",True,False,False,2.295
+groq,p1_zero_shot,8,tanglish,"Here’s a straightforward JSON representation of the command:
+
+```json
+{
+  ""action"": ""undo"",
+  ""target"": ""pannu""
+}
+```
+
+- **action** – the operation to perform (`undo`).  
+- **target** – the item or element the action applies to (`pannu`).",True,True,False,2.127
+groq,p1_zero_shot,10,tamil_number,"```json
+{
+  ""action"": ""underline"",
+  ""line"": 1
+}
+```",True,True,False,2.078
+groq,p1_zero_shot,11,tamil_number,"Here’s a concise JSON representation of the command:
+
+```json
+{
+  ""action"": ""take"",
+  ""target"": ""paragraph"",
+  ""language"": ""Telugu""
+}
+```
+
+- **action** – the verb (“take”/“eduthudu”).
+- **target** – the object being acted upon (“paragraph”).
+- **language** – indicates the command was given in Telugu.",True,False,False,2.503
+groq,p1_zero_shot,13,unclear,"```json
+{
+  ""command"": ""adha konjam maathu"",
+  ""language"": ""Tamil"",
+  ""intent"": ""add more content""
+}
+```",True,False,False,2.697
+groq,p1_zero_shot,15,rewrite,"```json
+{
+  ""action"": ""edit"",
+  ""target"": ""paragraph"",
+  ""index"": 2,
+  ""style"": ""casual""
+}
+```",True,False,False,1.489
+groq,p4_few_shot,2,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,1.652
+groq,p4_few_shot,3,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",True,True,True,1.679
+groq,p4_few_shot,5,tanglish,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.859
+groq,p4_few_shot,6,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",True,True,True,2.789
+groq,p4_few_shot,7,tanglish,"{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":""last"",""question"":null}",True,True,True,1.726
+groq,p4_few_shot,8,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,1.412
+groq,p4_few_shot,10,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,2.93
+groq,p4_few_shot,11,tamil_number,"{""action"":""clarify"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":""What would you like to do with the last paragraph?""}",True,False,False,3.156
+groq,p4_few_shot,13,unclear,"{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which text should I rewrite a bit?""}",True,True,True,2.121
+groq,p4_few_shot,15,rewrite,"{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":2},""value"":""casual"",""question"":null}",True,True,True,1.556
+ollama-local,p1_zero_shot,2,english,"Here is the JSON representation of the document editing command to delete the first paragraph:
+
+```json
+{
+  ""command"": ""deleteFirstParagraph""
+}
+```
+
+This JSON object represents a simple command to delete the first paragraph in a document.",True,False,False,9.545
+ollama-local,p1_zero_shot,3,english,"Here is the JSON representation of the document editing command to insert ""Thank you"" at the end:
+
+```json
+{
+  ""command"": ""insert"",
+  ""text"": ""Thank you"",
+  ""position"": ""end""
+}
+```",True,False,False,6.689
+ollama-local,p1_zero_shot,5,tanglish,"Here is the JSON representation of the document editing command ""title-a bold pannu"":
+
+```json
+{
+  ""command"": {
+    ""type"": ""title"",
+    ""level"": ""a"",
+    ""styles"": {
+      ""bold"": true,
+      ""text"": ""pannu""
+    }
+  }
+}
+```
+
+Note that the ""text"" field is enclosed in quotes as it is a string.",True,False,False,11.587
+ollama-local,p1_zero_shot,6,tanglish,"The provided command ""end-la ""Nandri"" serkku"" does not appear to be a standard document editing command or instruction. It seems to be a mix of words or a phrase that might be in a specific language or dialect. Without more context, it's difficult to interpret its meaning accurately. 
+
+However, if we were to attempt to represent this as a JSON object, it might look something like this:
+
+```json
+{
+  ""command"": ""end-la \""Nandri\"" serkku""
+}
+```
+
+Please note that this JSON object is a representation of the given string and does not actually perform any document editing action. If you have a specific document editing command or instruction, please provide it, and I can help you convert it into a JSON format.",True,False,False,23.863
+ollama-local,p1_zero_shot,7,tanglish,"The provided command ""first para-va kadaisi-ku nagarthu"" does not appear to be a valid English or any other common language command for document editing. It seems to be a mix of words or a jumbled phrase. 
+
+However, if we were to interpret this as a JSON structure representing a command to edit a document, we could create a JSON object with keys for the command and its parameters. Here's an example of how it might look:
+
+```json
+{
+  ""command"": ""edit"",
+  ""paragraph"": 1,
+  ""action"": ""replace"",
+  ""text"": ""kadaisi-ku nagarthu""
+}
+```
+
+In this JSON, ""command"" indicates the type of action (in this case, editing), ""paragraph"" specifies which paragraph (1 in this case), ""action"" specifies the action to take (replace in this case), and ""text"" specifies the new text to be inserted.
+
+Please note that this JSON structure is a hypothetical interpretation of the given command and may not accurately represent the intended meaning or functionality of the original command.",True,False,False,32.192
+ollama-local,p1_zero_shot,8,tanglish,"The command ""undo pannu"" does not appear to be a valid document editing command in a standard document processing application like Microsoft Word or Google Docs. It seems to be a combination of words or a typo. 
+
+If we were to interpret this as a JSON object representing an undo action, it might look something like this:
+
+```json
+{
+  ""action"": ""undo"",
+  ""document"": ""pannu""
+}
+```
+
+However, this interpretation is speculative and not based on any actual document editing command. If you have a specific document editing command or context, please provide it, and I can help you convert it into JSON.",True,True,True,19.813
+ollama-local,p1_zero_shot,10,tamil_number,"The document editing command ""mudhal line-a underline pannu"" seems to be in a non-standard format. Assuming ""mudhal"" is meant to be ""mudhal"" (which is a term used in Malayalam for ""underline"") and ""pannu"" is meant to be ""pannu"" (which is a term used in Malayalam for ""line""), the command can be interpreted as ""underline the line"".
+
+Here is the JSON representation of the command:
+
+```json
+{
+  ""command"": ""underline"",
+  ""element"": ""line""
+}
+```
+
+If ""mudhal"" and ""pannu"" are meant to be different elements, please provide more context or clarify the exact command you want to represent in JSON.",True,False,False,21.784
+ollama-local,p1_zero_shot,11,tamil_number,"The provided command ""kadaisi paragraph-a eduthudu"" appears to be in a language (likely Luganda or a related language) that is not directly translatable into JSON. However, if you want to represent this command in a JSON format, you could structure it as follows:
+
+```json
+{
+  ""command"": ""kadaisi paragraph-a eduthudu""
+}
+```
+
+This JSON object represents the command as a key-value pair, where the key is ""command"" and the value is the provided command in the original language. Please note that this is a representation and not a direct translation into JSON.",True,False,False,18.791
+ollama-local,p1_zero_shot,13,unclear,"The command ""adha konjam maathu"" appears to be in Igbo language and translates to ""delete all"" in English. However, this command does not directly correspond to a specific JSON structure for document editing commands. 
+
+If you need to represent this command in a JSON format, it could be represented as follows:
+
+```json
+{
+  ""command"": ""delete_all""
+}
+```
+
+Please let me know if you need any further assistance or if you have a different command in mind!",True,False,False,13.987
+ollama-local,p1_zero_shot,15,rewrite,"Here is the JSON representation of the document editing command you provided:
+
+```json
+{
+  ""command"": ""make_the_second_paragraph_more_casual""
+}
+```
+
+Please note that this JSON object represents the command to modify the second paragraph to be more casual, but it does not contain any actual text or document structure. The actual text and structure of the document would need to be provided separately for this command to be executed.",True,False,False,13.015
+ollama-local,p4_few_shot,2,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,14.378
+ollama-local,p4_few_shot,3,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",True,True,True,4.471
+ollama-local,p4_few_shot,5,tanglish,"JSON: {""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,4.044
+ollama-local,p4_few_shot,6,tanglish,"JSON: {""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",True,True,True,4.585
+ollama-local,p4_few_shot,7,tanglish,"JSON: {""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,4.169
+ollama-local,p4_few_shot,8,tanglish,"JSON: {""action"":""undo"",""target"":null,""value"":null,""question"":null}",True,True,True,3.022
+ollama-local,p4_few_shot,10,tamil_number,"JSON: {""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,4.369
+ollama-local,p4_few_shot,11,tamil_number,"JSON: {""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,False,False,3.842
+ollama-local,p4_few_shot,13,unclear,"JSON: {""action"":""clarify"",""target"":null,""value"":null,""question"":""What part of the document should I change to a different language?""}",True,True,True,5.059
+ollama-local,p4_few_shot,15,rewrite,"JSON: {""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":""more casual"",""question"":null}",True,True,False,3.811
+gemini,p1_zero_shot,2,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": {
+    ""type"": ""paragraph"",
+    ""position"": ""first""
+  }
+}
+```",True,True,False,7.96
+gemini,p1_zero_shot,3,english,"```json
+{
+  ""command"": ""insert"",
+  ""text"": ""Thank you"",
+  ""position"": ""end""
+}
+```",True,False,False,4.847
+gemini,p1_zero_shot,5,tanglish,"```json
+{
+  ""command"": ""applyStyle"",
+  ""target"": {
+    ""type"": ""elementId"",
+    ""id"": ""title-a""
+  },
+  ""style"": {
+    ""property"": ""font-weight"",
+    ""value"": ""bold""
+  }
+}
+```",True,False,False,9.427
+gemini,p1_zero_shot,6,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""position"": ""end"",
+  ""content"": ""Nandri""
+}
+```",True,True,False,3.476
+gemini,p1_zero_shot,7,tanglish,"```json
+{
+  ""command"": ""move"",
+  ""target"": {
+    ""type"": ""paragraph"",
+    ""position"": ""first""
+  },
+  ""destination"": {
+    ""type"": ""document"",
+    ""position"": ""end""
+  }
+}
+```",True,False,False,5.753
+gemini,p1_zero_shot,8,tanglish,"```json
+{
+  ""command"": ""undo"",
+  ""user"": ""pannu""
+}
+```
+
+**Explanation:**
+
+*   **`command`**: The primary action to be performed, which is ""undo"".
+*   **`user`**: This assumes ""pannu"" refers to a specific user whose last action (or a set of actions) should be undone.
+
+**Alternative Interpretations (depending on context):**
+
+If ""pannu"" refers to a specific change ID or a named operation, it might look like this:
+
+```json
+{
+  ""command"": ""undo"",
+  ""changeId"": ""pannu""
+}
+```
+
+Or if it's a tag:
+
+```json
+{
+  ""command"": ""undo"",
+  ""tag"": ""pannu""
+}
+```
+
+However, given the natural language ""undo pannu"", `user` is a very common and intuitive interpretation in collaborative editing environments.",True,False,False,7.045
+gemini,p1_zero_shot,10,tamil_number,"```json
+{
+  ""command"": ""underline"",
+  ""target"": {
+    ""type"": ""line"",
+    ""position"": ""first""
+  }
+}
+```
+
+**Explanation:**
+
+*   `command`: Specifies the action to be performed, which is ""underline"".
+*   `target`: Defines what the command should act upon.
+    *   `type`: Indicates the type of element being targeted, in this case, a ""line"".
+    *   `position`: Specifies which line, using ""first"" to represent ""mudhal"". (Alternatively, `index: 0` could be used for programmatic purposes).",True,False,False,7.395
+gemini,p1_zero_shot,11,tamil_number,"```json
+{
+  ""action"": ""delete"",
+  ""target"": {
+    ""type"": ""paragraph"",
+    ""position"": ""last""
+  }
+}
+```",True,True,False,5.004
+gemini,p1_zero_shot,13,unclear,"Here's a JSON representation of the command ""adha konjam maathu"", interpreting it for a document editing context:
+
+```json
+{
+  ""command"": {
+    ""action"": ""edit"",
+    ""target"": ""current_selection"",
+    ""modifier"": {
+      ""type"": ""degree"",
+      ""value"": ""minor""
+    }
+  },
+  ""original_phrase"": ""adha konjam maathu"",
+  ""language"": ""Tamil"",
+  ""interpretation"": ""Make a slight/minor change to the current selection or the last interacted element.""
+}
+```
+
+**Explanation of the JSON fields:**
+
+*   **`command`**: The main object encapsulating the command details.
+    *   **`action`**: `""edit""` - This is the core action, meaning to change or modify. Other possibilities could be `""modify""`, `""adjust""`, or `""refine""`.
+    *   **`target`**: `""current_selection""` - ""adha"" (அதை) means ""that/it"". In a document editor, this most commonly refers to the currently selected text, object, or the last element interacted with.
+    *   **`modifier`**: An object describing how the action should be performed.
+        *   **`type`**: `""degree""` - Indicates that the modifier specifies the extent of the action.
+        *   **`value`**: `""minor""` - ""konjam"" (கொஞ்சம்) means ""a little bit"" or ""slightly"". This implies a minor or subtle change rather than a major overhaul.
+*   **`original_phrase`**: The command as it was given.
+*   **`language`**: The language of the original command.
+*   **`interpretation`**: A human-readable explanation of what the command means in context.",True,False,False,9.286
+gemini,p2_role,2,english,"```json
+{
+  ""command"": ""delete"",
+  ""target_type"": ""paragraph"",
+  ""position"": ""first""
+}
+```",True,False,False,6.654
+gemini,p2_role,3,english,"```json
+{
+  ""action"": ""insert"",
+  ""content"": ""Thank you"",
+  ""location"": ""end""
+}
+```",True,True,False,1.542
+gemini,p2_role,5,tanglish,"```json
+{
+  ""command"": ""format"",
+  ""target"": ""document_title"",
+  ""parameters"": {
+    ""style"": ""bold""
+  }
+}
+```",True,False,False,4.95
+gemini,p2_role,6,tanglish,"```json
+{
+  ""command"": ""insert_text"",
+  ""text"": ""Nandri"",
+  ""position"": ""end""
+}
+```",True,False,False,4.25
+gemini,p2_role,7,tanglish,"```json
+{
+  ""command"": ""move"",
+  ""object_type"": ""paragraph"",
+  ""object_identifier"": ""first"",
+  ""destination"": ""end""
+}
+```",True,False,False,9.433
+gemini,p2_role,8,tanglish,"```json
+{
+  ""command"": ""undo"",
+  ""parameters"": {},
+  ""original_text"": ""undo pannu"",
+  ""language_detected"": ""mixed""
+}
+```",True,False,False,7.712
+gemini,p2_role,10,tamil_number,"```json
+{
+  ""command"": ""format"",
+  ""action"": ""underline"",
+  ""target"": {
+    ""type"": ""line"",
+    ""index"": 1
+  }
+}
+```",True,True,True,6.073
+gemini,p2_role,11,tamil_number,"```json
+{
+  ""command"": ""delete"",
+  ""target"": ""paragraph"",
+  ""position"": ""last""
+}
+```",True,False,False,4.954
+gemini,p2_role,13,unclear,"```json
+{
+  ""command"": ""edit"",
+  ""target"": ""current_selection"",
+  ""parameters"": {
+    ""modifier"": ""slight""
+  },
+  ""original_input"": ""adha konjam maathu"",
+  ""language_detected"": ""Tanglish"",
+  ""confidence"": ""high""
+}
+```",True,False,False,5.905
+groq,p2_role,2,english,"```json
+{
+  ""action"": ""delete"",
+  ""target"": ""paragraph"",
+  ""position"": ""first""
+}
+```",True,True,False,4.207
+groq,p2_role,3,english,"```json
+{
+  ""action"": ""insert"",
+  ""text"": ""Thank you"",
+  ""position"": ""end""
+}
+```",True,True,False,1.375
+groq,p2_role,5,tanglish,"```json
+{
+  ""action"": ""format"",
+  ""target"": ""title"",
+  ""style"": ""bold""
+}
+```",True,False,False,1.991
+groq,p2_role,6,tanglish,"```json
+{
+  ""action"": ""insert"",
+  ""position"": ""end"",
+  ""text"": ""Nandri""
+}
+```",True,True,False,1.978
+groq,p2_role,7,tanglish,"```json
+{
+  ""action"": ""undo"",
+  ""target"": {
+    ""type"": ""paragraph"",
+    ""index"": 1
+  }
+}
+```",True,False,False,2.387
+groq,p2_role,8,tanglish,"```json
+{
+  ""command"": ""undo""
+}
+```",True,False,False,1.343
+groq,p2_role,10,tamil_number,"```json
+{
+  ""action"": ""underline"",
+  ""line"": ""first""
+}
+```",True,True,False,1.676
+groq,p2_role,11,tamil_number,"```json
+{
+  ""command"": ""take"",
+  ""object"": ""paragraph""
+}
+```",True,False,False,1.736
+groq,p2_role,13,unclear,"```json
+{
+  ""action"": ""stop"",
+  ""description"": ""stop recording (a little)""
+}
+```",True,False,False,1.645
+groq,p2_role,15,rewrite,"```json
+{
+  ""action"": ""modify"",
+  ""target"": ""paragraph"",
+  ""index"": 2,
+  ""style"": ""casual""
+}
+```",True,False,False,1.726
+groq,p3_structured,2,english,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.754
+groq,p3_structured,3,english,"{""action"":""insert"",""target"":{""type"":""document"",""index"":null},""value"":""Thank you"",""question"":null}",True,True,False,1.346
+groq,p3_structured,5,tanglish,"{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,1.392
+groq,p3_structured,6,tanglish,"{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",True,True,True,3.033
+groq,p3_structured,7,tanglish,"{""action"":""delete"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,False,False,1.915
+groq,p3_structured,8,tanglish,"{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,2.005
+groq,p3_structured,10,tamil_number,"{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.467
+groq,p3_structured,11,tamil_number,"{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1},""value"":null,""question"":null}",True,True,True,2.023
+groq,p3_structured,13,unclear,"{""action"":""clarify"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":""Where would you like to add more text?""}",True,True,True,1.479
+groq,p3_structured,15,rewrite,"{""action"":""clarify"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":""Could you provide the text of the second paragraph?""}",True,False,False,1.75
+groq,p5_cot,2,english,"<think>
+1. ACTION: The verb is ""delete"".
+2. TARGET: The user says ""the first paragraph"" → type ""paragraph"", index 1.
+3. CHECK: Target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,2.223
+groq,p5_cot,3,english,"<think>
+1. ACTION: The verb is ""insert"".
+2. TARGET: The phrase ""at the end"" indicates the target is the document, index -1.
+3. CHECK: The target is clear, no clarification needed.
+</think>
+{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",True,True,True,1.456
+groq,p5_cot,5,tanglish,"<think>
+1. ACTION: The verb is ""bold"" (pannu means do, so we apply bold).
+2. TARGET: The target is the title of the document; no specific index is given, so index is null.
+3. CHECK: The target is clear (title), so no clarification needed.
+</think>
+{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,3.209
+groq,p5_cot,6,tanglish,"<think>
+1. ACTION: ""serkku"" → insert  
+2. TARGET: ""end-la"" → document, index -1  
+3. CHECK: target is clear, no clarification needed
+</think>
+{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",True,True,True,1.487
+groq,p5_cot,7,tanglish,"<think>
+1. ACTION: The verb is ""nagarthu"" which means ""move"".
+2. TARGET: The phrase ""first para-va"" indicates the first paragraph. ""kadaisi-ku"" means to the end, so we target the first paragraph to move to the end.
+3. CHECK: The target is clear – we are moving paragraph 1 to the end of the document.
+</think>
+{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,1.565
+groq,p5_cot,8,tanglish,"<think>
+1. ACTION: ""undo"" (verb)
+2. TARGET: not specified
+3. CHECK: target unclear, need clarification
+</think>
+{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which action should I undo?""}",True,False,False,1.454
+groq,p5_cot,10,tamil_number,"<think>
+1. ACTION: The verb is ""pannu"" meaning ""do"". The word before it is ""underline"", so the action is underline.
+2. TARGET: The target is ""mudhal line-a"" → type line, index 1.
+3. CHECK: The target is clear.
+</think>
+{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,1.537
+groq,p5_cot,11,tamil_number,"<think>
+1. ACTION: The verb is ""eduthudu"", which is not in the known verb list (bold, italic, underline, delete, insert, rewrite, move, undo, clarify).  
+2. TARGET: The target is the last paragraph (""kadaisi paragraph-a"").  
+3. CHECK: Since the action verb is unclear, we must ask for clarification.  
+</think>
+{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which action should I perform on the last paragraph?""}",True,False,False,1.876
+groq,p5_cot,13,unclear,"<think>
+1. ACTION: The verb ""maathu"" indicates a rewrite operation.  
+2. TARGET: The user says ""adha"" (that), but no specific part of the document is identified.  
+3. CHECK: Target is unclear → need clarification.
+</think>
+{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part should I rewrite?""}",True,True,True,1.474
+groq,p5_cot,15,rewrite,"<think>
+1. ACTION: The verb is ""make"" which implies a transformation, so we use ""rewrite"".
+2. TARGET: The user refers to ""the second paragraph"", so type is ""paragraph"" and index is 2.
+3. CHECK: The target is clear (second paragraph). We can proceed with the rewrite to a casual style.
+</think>
+{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":2},""value"":""casual"",""question"":null}",True,True,True,2.896
+groq,p6_self_consistency,2,english,"<think>
+1. ACTION: ""delete"" (verb)
+2. TARGET: paragraph, index 1 (first paragraph)
+3. CHECK: target is clear
+</think>
+{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,6.358
+groq,p6_self_consistency,3,english,"<think>
+1. ACTION: The verb is ""insert"".
+2. TARGET: The user says ""at the end"", which maps to the document end (index -1).
+3. CHECK: The target is clear.
+</think>
+{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Thank you"",""question"":null}",True,True,True,9.022
+groq,p6_self_consistency,5,tanglish,"<think>
+1. ACTION: The verb ""pannu"" indicates ""do"" and the word before it ""bold"" tells us the action is to make bold.
+2. TARGET: The target word before the verb is ""title-a"" meaning the title of the document.
+3. CHECK: The target is clear – it is the title, no index specified.
+</think>
+{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,4.72
+groq,p6_self_consistency,6,tanglish,"<think>1. ACTION: serkku → insert<br>2. TARGET: end of document → index -1<br>3. CHECK: target clear</think>
+{""action"":""insert"",""target"":{""type"":""document"",""index"":-1},""value"":""Nandri"",""question"":null}",True,True,True,4.566
+groq,p6_self_consistency,7,tanglish,"<think>
+1. ACTION: The verb ""nagarthu"" means ""move"".  
+2. TARGET: ""first para-va"" refers to the first paragraph (index 1). The phrase ""kadaisi-ku"" indicates the destination is the last position.  
+3. CHECK: Target is clear; no clarification needed.  
+</think>
+{""action"":""move"",""target"":{""type"":""paragraph"",""index"":1},""value"":""last"",""question"":null}",True,True,True,12.716
+groq,p6_self_consistency,8,tanglish,"<think>
+ACTION: The user says ""undo pannu"" which means perform an undo operation.  
+TARGET: Undo applies to the last action on the document as a whole, so target type is ""document"" with no specific index.  
+CHECK: The target is clear; we can proceed with the undo command.
+</think>
+{""action"":""undo"",""target"":{""type"":""document"",""index"":null},""value"":null,""question"":null}",True,True,False,12.45
+groq,p6_self_consistency,10,tamil_number,"<think>
+1. ACTION: The verb is ""underline"" (look at the word before ""pannu"").
+2. TARGET: The target is the first line (""mudhal line"") → type ""line"", index 1.
+3. CHECK: Target is clear, no ambiguity.
+</think>
+{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,16.096
+groq,p6_self_consistency,11,tamil_number,"<think>
+1. ACTION: The verb is ""eduthudu"". It is not ""pannu"" or ""aakku"", so we don't have a direct mapping to a known action.
+2. TARGET: The target is the last paragraph (type ""paragraph"", index -1).
+3. CHECK: Since the action is unclear, we need to ask for clarification.
+</think>
+{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which action would you like to perform on the last paragraph?""}",True,False,False,19.991
+groq,p6_self_consistency,13,unclear,"<think>
+1. ACTION: ""maathu"" → rewrite  
+2. TARGET: ""adha"" means ""that"" but no specific part or index is given, so target is unclear.  
+3. CHECK: Since the target is not clear, we need to clarify with the user.
+</think>
+{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which part would you like me to rewrite a bit?""}",True,True,True,18.396
+groq,p6_self_consistency,15,rewrite,"<think>
+ACTION: The user wants to ""make the second paragraph more casual"" → action is rewrite.  
+TARGET: Second paragraph → type paragraph, index 2.  
+CHECK: Target is clear (second paragraph). No clarification needed.  
+</think>
+{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":2},""value"":""casual"",""question"":null}",True,True,True,15.413
+ollama-local,p2_role,2,english,"```json
+{
+  ""command"": ""delete_first_paragraph""
+}
+```",True,False,False,12.515
+ollama-local,p2_role,3,english,"```json
+{
+  ""command"": ""insert_at_end"",
+  ""text_to_insert"": ""Thank you""
+}
+```",True,False,False,3.712
+ollama-local,p2_role,5,tanglish,"```json
+{
+  ""command"": {
+    ""type"": ""title"",
+    ""text"": ""A"",
+    ""style"": {
+      ""bold"": true
+    },
+    ""language"": ""en""
+  },
+  ""text"": "" pannu""
+}
+```",True,False,False,7.584
+ollama-local,p2_role,6,tanglish,"```json
+{
+  ""command"": ""end-la \""Nandri\"" serkku""
+}
+```
+
+Note: The command ""end-la \""Nandri\"" serkku"" seems to be in a format that might be used in a voice document editor, but it's not clear what it means in the context of a Tamil Nadu student's voice document editor (VDOC). Without more context, I've provided the JSON representation of the command as given.",True,False,False,13.005
+ollama-local,p2_role,7,tanglish,"```json
+{
+  ""command"": ""first para-va kadaisi-ku nagarthu""
+}
+```
+
+Note: The command ""first para-va kadaisi-ku nagarthu"" appears to be in a mix of English and a form of Tamil (Tanglish). In the context of a voice document editor, it seems to be asking for the first paragraph to be translated or converted into Nagari script. However, without more context, I've kept the command as is.",True,False,False,12.626
+ollama-local,p2_role,8,tanglish,"{
+  ""command"": ""undo"",
+  ""language"": ""tamil""
+}",True,False,False,3.032
+ollama-local,p2_role,10,tamil_number,"```json
+{
+  ""command"": {
+    ""underline"": true,
+    ""text"": ""mudhal line-a pannu""
+  }
+}
+```",True,False,False,5.213
+ollama-local,p2_role,11,tamil_number,"```json
+{
+  ""command"": ""paragraph-a eduthudu"",
+  ""language"": ""tamil""
+}
+```
+
+Note: The command ""kadaisi paragraph-a eduthudu"" seems to be a mix of Tamil and English. In the context of the VDOC, it has been interpreted as a Tamil command for ""paragraph-a eduthudu"" (which could mean ""paragraph-a add text"" in English). The language field is set to ""tamil"" as per the command.",True,False,False,14.558
+ollama-local,p2_role,13,unclear,"```json
+{
+  ""command"": ""adha konjam maathu""
+}
+```
+
+Note: The command ""adha konjam maathu"" translates to ""when will the exam be held"" in English.",True,False,False,7.675
+ollama-local,p2_role,15,rewrite,"{
+  ""command"": ""make_the_second_paragraph_more_casual""
+}",True,False,False,2.883
+ollama-local,p3_structured,2,english,"{""action"": ""delete"", ""target"": {""type"": ""paragraph"", ""index"": 1}, ""value"": null, ""question"": ""Which paragraph do you want to delete?""}",True,True,True,9.719
+ollama-local,p3_structured,3,english,"{""action"": ""insert"", ""target"": {""type"": ""paragraph"", ""index"": 3}, ""value"": ""Thank you"", ""question"": null}",True,True,False,4.651
+ollama-local,p3_structured,5,tanglish,"{""action"": ""rewrite"", ""target"": {""type"": ""title"", ""index"": 1}, ""value"": ""Bold Pannu"", ""question"": null}",True,False,False,4.752
+ollama-local,p3_structured,6,tanglish,"{""action"": ""clarify"", ""target"": {""type"": ""word"", ""index"": 5}, ""value"": ""Nandri"", ""question"": ""Is 'Nandri' a typo or should it be kept as is?""}",True,False,False,7.359
+ollama-local,p3_structured,7,tanglish,"{""action"": ""move"", ""target"": {""type"": ""paragraph"", ""index"": 1}, ""value"": null, ""question"": ""Which paragraph do you want to move?""}",True,True,True,5.243
+ollama-local,p3_structured,8,tanglish,"{""action"": ""undo"", ""target"": {""type"": ""paragraph"", ""index"": 1}, ""value"": null, ""question"": null}",True,True,False,5.028
+ollama-local,p3_structured,10,tamil_number,"{""action"": ""underline"", ""target"": {""type"": ""line"", ""index"": 1}, ""value"": null, ""question"": null}",True,True,True,4.638
+ollama-local,p3_structured,11,tamil_number,"{""action"": ""move"", ""target"": {""type"": ""paragraph"", ""index"": 1}, ""value"": null, ""question"": ""Which paragraph do you want to move?""}",True,False,False,5.774
+ollama-local,p3_structured,13,unclear,"{""action"": ""insert"", ""target"": {""type"": ""word"", ""index"": 4}, ""value"": ""konna"", ""question"": null}",True,False,False,4.767
+ollama-local,p3_structured,15,rewrite,"{""action"": ""clarify"", ""target"": {""type"": ""paragraph"", ""index"": 2}, ""value"": null, ""question"": ""How do you want the second paragraph to sound more casual?""}",True,False,False,6.195
+ollama-local,p5_cot,2,english,"<think>
+1. ACTION: delete
+2. TARGET: first paragraph, index 1
+3. CHECK: The target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,19.155
+ollama-local,p5_cot,3,english,"<think>
+1. ACTION: delete - The word before ""bold"" is ""delete"", so it's a delete action.
+2. TARGET: atha - The word ""atha"" indicates the last line, and ""la"" is used to indicate the end. So, it's the last line.
+3. CHECK: The target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,False,False,14.515
+ollama-local,p5_cot,5,tanglish,"<think>
+1. ACTION: The command is ""title-a bold pannu"", which means ""bold the title"". So, the verb is ""bold"".
+2. TARGET: The target is the title, and we need to bold it. The index is null because we are targeting the title, which is not associated with a specific line or paragraph number.
+3. CHECK: The target is clear. The title is the top-level heading in a document.
+</think>
+{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,15.703
+ollama-local,p5_cot,6,tanglish,"<think>
+1. ACTION: delete - The word before ""bold"" is ""delete"".
+2. TARGET: end-la - The target is the last line of the document.
+3. CHECK: The target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,False,False,10.251
+ollama-local,p5_cot,7,tanglish,"<think>
+1. ACTION: delete - The word before ""bold"" is ""delete"".
+2. TARGET: first para - The first paragraph is the first one in the document.
+3. CHECK: The target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,False,False,10.445
+ollama-local,p5_cot,8,tanglish,"<think>
+1. ACTION: ""undo"" - The user asked to undo the last action.
+2. TARGET: null - No specific target mentioned, so we assume the last action should be undone.
+3. CHECK: The action is clear.
+</think>
+{""action"":""undo"",""target"":null,""value"":null,""question"":null}",True,True,True,9.158
+ollama-local,p5_cot,10,tamil_number,"<think>
+1. ACTION: The user wants to underline a new line. ""mudhal line-a underline pannu"" indicates ""underline the first line"".
+2. TARGET: The target is the first line of the document.
+3. CHECK: The target is clear.
+</think>
+{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,10.933
+ollama-local,p5_cot,11,tamil_number,"<think>
+1. ACTION: The user wants to bold a title. ""bold"" is the verb.
+2. TARGET: The target is the title, but we don't know the index. The user needs to specify which title.
+3. CHECK: The target is not clear because we don't know which title to bold.
+</think>
+{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which title should be bolded?""}",True,False,False,13.333
+ollama-local,p5_cot,13,unclear,"<think>
+1. ACTION: delete - The word before ""bold"" is ""delete"", so it's deleting a line.
+2. TARGET: line - The target is the last line, which is index -1.
+3. CHECK: The target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,False,False,11.783
+ollama-local,p5_cot,15,rewrite,"<think>
+1. ACTION: ""make"" - The user is instructing to change the tone of the second paragraph.
+2. TARGET: The second paragraph. The index is 2.
+3. CHECK: The target is clear.
+</think>
+{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":2},""value"":null,""question"":null}",True,True,False,10.151
+ollama-local,p6_self_consistency,2,english,"<think>
+1. ACTION: delete which means ""delete"" the text.
+2. TARGET: the first paragraph which is index 1.
+3. CHECK: The target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,True,26.618
+ollama-local,p6_self_consistency,3,english,"<think>
+1. ACTION: ""insert"" - The user wants to insert something at the end.
+2. TARGET: document at the end - The user wants to insert ""Thank you"" at the end of the document.
+3. CHECK: The target is clear.
+</think>
+{""action"":""insert"",""target"":{""type"":""document"",""index"":null},""value"":""Thank you"",""question"":null}",True,True,False,32.954
+ollama-local,p6_self_consistency,5,tanglish,"<think>
+1. ACTION: The command is ""title-a bold pannu"", ""a"" indicates a verb before it.
+2. TARGET: The target is ""title"", which refers to the title of the document. The index is not specified, so it's ""null"".
+3. CHECK: The target is clear.
+</think>
+{""action"":""bold"",""target"":{""type"":""title"",""index"":null},""value"":null,""question"":null}",True,True,True,41.984
+ollama-local,p6_self_consistency,6,tanglish,"<think>
+1. ACTION: delete - The word before ""bold"" is ""delete"".
+2. TARGET: end-la - The number is 1, as it refers to the last line.
+3. CHECK: The target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,False,False,30.86
+ollama-local,p6_self_consistency,7,tanglish,"<think>
+1. ACTION: delete
+   - The command says ""atha delete pannu"", which is like saying ""delete the last one"".
+2. TARGET: first paragraph
+   - ""first"" means the first paragraph.
+3. CHECK: is the target clear?
+   - Yes, it's clear that we should delete the first paragraph.
+</think>
+{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,False,False,34.103
+ollama-local,p6_self_consistency,8,tanglish,"<think>
+1. ACTION: ""undo"" - The command given is ""undo pannu"", which means undo the last action. The last action would have been a delete or rewrite.
+2. TARGET: null - Since we need to undo an action, we first need to know what action was last performed. Without a previous action to reference, we cannot determine the target.
+3. CHECK: use clarify - We need to ask which action to undo.
+</think>
+{""action"":""clarify"",""target"":null,""value"":null,""question"":""Which action should be undone?""}",True,False,False,38.308
+ollama-local,p6_self_consistency,10,tamil_number,"<think>
+1. ACTION: The word ""mudhal"" before the verb ""line-a"" indicates ""do to the first line.""
+2. TARGET: The target is the first line of the document.
+3. CHECK: The target is clear.
+</think>
+{""action"":""underline"",""target"":{""type"":""line"",""index"":1},""value"":null,""question"":null}",True,True,True,33.877
+ollama-local,p6_self_consistency,11,tamil_number,"<think>
+1. ACTION: look for the instruction that specifies what to do with a particular part of the document, and which number.
+2. TARGET: the paragraph that needs to be bolded
+3. CHECK: is the paragraph number clear?
+</think>
+{""action"":""bold"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":""Which paragraph should be made bold?""}",True,False,False,33.274
+ollama-local,p6_self_consistency,13,unclear,"<think>
+1. ACTION: The user is instructing to delete text. ""delete pannu"" indicates this is a deletion action.
+2. TARGET: The user wants to delete the last line. ""last line-a delete pannu"" specifies the target is the last line.
+3. CHECK: The target is clear.
+</think>
+{""action"":""delete"",""target"":{""type"":""line"",""index"":-1},""value"":null,""question"":null}",True,False,False,35.233
+ollama-local,p6_self_consistency,15,rewrite,"<think>
+1. ACTION: ""make"" - The user is instructing to change the tone of the second paragraph.
+2. TARGET: The second paragraph - The second paragraph is the target for the change.
+3. CHECK: The target ""second paragraph"" is clear.
+</think>
+{""action"":""rewrite"",""target"":{""type"":""paragraph"",""index"":1},""value"":null,""question"":null}",True,True,False,33.835

@@ -1,0 +1,50 @@
+technique,id,category,output,valid_json,count_ok,actions_ok,exact_ok,latency_s
+studio_actions_v1,1,single,"[{""action"":""create_report"",""topic"":""solar energy""}]",True,True,True,True,3.695
+studio_actions_v1,2,single,"[{""action"":""format"",""target"":{""type"":""title"",""index"":null},""bold"":true,""italic"":null,""underline"":null,""size"":null,""font"":null,""align"":null}]",True,True,True,True,2.137
+studio_actions_v1,3,single,"[{""action"":""page_border"",""style"":""single""}]",True,True,True,True,2.635
+studio_actions_v1,4,single,"[{""action"":""set_font"",""font"":""Arial"",""size"":14}]",True,True,True,True,2.812
+studio_actions_v1,5,single,"[{""action"":""add_section"",""heading"":""Methods""}]",True,True,True,True,3.476
+studio_actions_v1,6,single,"[{""action"":""delete"",""target"":{""type"":""section"",""index"":2}}]",True,True,True,True,2.196
+studio_actions_v1,7,single,"[{""action"":""format"",""target"":{""type"":""title"",""index"":null},""bold"":null,""italic"":null,""underline"":null,""size"":null,""font"":null,""align"":""center""}]",True,True,True,True,2.823
+studio_actions_v1,8,single,"[{""action"":""line_spacing"",""value"":2}]",True,True,True,True,2.515
+studio_actions_v1,9,single,"[{""action"":""export"",""format"":""pdf""}]",True,True,True,True,2.262
+studio_actions_v1,10,single,"[{""action"":""undo""}]",True,True,True,True,1.661
+studio_actions_v1,12,single,"[{""action"":""format"",""target"":{""type"":""title"",""index"":null},""bold"":null,""italic"":true,""underline"":null,""size"":null,""font"":null,""align"":null}]",True,True,True,True,2.427
+studio_actions_v1,13,single,"[{""action"":""format"",""target"":{""type"":""heading"",""index"":1},""bold"":true,""italic"":null,""underline"":null,""size"":null,""font"":null,""align"":null}]",True,True,True,True,3.156
+studio_actions_v1,14,single,"[{""action"":""delete"",""target"":{""type"":""paragraph"",""index"":-1}}]",True,True,True,True,2.081
+studio_actions_v1,15,single,"[{""action"":""page_border"",""style"":""double""}]",True,True,True,True,2.05
+studio_actions_v1,16,single,"[{""action"":""add_section"",""heading"":""conclusion""}]",True,True,True,True,1.977
+studio_actions_v1,17,single,"[{""action"":""set_font"",""font"":null,""size"":14}]",True,True,True,True,4.109
+studio_actions_v1,18,single,"[{""action"":""move"",""target"":{""type"":""section"",""index"":3},""to_index"":2}]",True,True,True,True,2.07
+studio_actions_v1,19,single,"[{""action"":""format"",""target"":{""type"":""heading"",""index"":5},""bold"":null,""italic"":null,""underline"":true,""size"":null,""font"":null,""align"":null}]",True,True,True,True,2.274
+studio_actions_v1,20,single,"[{""action"":""page_border"",""style"":""none""}]",True,True,True,True,2.473
+studio_actions_v1,21,multi,"[{""action"":""format"",""target"":{""type"":""title"",""index"":null},""bold"":true,""italic"":null,""underline"":null,""size"":20,""font"":null,""align"":null}]",True,True,True,True,2.58
+studio_actions_v1,22,multi,"[{""action"":""create_report"",""topic"":""renewable energy""},{""action"":""page_border"",""style"":""single""}]",True,True,True,True,2.242
+studio_actions_v1,23,multi,"[{""action"":""format"",""target"":{""type"":""title"",""index"":null},""bold"":null,""italic"":null,""underline"":null,""size"":null,""font"":""Arial"",""align"":""center""}]",True,False,False,False,2.379
+studio_actions_v1,24,multi,"[{""action"":""add_section"",""heading"":""Results""},{""action"":""format"",""target"":{""type"":""heading"",""index"":null},""bold"":true,""italic"":null,""underline"":null,""size"":null,""font"":null,""align"":null}]",True,True,True,False,2.883
+studio_actions_v1,25,multi,"[{""action"":""delete"",""target"":{""type"":""section"",""index"":2}},{""action"":""page_border"",""style"":""single""}]",True,True,True,True,2.092
+studio_actions_v1,26,multi,"[{""action"":""set_font"",""font"":""Times New Roman"",""size"":12},{""action"":""line_spacing"",""value"":1.5}]",True,True,True,True,4.21
+studio_actions_v1,27,multi,"[{""action"":""export"",""format"":""both""}]",True,True,True,True,1.66
+studio_actions_v1,28,unclear,"[{""action"":""clarify"",""question"":""Which part should I enlarge?""}]",True,True,True,True,2.688
+studio_actions_v1,29,unclear,"[{""action"":""clarify"",""question"":""What should I change?""}]",True,True,True,True,2.161
+studio_actions_v1,30,unclear,"[{""action"":""clarify"",""question"":""Which part would you like to improve?""}]",True,True,True,True,2.487
+studio_actions_zero_shot,1,single,"[{""action"":""create_report"",""topic"":""solar energy""}]",True,True,True,True,2.257
+studio_actions_zero_shot,2,single,"[
+  {
+    ""action"":""format"",
+    ""target"":{""type"":""title"",""index"":null},
+    ""bold"":true,
+    ""italic"":null,
+    ""underline"":null,
+    ""size"":null,
+    ""font"":null,
+    ""align"":null
+  }
+]",True,True,True,True,3.355
+studio_actions_zero_shot,3,single,,False,False,False,False,2.491
+studio_actions_zero_shot,4,single,"[{""action"":""set_font"",""font"":""Arial"",""size"":14}]",True,True,True,True,74.509
+studio_actions_zero_shot,5,single,"[{""action"":""add_section"",""heading"":""Methods""}]",True,True,True,True,41.408
+studio_actions_zero_shot,6,single,"[{""action"":""delete"",""target"":{""type"":""section"",""index"":2}}]",True,True,True,True,52.412
+studio_actions_zero_shot,7,single,,False,False,False,False,3.731
+studio_actions_zero_shot,8,single,"[{""action"":""line_spacing"",""value"":2}]",True,True,True,True,42.914
+studio_actions_zero_shot,9,single,"[{""action"":""export"",""format"":""pdf""}]",True,True,True,True,44.056

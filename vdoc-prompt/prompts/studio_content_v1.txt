@@ -1,0 +1,26 @@
+Write a simple student report on: {topic}
+
+Use these four sections, in this order:
+  Introduction
+  Main Points
+  Advantages or Problems
+  Conclusion
+
+Rules:
+- Never invent exact facts about real places, organisations or people:
+  no founding years, fees, student numbers, rankings, or names of people.
+  Write a general statement that is true instead, or put [add detail here]
+  where the student should fill a number in.
+- Simple English. Short sentences. A school or college student should understand it.
+- 400 words at most across the whole report.
+- One to three paragraphs per section.
+- No markdown, no bullet characters, no headings inside the paragraph text.
+
+Return ONLY this JSON object, no other text:
+{"title": "<a short report title>",
+ "sections": [
+   {"heading": "Introduction", "paragraphs": ["...", "..."]},
+   {"heading": "Main Points", "paragraphs": ["..."]},
+   {"heading": "Advantages or Problems", "paragraphs": ["..."]},
+   {"heading": "Conclusion", "paragraphs": ["..."]}
+ ]}

@@ -19,7 +19,7 @@ import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 
 # Load .env from project root so GROQ_API_KEY is available
@@ -215,6 +215,155 @@ def multi_action_config():
         "model":               "DocEditBERT (models/doceditbert_1000)",
         "whisper":             whisper_asr.config(),
     })
+
+
+# ── Prompt engineering (the vdoc-prompt project, served inside VDOC) ─────────
+#
+# Imported lazily: vdoc-prompt pulls in pandas and the LLM clients, and a
+# missing key or a missing package there must not stop the rest of VDOC from
+# starting. If the import fails, these four routes report why and the other
+# pages carry on working.
+try:
+    import pe_api
+    PE_IMPORT_ERROR = None
+except Exception as exc:                      # noqa: BLE001 - reported, not raised
+    pe_api, PE_IMPORT_ERROR = None, f"{type(exc).__name__}: {exc}"
+
+
+def _pe_ready():
+    if pe_api is None:
+        return jsonify({"error": f"prompt-engineering module unavailable — "
+                                 f"{PE_IMPORT_ERROR}"}), 503
+    return None
+
+
+@app.route("/pe/meta", methods=["GET"])
+def pe_meta():
+    """Model and technique lists for the page's dropdowns."""
+    return _pe_ready() or jsonify(pe_api.meta())
+
+
+@app.route("/pe/run", methods=["POST"])
+def pe_run():
+    """One command, one model, one technique -> prompt, reply, JSON, time."""
+    not_ready = _pe_ready()
+    if not_ready:
+        return not_ready
+    data = request.get_json(silent=True) or {}
+    command = (data.get("command") or "").strip()
+    if not command:
+        return jsonify({"error": "Missing 'command' field"}), 400
+    result = pe_api.run_one(command,
+                            data.get("model") or "groq",
+                            data.get("technique") or "p4_few_shot_v3")
+    return (jsonify(result), 400) if result.get("error") else jsonify(result)
+
+
+@app.route("/pe/compare", methods=["POST"])
+def pe_compare():
+    """The same command under zero-shot, few-shot v1 and few-shot v3."""
+    not_ready = _pe_ready()
+    if not_ready:
+        return not_ready
+    data = request.get_json(silent=True) or {}
+    command = (data.get("command") or "").strip()
+    if not command:
+        return jsonify({"error": "Missing 'command' field"}), 400
+    return jsonify({"command": command,
+                    "results": pe_api.compare(command, data.get("model") or "groq")})
+
+
+@app.route("/pe/results", methods=["GET"])
+def pe_results():
+    """Tables and charts data, all read from vdoc-prompt/results/runs.csv."""
+    return _pe_ready() or jsonify(pe_api.results())
+
+
+# ── VDOC Studio (speak a command, get Word and PDF) ──────────────────────────
+try:
+    import studio_api
+    STUDIO_IMPORT_ERROR = None
+except Exception as exc:                      # noqa: BLE001 - reported, not raised
+    studio_api, STUDIO_IMPORT_ERROR = None, f"{type(exc).__name__}: {exc}"
+
+
+def _studio_ready():
+    if studio_api is None:
+        return jsonify({"error": f"VDOC Studio unavailable — {STUDIO_IMPORT_ERROR}"}), 503
+    return None
+
+
+@app.route("/studio/state", methods=["GET"])
+def studio_state():
+    return _studio_ready() or jsonify(studio_api.state())
+
+
+@app.route("/studio/command", methods=["POST"])
+def studio_command():
+    """One spoken or typed sentence -> actions -> a changed document."""
+    not_ready = _studio_ready()
+    if not_ready:
+        return not_ready
+    data = request.get_json(silent=True) or {}
+    text = (data.get("text") or data.get("command") or "").strip()
+    if not text:
+        return jsonify({"error": "Missing 'text' field"}), 400
+    try:
+        return jsonify(studio_api.run_command(
+            text, data.get("model") or "groq",
+            data.get("technique") or studio_api.ACTIONS_PROMPT))
+    except Exception as exc:                  # noqa: BLE001 - never crash the tab
+        return jsonify({"error": f"{type(exc).__name__}: {exc}",
+                        **studio_api.state()}), 500
+
+
+@app.route("/studio/pick", methods=["POST"])
+def studio_pick():
+    """Apply one of the buttons offered after a clarify. No LLM call."""
+    not_ready = _studio_ready()
+    if not_ready:
+        return not_ready
+    data = request.get_json(silent=True) or {}
+    picked = studio_api.pick(data.get("index") or 0)
+    if picked is None:
+        return jsonify({"error": "no such option", **studio_api.state()}), 400
+    return jsonify(picked)
+
+
+@app.route("/studio/undo", methods=["POST"])
+def studio_undo():
+    not_ready = _studio_ready()
+    if not_ready:
+        return not_ready
+    undone = studio_api.undo()
+    return jsonify({"undone": undone, **studio_api.state()})
+
+
+@app.route("/studio/reset", methods=["POST"])
+def studio_reset():
+    not_ready = _studio_ready()
+    if not_ready:
+        return not_ready
+    studio_api.reset()
+    return jsonify(studio_api.state())
+
+
+@app.route("/studio/download", methods=["GET"])
+def studio_download():
+    """Rebuilt on every request, so the file always matches the preview."""
+    not_ready = _studio_ready()
+    if not_ready:
+        return not_ready
+    fmt = (request.args.get("format") or "docx").lower()
+    path = studio_api.download_path(fmt)
+    if not path:
+        return jsonify({"error": "format must be docx or pdf"}), 400
+    # inline=1 is the PDF-view iframe: it needs to display the file, not
+    # download it. Everything else is a download.
+    inline = request.args.get("inline") in ("1", "true", "yes")
+    return send_file(path, as_attachment=not inline,
+                     download_name=f"vdoc_studio.{fmt}",
+                     mimetype="application/pdf" if fmt == "pdf" else None)
 
 
 @app.route("/suggest-corrections", methods=["POST"])

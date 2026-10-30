@@ -80,6 +80,21 @@ def _clean(token):
     return token.lower().strip(_PUNCT + "\"'")
 
 
+def _tokenise(text):
+    """
+    Split on hyphens as well as whitespace.
+
+    Tanglish glues the locative particle onto the unit word -- "3rd line-la",
+    "rendavathu vari-la" -- and the ordinal can only attach to the unit when
+    the unit is a token of its own. On the voice path the snapper has usually
+    pulled these apart already; a typed command has not been through it.
+    """
+    tokens = []
+    for piece in text.split():
+        tokens.extend(part for part in _clean(piece).split("-") if part)
+    return tokens
+
+
 def resolve(text):
     """
     Find a line/paragraph target in the text.
@@ -89,7 +104,7 @@ def resolve(text):
         "line 2", "line two", "para 3"
         "2nd line", "3rd paragraph"
     """
-    tokens = [_clean(t) for t in text.split()]
+    tokens = _tokenise(text)
     if not tokens:
         return None
 

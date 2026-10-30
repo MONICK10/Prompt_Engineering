@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-10-23T11:04:42",
+  "generated_at": "2026-10-30T00:25:48",
   "dataset": "data/docEdit1000.json",
-  "total": 1000,
-  "unchanged": 1000,
+  "total": 1042,
+  "unchanged": 1042,
+  "case_marker_stripped": 15,
   "wrongly_split": 0,
   "changed_result": 0,
   "accuracy_unchanged": 1.0,

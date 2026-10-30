@@ -1,0 +1,19 @@
+# Words Whisper should expect to hear. One per line, or comma separated.
+# Lines starting with # are notes and are ignored.
+#
+# Whisper is given this as "text that came just before the audio", so it
+# leans towards these spellings. Add place names, college names and command
+# words here as they come up -- no code change and no restart is needed, the
+# file is read on every transcription.
+
+# Places and institutions
+Karunya, Coimbatore, Tamil Nadu
+
+# Tanglish command words
+pathi, pannu, maathu, serkku, eduthudu, podu, vai
+
+# Positions
+kadaisi, mudhal, rendavathu, moonavathu
+
+# Document words
+report, section, heading, title, border, bold, size, underline, center

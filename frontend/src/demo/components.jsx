@@ -81,12 +81,18 @@ export function targetLabel(entry) {
 
   const unit = target.unit || 'line'
   const resolved = entry.resolved_line
-  if (!resolved) {
-    return target.n === -1 ? `last ${unit}` : `${unit} ${target.n}`
+  const where = !resolved
+    ? (target.n === -1 ? `last ${unit}` : `${unit} ${target.n}`)
+    : resolved.moved
+      ? `${unit} ${resolved.current} (moved from ${unit} ${resolved.original})`
+      : `${unit} ${resolved.current}`
+
+  // On a scoped action the line is only where to look, so the card has to
+  // name the words being swapped too -- "line 3" alone says nothing.
+  if (target.from && target.to) {
+    return `"${target.from}" → "${target.to}" on ${where}`
   }
-  return resolved.moved
-    ? `${unit} ${resolved.current} (moved from ${unit} ${resolved.original})`
-    : `${unit} ${resolved.current}`
+  return where
 }
 
 export function ActionCard({ entry, index, total, step }) {

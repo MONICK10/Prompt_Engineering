@@ -25610,5 +25610,1025 @@
     "from_anchor": "start",
     "to_anchor": "finish",
     "lang": "tanglish"
+  },
+  {
+    "id": 1001,
+    "text": "1st line-la reported-a car-nu maathu",
+    "tokens": [
+      "1st",
+      "line-la",
+      "reported-a",
+      "car-nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "reported",
+    "to_anchor": "car",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1002,
+    "text": "first line la reported a car nu maathu",
+    "tokens": [
+      "first",
+      "line",
+      "la",
+      "reported",
+      "a",
+      "car",
+      "nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "reported",
+    "to_anchor": "car",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1003,
+    "text": "2nd line-la name-a address-nu maathu",
+    "tokens": [
+      "2nd",
+      "line-la",
+      "name-a",
+      "address-nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "name",
+    "to_anchor": "address",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1004,
+    "text": "second line la name a address nu maathu",
+    "tokens": [
+      "second",
+      "line",
+      "la",
+      "name",
+      "a",
+      "address",
+      "nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "name",
+    "to_anchor": "address",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1005,
+    "text": "3rd line-la introduction-a overview-nu maathu",
+    "tokens": [
+      "3rd",
+      "line-la",
+      "introduction-a",
+      "overview-nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "introduction",
+    "to_anchor": "overview",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1006,
+    "text": "third line la introduction a overview nu maathu",
+    "tokens": [
+      "third",
+      "line",
+      "la",
+      "introduction",
+      "a",
+      "overview",
+      "nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "introduction",
+    "to_anchor": "overview",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1007,
+    "text": "4th line-la conclusion-a summary-nu maathu",
+    "tokens": [
+      "4th",
+      "line-la",
+      "conclusion-a",
+      "summary-nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "conclusion",
+    "to_anchor": "summary",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1008,
+    "text": "fourth line la conclusion a summary nu maathu",
+    "tokens": [
+      "fourth",
+      "line",
+      "la",
+      "conclusion",
+      "a",
+      "summary",
+      "nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "conclusion",
+    "to_anchor": "summary",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1009,
+    "text": "5th line-la title-a heading-nu maathu",
+    "tokens": [
+      "5th",
+      "line-la",
+      "title-a",
+      "heading-nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "title",
+    "to_anchor": "heading",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1010,
+    "text": "fifth line la title a heading nu maathu",
+    "tokens": [
+      "fifth",
+      "line",
+      "la",
+      "title",
+      "a",
+      "heading",
+      "nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "title",
+    "to_anchor": "heading",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1011,
+    "text": "last line-la accident-a incident-nu maathu",
+    "tokens": [
+      "last",
+      "line-la",
+      "accident-a",
+      "incident-nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "accident",
+    "to_anchor": "incident",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1012,
+    "text": "last line la accident a incident nu maathu",
+    "tokens": [
+      "last",
+      "line",
+      "la",
+      "accident",
+      "a",
+      "incident",
+      "nu",
+      "maathu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "accident",
+    "to_anchor": "incident",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1013,
+    "text": "mudhal line-la chapter-ku badhila section podu",
+    "tokens": [
+      "mudhal",
+      "line-la",
+      "chapter-ku",
+      "badhila",
+      "section",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "chapter",
+    "to_anchor": "section",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1014,
+    "text": "mudhal line la chapter ku badhila section podu",
+    "tokens": [
+      "mudhal",
+      "line",
+      "la",
+      "chapter",
+      "ku",
+      "badhila",
+      "section",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "chapter",
+    "to_anchor": "section",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1015,
+    "text": "rendavathu line-la method-ku badhila approach podu",
+    "tokens": [
+      "rendavathu",
+      "line-la",
+      "method-ku",
+      "badhila",
+      "approach",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "method",
+    "to_anchor": "approach",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1016,
+    "text": "rendavathu line la method ku badhila approach podu",
+    "tokens": [
+      "rendavathu",
+      "line",
+      "la",
+      "method",
+      "ku",
+      "badhila",
+      "approach",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "method",
+    "to_anchor": "approach",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1017,
+    "text": "moonavathu line-la result-ku badhila outcome podu",
+    "tokens": [
+      "moonavathu",
+      "line-la",
+      "result-ku",
+      "badhila",
+      "outcome",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "result",
+    "to_anchor": "outcome",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1018,
+    "text": "moonavathu line la result ku badhila outcome podu",
+    "tokens": [
+      "moonavathu",
+      "line",
+      "la",
+      "result",
+      "ku",
+      "badhila",
+      "outcome",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "result",
+    "to_anchor": "outcome",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1019,
+    "text": "naalavathu line-la researchers-ku badhila authors podu",
+    "tokens": [
+      "naalavathu",
+      "line-la",
+      "researchers-ku",
+      "badhila",
+      "authors",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "researchers",
+    "to_anchor": "authors",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1020,
+    "text": "naalavathu line la researchers ku badhila authors podu",
+    "tokens": [
+      "naalavathu",
+      "line",
+      "la",
+      "researchers",
+      "ku",
+      "badhila",
+      "authors",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "researchers",
+    "to_anchor": "authors",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1021,
+    "text": "anjavathu line-la system-ku badhila platform podu",
+    "tokens": [
+      "anjavathu",
+      "line-la",
+      "system-ku",
+      "badhila",
+      "platform",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "system",
+    "to_anchor": "platform",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1022,
+    "text": "anjavathu line la system ku badhila platform podu",
+    "tokens": [
+      "anjavathu",
+      "line",
+      "la",
+      "system",
+      "ku",
+      "badhila",
+      "platform",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "system",
+    "to_anchor": "platform",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1023,
+    "text": "kadaisi line-la study-ku badhila research podu",
+    "tokens": [
+      "kadaisi",
+      "line-la",
+      "study-ku",
+      "badhila",
+      "research",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "study",
+    "to_anchor": "research",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1024,
+    "text": "kadaisi line la study ku badhila research podu",
+    "tokens": [
+      "kadaisi",
+      "line",
+      "la",
+      "study",
+      "ku",
+      "badhila",
+      "research",
+      "podu"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "B-FROM",
+      "O",
+      "O",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "study",
+    "to_anchor": "research",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1025,
+    "text": "chapter-a section-a maathu",
+    "tokens": [
+      "chapter-a",
+      "section-a",
+      "maathu"
+    ],
+    "labels": [
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "chapter",
+    "to_anchor": "section",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1026,
+    "text": "method a approach a maathu",
+    "tokens": [
+      "method",
+      "a",
+      "approach",
+      "a",
+      "maathu"
+    ],
+    "labels": [
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "method",
+    "to_anchor": "approach",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1027,
+    "text": "result-a outcome-a maathu",
+    "tokens": [
+      "result-a",
+      "outcome-a",
+      "maathu"
+    ],
+    "labels": [
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "result",
+    "to_anchor": "outcome",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1028,
+    "text": "researchers a authors a maathu",
+    "tokens": [
+      "researchers",
+      "a",
+      "authors",
+      "a",
+      "maathu"
+    ],
+    "labels": [
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "researchers",
+    "to_anchor": "authors",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1029,
+    "text": "system-a platform-a maathu",
+    "tokens": [
+      "system-a",
+      "platform-a",
+      "maathu"
+    ],
+    "labels": [
+      "B-FROM",
+      "B-TO",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "system",
+    "to_anchor": "platform",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1030,
+    "text": "study a research a maathu",
+    "tokens": [
+      "study",
+      "a",
+      "research",
+      "a",
+      "maathu"
+    ],
+    "labels": [
+      "B-FROM",
+      "O",
+      "B-TO",
+      "O",
+      "B-ACTION"
+    ],
+    "intent": "replace",
+    "from_anchor": "study",
+    "to_anchor": "research",
+    "lang": "tanglish"
+  },
+  {
+    "id": 1031,
+    "text": "change chapter to section",
+    "tokens": [
+      "change",
+      "chapter",
+      "to",
+      "section"
+    ],
+    "labels": [
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "chapter",
+    "to_anchor": "section",
+    "lang": "en"
+  },
+  {
+    "id": 1032,
+    "text": "change method to approach",
+    "tokens": [
+      "change",
+      "method",
+      "to",
+      "approach"
+    ],
+    "labels": [
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "method",
+    "to_anchor": "approach",
+    "lang": "en"
+  },
+  {
+    "id": 1033,
+    "text": "change result to outcome",
+    "tokens": [
+      "change",
+      "result",
+      "to",
+      "outcome"
+    ],
+    "labels": [
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "result",
+    "to_anchor": "outcome",
+    "lang": "en"
+  },
+  {
+    "id": 1034,
+    "text": "change researchers to authors",
+    "tokens": [
+      "change",
+      "researchers",
+      "to",
+      "authors"
+    ],
+    "labels": [
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "researchers",
+    "to_anchor": "authors",
+    "lang": "en"
+  },
+  {
+    "id": 1035,
+    "text": "change system to platform",
+    "tokens": [
+      "change",
+      "system",
+      "to",
+      "platform"
+    ],
+    "labels": [
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "system",
+    "to_anchor": "platform",
+    "lang": "en"
+  },
+  {
+    "id": 1036,
+    "text": "change study to research",
+    "tokens": [
+      "change",
+      "study",
+      "to",
+      "research"
+    ],
+    "labels": [
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "study",
+    "to_anchor": "research",
+    "lang": "en"
+  },
+  {
+    "id": 1037,
+    "text": "in the first line change reported to car",
+    "tokens": [
+      "in",
+      "the",
+      "first",
+      "line",
+      "change",
+      "reported",
+      "to",
+      "car"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "reported",
+    "to_anchor": "car",
+    "lang": "en"
+  },
+  {
+    "id": 1038,
+    "text": "in the second line change name to address",
+    "tokens": [
+      "in",
+      "the",
+      "second",
+      "line",
+      "change",
+      "name",
+      "to",
+      "address"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "name",
+    "to_anchor": "address",
+    "lang": "en"
+  },
+  {
+    "id": 1039,
+    "text": "in the third line change introduction to overview",
+    "tokens": [
+      "in",
+      "the",
+      "third",
+      "line",
+      "change",
+      "introduction",
+      "to",
+      "overview"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "introduction",
+    "to_anchor": "overview",
+    "lang": "en"
+  },
+  {
+    "id": 1040,
+    "text": "in the fourth line change conclusion to summary",
+    "tokens": [
+      "in",
+      "the",
+      "fourth",
+      "line",
+      "change",
+      "conclusion",
+      "to",
+      "summary"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "conclusion",
+    "to_anchor": "summary",
+    "lang": "en"
+  },
+  {
+    "id": 1041,
+    "text": "in the fifth line change title to heading",
+    "tokens": [
+      "in",
+      "the",
+      "fifth",
+      "line",
+      "change",
+      "title",
+      "to",
+      "heading"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "title",
+    "to_anchor": "heading",
+    "lang": "en"
+  },
+  {
+    "id": 1042,
+    "text": "in the last line change accident to incident",
+    "tokens": [
+      "in",
+      "the",
+      "last",
+      "line",
+      "change",
+      "accident",
+      "to",
+      "incident"
+    ],
+    "labels": [
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-ACTION",
+      "B-FROM",
+      "O",
+      "B-TO"
+    ],
+    "intent": "replace",
+    "from_anchor": "accident",
+    "to_anchor": "incident",
+    "lang": "en"
   }
 ]

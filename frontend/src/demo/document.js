@@ -91,6 +91,15 @@ export function findAnchorRange(doc, fromText, toText) {
   return null
 }
 
+/** First occurrence of a single word anywhere in the document. */
+function findFirstInDoc(doc, needle) {
+  for (let i = 0; i < doc.length; i++) {
+    const hit = findInLine(doc[i], needle)
+    if (hit) return { lineIndex: i, ...hit }
+  }
+  return null
+}
+
 // ── Applying marks ──────────────────────────────────────────────────────────
 
 function addMark(line, start, end, type) {
@@ -191,6 +200,30 @@ export function applyAction(docIn, entry) {
       doc.splice(index + 1, 0, added)
       return { doc, touched: [added.id], ok: true, message: `inserted after line ${position}` }
     }
+    // On a line target `replace` is scoped, not targeted: the line says where
+    // to look, `from`/`to` say what to swap. The pipeline carries both.
+    if (action === 'replace') {
+      if (!target.from || !target.to) {
+        return {
+          doc, touched: [], ok: false,
+          message: 'replace needs both a word to change and its replacement',
+        }
+      }
+      const hit = findInLine(line, target.from)
+      if (!hit) {
+        return {
+          doc, touched: [], ok: false,
+          message: `"${target.from}" not found on line ${position}`,
+        }
+      }
+      line.text = line.text.slice(0, hit.start) + target.to + line.text.slice(hit.end)
+      line.marks = []
+      return {
+        doc, touched: [line.id], ok: true,
+        message: `replaced "${target.from}" with "${target.to}" on line ${position}`
+               + `${hit.fuzzy ? ' (fuzzy match)' : ''}`,
+      }
+    }
     const markType = MARK_ACTIONS[action]
     if (!markType) return { doc, touched: [], ok: false, message: `cannot apply "${action}" to a line` }
     addMark(line, 0, line.text.length, markType)
@@ -200,6 +233,23 @@ export function applyAction(docIn, entry) {
   // ── Anchor target ─────────────────────────────────────────────────────────
   if (!target.from || !target.to) {
     return { doc, touched: [], ok: false, message: 'could not extract all fields — no edit applied' }
+  }
+
+  // `replace` is not a range. `to` is new text, not a word already in the
+  // document, so findAnchorRange would hunt for it and always come back empty.
+  if (action === 'replace') {
+    const hit = findFirstInDoc(doc, target.from)
+    if (!hit) {
+      return { doc, touched: [], ok: false, message: `"${target.from}" not found` }
+    }
+    const line = doc[hit.lineIndex]
+    line.text = line.text.slice(0, hit.start) + target.to + line.text.slice(hit.end)
+    line.marks = []
+    return {
+      doc, touched: [line.id], ok: true,
+      message: `replaced "${target.from}" with "${target.to}"`
+             + `${hit.fuzzy ? ' (fuzzy match)' : ''}`,
+    }
   }
 
   const range = findAnchorRange(doc, target.from, target.to)
